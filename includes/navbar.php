@@ -36,13 +36,6 @@ $base_path = $base_path ?? './';
 											<a class="elementor-item">Collections</a></li>
 									</ul>
 								</nav>
-								<div class="elementor-menu-toggle" role="button" tabindex="0" aria-label="Menu Toggle"
-									aria-expanded="false">
-									<i aria-hidden="true" role="presentation"
-										class="elementor-menu-toggle__icon--open eicon-menu-bar"></i><i
-										aria-hidden="true" role="presentation"
-										class="elementor-menu-toggle__icon--close eicon-close"></i>
-								</div>
 								<nav class="elementor-nav-menu--dropdown elementor-nav-menu__container"
 									aria-hidden="true">
 									<ul id="menu-2-8ba429b" class="elementor-nav-menu">
@@ -128,7 +121,7 @@ $base_path = $base_path ?? './';
 								</div> <!-- close elementor-menu-cart__wrapper -->
 							</div>
 						</div>
-						<div class="elementor-element elementor-element-03e83c0 elementor-align-right elementor-widget__width-auto vamtam-popup-toggle vamtam-popup-close-icon elementor-widget elementor-widget-button"
+						<!-- <div class="elementor-element elementor-element-03e83c0 elementor-align-right elementor-widget__width-auto vamtam-popup-toggle vamtam-popup-close-icon elementor-widget elementor-widget-button"
 							data-id="03e83c0" data-element_type="widget" data-e-type="widget"
 							data-widget_type="button.default">
 							<div class="elementor-widget-container">
@@ -143,7 +136,7 @@ $base_path = $base_path ?? './';
 									</a>
 								</div>
 							</div>
-						</div>
+						</div> -->
 					</div>
 				</div>
 			</div>

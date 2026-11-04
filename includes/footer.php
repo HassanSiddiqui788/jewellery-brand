@@ -125,21 +125,9 @@ $base_path = $base_path ?? './';
 														<a href="<?= $base_path ?>shop/collections/index.php"
 															class="elementor-item">Collections</a></li>
 													<li
-														class="menu-item menu-item-type-post_type menu-item-object-page menu-item-42">
-														<a href="<?= $base_path ?>pages/gift-cards.php" class="elementor-item">Gift
-															Cards</a></li>
-													<li
 														class="menu-item menu-item-type-post_type menu-item-object-page menu-item-46">
 														<a href="<?= $base_path ?>pages/customer-reviews.php" class="elementor-item">Customer
 															Reviews</a></li>
-													<li
-														class="menu-item menu-item-type-post_type menu-item-object-page menu-item-47">
-														<a href="<?= $base_path ?>pages/retail-store.php" class="elementor-item">Retail
-															Store</a></li>
-													<li
-														class="menu-item menu-item-type-custom menu-item-object-custom menu-item-48">
-														<a href="https://etsy.com"
-															class="elementor-item">Etsy Shop</a></li>
 												</ul>
 											</nav>
 											<nav class="elementor-nav-menu--dropdown elementor-nav-menu__container"
@@ -150,21 +138,10 @@ $base_path = $base_path ?? './';
 														<a href="<?= $base_path ?>shop/collections/index.php" class="elementor-item"
 															tabindex="-1">Collections</a></li>
 													<li
-														class="menu-item menu-item-type-post_type menu-item-object-page menu-item-42">
-														<a href="<?= $base_path ?>pages/gift-cards.php" class="elementor-item"
-															tabindex="-1">Gift Cards</a></li>
-													<li
 														class="menu-item menu-item-type-post_type menu-item-object-page menu-item-46">
 														<a href="<?= $base_path ?>pages/customer-reviews.php" class="elementor-item"
 															tabindex="-1">Customer Reviews</a></li>
-													<li
-														class="menu-item menu-item-type-post_type menu-item-object-page menu-item-47">
-														<a href="<?= $base_path ?>pages/retail-store.php" class="elementor-item"
-															tabindex="-1">Retail Store</a></li>
-													<li
-														class="menu-item menu-item-type-custom menu-item-object-custom menu-item-48">
-														<a href="https://etsy.com"
-															class="elementor-item" tabindex="-1">Etsy Shop</a></li>
+													
 												</ul>
 											</nav>
 										</div>
@@ -190,10 +167,6 @@ $base_path = $base_path ?? './';
 												class="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-vertical e--pointer-text e--animation-none">
 												<ul id="menu-1-1ff8f01" class="elementor-nav-menu sm-vertical">
 													<li
-														class="menu-item menu-item-type-post_type menu-item-object-page menu-item-59">
-														<a href="<?= $base_path ?>pages/shipping.php"
-															class="elementor-item">Delivery</a></li>
-													<li
 														class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58">
 														<a href="<?= $base_path ?>pages/returns.php" class="elementor-item">Return
 															&#038; Cancellations</a></li>
@@ -206,10 +179,6 @@ $base_path = $base_path ?? './';
 											<nav class="elementor-nav-menu--dropdown elementor-nav-menu__container"
 												aria-hidden="true">
 												<ul id="menu-2-1ff8f01" class="elementor-nav-menu sm-vertical">
-													<li
-														class="menu-item menu-item-type-post_type menu-item-object-page menu-item-59">
-														<a href="<?= $base_path ?>pages/shipping.php" class="elementor-item"
-															tabindex="-1">Delivery</a></li>
 													<li
 														class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58">
 														<a href="<?= $base_path ?>pages/returns.php" class="elementor-item"

@@ -920,7 +920,7 @@ $base_path = $base_path ?? './';
 		</div>
 	</div>
 </div>
-		(() => {
+		<!-- (() => {
 			const lazyloadRunObserver = () => {
 				const lazyloadBackgrounds = document.querySelectorAll(`.e-con.e-parent:not(.e-lazyloaded)`);
 				const lazyloadBackgroundObserver = new IntersectionObserver((entries) => {
@@ -945,7 +945,7 @@ $base_path = $base_path ?? './';
 			events.forEach((event) => {
 				document.addEventListener(event, lazyloadRunObserver);
 			});
-		})();
+		})(); -->
 	</script>
 	<script type='text/javascript'>
 		(function () {
