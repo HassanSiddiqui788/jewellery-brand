@@ -5,71 +5,158 @@
  */
 $base_path = $base_path ?? './';
 ?>
+<!-- Top Announcement Marquee Ticker -->
+<div class="site-topbar">
+    <div class="topbar-marquee">
+        <span class="marquee-track">
+            <span>FREE SHIPPING ON ORDERS OVER $150</span>
+            <span class="marquee-bullet">•</span>
+            <span>NEW SEASON ARRIVALS</span>
+            <span class="marquee-bullet">•</span>
+            <span>HANDCRAFTED FINE JEWELRY</span>
+            <span class="marquee-bullet">•</span>
+            <span>100% ETHICAL PRECIOUS METALS</span>
+            <span class="marquee-bullet">•</span>
+            <span>EXCLUSIVE MEMBER PRIVILEGES</span>
+            <span class="marquee-bullet">•</span>
+            <span>FREE SHIPPING ON ORDERS OVER $150</span>
+            <span class="marquee-bullet">•</span>
+            <span>NEW SEASON ARRIVALS</span>
+            <span class="marquee-bullet">•</span>
+            <span>HANDCRAFTED FINE JEWELRY</span>
+            <span class="marquee-bullet">•</span>
+            <span>100% ETHICAL PRECIOUS METALS</span>
+            <span class="marquee-bullet">•</span>
+            <span>EXCLUSIVE MEMBER PRIVILEGES</span>
+        </span>
+    </div>
+</div>
+
 <header class="site-header">
     <div class="site-header-inner">
         <!-- 1. Left: Desktop Navigation Menu -->
         <nav class="site-nav-desktop" aria-label="Main Navigation">
             <ul class="site-nav-list">
                 <li class="site-nav-item">
-                    <a href="<?= $base_path ?>index.php" class="site-nav-link">Home</a>
-                </li>
-                <li class="site-nav-item">
-                    <a href="<?= $base_path ?>pages/about.php" class="site-nav-link">
-                        About <i class="fas fa-caret-down" style="font-size: 10px; margin-left: 2px;"></i>
+                    <a href="<?= $base_path ?>index.php" class="site-nav-link">
+                        Home <i class="fas fa-caret-down nav-caret"></i>
                     </a>
                     <ul class="site-dropdown">
-                        <li><a href="<?= $base_path ?>pages/about.php">Our Story</a></li>
-                        <li><a href="<?= $base_path ?>blog/index.php">Journal</a></li>
-                        <li><a href="<?= $base_path ?>pages/our-materials.php">Our Materials</a></li>
-                        <li><a href="<?= $base_path ?>pages/contact.php">Contact Us</a></li>
+                        <li><a href="<?= $base_path ?>index.php">Home Showcase</a></li>
+                        <li><a href="<?= $base_path ?>shop/collections/index.php">Featured Collections</a></li>
+                        <li><a href="<?= $base_path ?>pages/about.php">Our Brand Story</a></li>
                     </ul>
-                </li>
-                <li class="site-nav-item mega-menu">
-                    <a href="<?= $base_path ?>shop/collections/index.php" class="site-nav-link mega-menu">Collections</a>
                 </li>
                 <li class="site-nav-item">
                     <a href="<?= $base_path ?>shop/index.php" class="site-nav-link">
-                        Shop <i class="fas fa-caret-down" style="font-size: 10px; margin-left: 2px;"></i>
+                        Shop <i class="fas fa-caret-down nav-caret"></i>
                     </a>
                     <ul class="site-dropdown">
                         <li><a href="<?= $base_path ?>shop/index.php">All Products</a></li>
-                        <li><a href="<?= $base_path ?>pages/gift-cards.php">Gift Cards</a></li>
+                        <li><a href="<?= $base_path ?>shop/categories/necklaces/index.php">Necklaces</a></li>
+                        <li><a href="<?= $base_path ?>shop/categories/earrings/index.php">Earrings</a></li>
+                        <li><a href="<?= $base_path ?>shop/categories/rings/index.php">Rings</a></li>
+                        <li><a href="<?= $base_path ?>shop/categories/bracelets/index.php">Bracelets</a></li>
+                        <li><a href="<?= $base_path ?>shop/categories/gift-card/index.php">Gift Cards</a></li>
+                    </ul>
+                </li>
+                <li class="site-nav-item">
+                    <a href="<?= $base_path ?>shop/collections/index.php" class="site-nav-link">
+                        Categories <i class="fas fa-caret-down nav-caret"></i>
+                    </a>
+                    <ul class="site-dropdown">
+                        <li><a href="<?= $base_path ?>shop/collections/index.php#necklaces">Necklaces Collection</a></li>
+                        <li><a href="<?= $base_path ?>shop/collections/index.php#earrings">Earrings Collection</a></li>
+                        <li><a href="<?= $base_path ?>shop/collections/index.php#rings">Rings Collection</a></li>
+                        <li><a href="<?= $base_path ?>shop/collections/index.php#bracelets">Bracelets Collection</a></li>
+                    </ul>
+                </li>
+                <li class="site-nav-item">
+                    <a href="<?= $base_path ?>shop/product/angel-hoops/index.php" class="site-nav-link">
+                        Product <i class="fas fa-caret-down nav-caret"></i>
+                    </a>
+                    <ul class="site-dropdown">
+                        <li><a href="<?= $base_path ?>shop/product/angel-hoops/index.php">Angel Hoops</a></li>
+                        <li><a href="<?= $base_path ?>shop/product/arquitectura-golden-earrings/index.php">Arquitectura Earrings</a></li>
+                        <li><a href="<?= $base_path ?>shop/product/bliss-golden-ring/index.php">Bliss Golden Ring</a></li>
+                        <li><a href="<?= $base_path ?>shop/product/exuberant-golden-necklace/index.php">Exuberant Necklace</a></li>
+                    </ul>
+                </li>
+                <li class="site-nav-item">
+                    <a href="<?= $base_path ?>pages/about.php" class="site-nav-link">
+                        Pages <i class="fas fa-caret-down nav-caret"></i>
+                    </a>
+                    <ul class="site-dropdown">
+                        <li><a href="<?= $base_path ?>pages/about.php">Our Story</a></li>
                         <li><a href="<?= $base_path ?>pages/customer-reviews.php">Customer Reviews</a></li>
                         <li><a href="<?= $base_path ?>pages/retail-store.php">Retail Store</a></li>
+                        <li><a href="<?= $base_path ?>pages/faq.php">FAQ</a></li>
+                        <li><a href="<?= $base_path ?>pages/shipping.php">Delivery &amp; Shipping</a></li>
+                        <li><a href="<?= $base_path ?>pages/returns.php">Returns &amp; Exchanges</a></li>
+                        <li><a href="<?= $base_path ?>pages/privacy-policy.php">Privacy Policy</a></li>
+                        <li><a href="<?= $base_path ?>pages/terms.php">Terms &amp; Conditions</a></li>
                     </ul>
+                </li>
+                <li class="site-nav-item">
+                    <a href="<?= $base_path ?>blog/index.php" class="site-nav-link">
+                        Blog <i class="fas fa-caret-down nav-caret"></i>
+                    </a>
+                    <ul class="site-dropdown">
+                        <li><a href="<?= $base_path ?>blog/index.php">All Articles</a></li>
+                        <li><a href="<?= $base_path ?>blog/posts/the-creative-journey-5-steps-to-reawaken-inspiration/index.php">Creative Journey</a></li>
+                        <li><a href="<?= $base_path ?>blog/posts/end-of-year-reflections/index.php">End of Year Reflections</a></li>
+                    </ul>
+                </li>
+                <li class="site-nav-item">
+                    <a href="<?= $base_path ?>pages/contact.php" class="site-nav-link">Contact</a>
                 </li>
             </ul>
         </nav>
 
         <!-- 2. Center: Brand Logo -->
         <div class="site-logo-wrap">
-            <a href="<?= $base_path ?>index.php" aria-label="Bijoux Home">
+            <a href="<?= $base_path ?>index.php" aria-label="Bijoux Home" class="site-logo-link">
                 <img width="156" height="30" src="<?= $base_path ?>assets/icons/logo.svg" alt="Bijoux Jewelry" class="site-logo-img">
             </a>
         </div>
 
-        <!-- 3. Right: Actions & Cart -->
+        <!-- 3. Right: Luxury Action Icons -->
         <div class="site-actions">
+            <!-- Search Button -->
+            <a href="<?= $base_path ?>shop/index.php" class="site-action-btn search-btn" aria-label="Search" title="Search">
+                <i class="fas fa-search" aria-hidden="true"></i>
+            </a>
+
+            <!-- Wishlist Button -->
+            <a href="<?= $base_path ?>shop/collections/index.php" class="site-action-btn wishlist-btn" aria-label="Wishlist" title="Wishlist">
+                <i class="far fa-heart" aria-hidden="true"></i>
+            </a>
+
             <!-- Shopping Bag / Cart Toggle -->
             <div class="elementor-menu-cart__toggle cart-toggle-wrap">
-                <a id="elementor-menu-cart__toggle_button" href="<?= $base_path ?>shop/cart.php" class="cart-toggle-btn elementor-menu-cart__toggle_button" aria-label="Shopping Cart" aria-expanded="false">
+                <a id="elementor-menu-cart__toggle_button" href="<?= $base_path ?>shop/cart.php" class="cart-toggle-btn elementor-menu-cart__toggle_button" aria-label="Shopping Cart" aria-expanded="false" title="Shopping Bag">
                     <span class="cart-amount-text woocommerce-Price-amount amount">
                         <bdi><span class="woocommerce-Price-currencySymbol" translate="no">&#36;</span>0.00</bdi>
                     </span>
                     <span class="cart-icon-wrap elementor-button-icon">
                         <span class="cart-badge elementor-button-icon-qty" data-counter="0">0</span>
-                        <i class="e-toggle-cart-custom-icon vamtamtheme- vamtam-theme-shopping-bag" aria-hidden="true" style="font-size: 20px;"></i>
+                        <i class="e-toggle-cart-custom-icon vamtamtheme- vamtam-theme-shopping-bag" aria-hidden="true"></i>
                     </span>
                 </a>
             </div>
 
+            <!-- User Account Button -->
+            <a href="<?= $base_path ?>shop/checkout.php" class="site-action-btn account-btn" aria-label="My Account" title="My Account">
+                <i class="far fa-user" aria-hidden="true"></i>
+            </a>
+
             <!-- Desktop Side Menu Hamburger Toggle (Popup 998) -->
             <a href="#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6Ijk5OCIsInRvZ2dsZSI6dHJ1ZSwiYWxpZ25fd2l0aF9wYXJlbnQiOiIifQ%3D%3D" 
-               class="site-action-btn vamtam-popup-toggle" 
+               class="site-action-btn vamtam-popup-toggle side-menu-toggle" 
                aria-label="Open Side Menu" 
                role="button"
                title="Side Menu">
-                <i aria-hidden="true" class="vamtamtheme- vamtam-theme-side-menu" style="font-size: 20px;"></i>
+                <i aria-hidden="true" class="vamtamtheme- vamtam-theme-side-menu"></i>
             </a>
 
             <!-- Mobile & Tablet Hamburger Button -->
@@ -87,43 +174,50 @@ $base_path = $base_path ?? './';
                 <a href="<?= $base_path ?>index.php" class="elementor-item">Home</a>
             </li>
             <li class="menu-item menu-item-has-children">
-                <a href="#" class="elementor-item">
-                    About
-                    <span class="sub-arrow"><i class="fas fa-caret-down" aria-hidden="true"></i></span>
-                </a>
-                <ul class="sub-menu">
-                    <li><a href="<?= $base_path ?>pages/about.php" class="elementor-sub-item">Our Story</a></li>
-                    <li><a href="<?= $base_path ?>blog/index.php" class="elementor-sub-item">Journal</a></li>
-                    <li><a href="<?= $base_path ?>pages/our-materials.php" class="elementor-sub-item">Our Materials</a></li>
-                    <li><a href="<?= $base_path ?>pages/contact.php" class="elementor-sub-item">Contact Us</a></li>
-                </ul>
-            </li>
-            <li class="menu-item">
-                <a href="<?= $base_path ?>shop/collections/index.php" class="elementor-item">Collections</a>
-            </li>
-            <li class="menu-item menu-item-has-children">
-                <a href="#" class="elementor-item">
+                <a href="<?= $base_path ?>shop/index.php" class="elementor-item">
                     Shop
                     <span class="sub-arrow"><i class="fas fa-caret-down" aria-hidden="true"></i></span>
                 </a>
                 <ul class="sub-menu">
                     <li><a href="<?= $base_path ?>shop/index.php" class="elementor-sub-item">All Products</a></li>
-                    <li><a href="<?= $base_path ?>pages/gift-cards.php" class="elementor-sub-item">Gift Cards</a></li>
-                    <li><a href="<?= $base_path ?>pages/customer-reviews.php" class="elementor-sub-item">Customer Reviews</a></li>
-                    <li><a href="<?= $base_path ?>pages/retail-store.php" class="elementor-sub-item">Retail Store</a></li>
+                    <li><a href="<?= $base_path ?>shop/categories/necklaces/index.php" class="elementor-sub-item">Necklaces</a></li>
+                    <li><a href="<?= $base_path ?>shop/categories/earrings/index.php" class="elementor-sub-item">Earrings</a></li>
+                    <li><a href="<?= $base_path ?>shop/categories/rings/index.php" class="elementor-sub-item">Rings</a></li>
+                    <li><a href="<?= $base_path ?>shop/categories/bracelets/index.php" class="elementor-sub-item">Bracelets</a></li>
+                    <li><a href="<?= $base_path ?>shop/categories/gift-card/index.php" class="elementor-sub-item">Gift Cards</a></li>
                 </ul>
+            </li>
+            <li class="menu-item">
+                <a href="<?= $base_path ?>shop/collections/index.php" class="elementor-item">Categories</a>
             </li>
             <li class="menu-item menu-item-has-children">
                 <a href="#" class="elementor-item">
-                    Customer Care
+                    Pages
                     <span class="sub-arrow"><i class="fas fa-caret-down" aria-hidden="true"></i></span>
                 </a>
                 <ul class="sub-menu">
-                    <li><a href="<?= $base_path ?>pages/shipping.php" class="elementor-sub-item">Delivery</a></li>
-                    <li><a href="<?= $base_path ?>pages/returns.php" class="elementor-sub-item">Return &amp; Cancellations</a></li>
+                    <li><a href="<?= $base_path ?>pages/about.php" class="elementor-sub-item">Our Story</a></li>
+                    <li><a href="<?= $base_path ?>pages/customer-reviews.php" class="elementor-sub-item">Customer Reviews</a></li>
+                    <li><a href="<?= $base_path ?>pages/retail-store.php" class="elementor-sub-item">Retail Store</a></li>
                     <li><a href="<?= $base_path ?>pages/faq.php" class="elementor-sub-item">FAQ</a></li>
+                    <li><a href="<?= $base_path ?>pages/shipping.php" class="elementor-sub-item">Delivery &amp; Shipping</a></li>
+                    <li><a href="<?= $base_path ?>pages/returns.php" class="elementor-sub-item">Returns &amp; Cancellations</a></li>
                     <li><a href="<?= $base_path ?>pages/privacy-policy.php" class="elementor-sub-item">Privacy Policy</a></li>
+                    <li><a href="<?= $base_path ?>pages/terms.php" class="elementor-sub-item">Terms &amp; Conditions</a></li>
                 </ul>
+            </li>
+            <li class="menu-item menu-item-has-children">
+                <a href="<?= $base_path ?>blog/index.php" class="elementor-item">
+                    Blog
+                    <span class="sub-arrow"><i class="fas fa-caret-down" aria-hidden="true"></i></span>
+                </a>
+                <ul class="sub-menu">
+                    <li><a href="<?= $base_path ?>blog/index.php" class="elementor-sub-item">All Articles</a></li>
+                    <li><a href="<?= $base_path ?>blog/posts/the-creative-journey-5-steps-to-reawaken-inspiration/index.php" class="elementor-sub-item">Creative Journey</a></li>
+                </ul>
+            </li>
+            <li class="menu-item">
+                <a href="<?= $base_path ?>pages/contact.php" class="elementor-item">Contact</a>
             </li>
         </ul>
     </nav>

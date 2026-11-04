@@ -8,15 +8,15 @@ $base_path = $base_path ?? './';
 
 $hero_slides = [
     [
-        'image' => $base_path . 'assets/images/home-banner-images/revslider_1.jpg',
+        'image' => $base_path . 'images/home-banner-images/revslider_1.jpg',
         'eyebrow' => 'PURELY HAND-CRAFTED',
         'title' => 'Charm For<br>Your Everyday',
-        'desc' => 'Artisan handcrafted gold & diamond jewelry designed to elevate every moment.',
+        'desc' => 'Get lifted with the 21 Day Facial Gua Sha Challenge!',
         'btn_text' => 'Shop Now',
         'btn_link' => $base_path . 'shop/index.php',
     ],
     [
-        'image' => $base_path . 'assets/images/home-banner-images/revslider_2.jpg',
+        'image' => $base_path . 'images/home-banner-images/revslider_2.jpg',
         'eyebrow' => 'TIMELESS BRILLIANCE',
         'title' => 'Radiance In<br>Every Detail',
         'desc' => 'Exquisite gemstone creations and fine diamond heirlooms sculpted with ethical precision.',
@@ -24,7 +24,7 @@ $hero_slides = [
         'btn_link' => $base_path . 'shop/collections/index.php',
     ],
     [
-        'image' => $base_path . 'assets/images/home-banner-images/revslider_3.jpg',
+        'image' => $base_path . 'images/home-banner-images/revslider_3.jpg',
         'eyebrow' => 'NEW SEASON ARRIVALS',
         'title' => 'Golden Forms,<br>Natural Glow',
         'desc' => 'Sculptural organic silhouettes inspired by nature, light, and architectural grace.',
