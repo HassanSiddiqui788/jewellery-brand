@@ -90,6 +90,7 @@ $body_class = $body_class ?? '';
     <link rel="stylesheet" href="<?= $base_path ?>assets/css/zoomIn.min.css" media="all" />
     <link rel="stylesheet" href="<?= $base_path ?>assets/css/e-animation-shrink.min.css" media="all" />
     <link rel="stylesheet" href="<?= $base_path ?>assets/css/e-animation-float.min.css" media="all" />
+    <link rel="stylesheet" href="<?= $base_path ?>assets/css/nav-toggle.css" media="all" />
 
     <!-- Page Specific Stylesheets -->
     <?php if (!empty($page_css)): ?>

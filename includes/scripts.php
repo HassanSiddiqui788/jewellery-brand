@@ -179,6 +179,9 @@ window.lazyLoadOptions = [{
 </script>
 <script src="<?= $base_path ?>assets/js/lazyload.min.js" async></script>
 
+<!-- Universal Navigation, Hamburger Menu & Side Cart Engine -->
+<script src="<?= $base_path ?>assets/js/nav-toggle.js" defer></script>
+
 <!-- Page Specific Scripts -->
 <?php if (!empty($page_scripts)): ?>
 <?php foreach ((array)$page_scripts as $script_file): ?>

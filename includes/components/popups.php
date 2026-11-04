@@ -5,7 +5,10 @@
  */
 $base_path = $base_path ?? './';
 ?>
-<div data-elementor-type="popup" data-elementor-id="998" class="elementor elementor-998 elementor-location-popup"
+<div id="elementor-popup-modal-998" class="dialog-type-lightbox elementor-popup-modal dialog-lightbox-widget dialog-container" style="display: none;" aria-hidden="true">
+	<div class="dialog-widget-content">
+		<div class="dialog-message">
+			<div data-elementor-type="popup" data-elementor-id="998" class="elementor elementor-998 elementor-location-popup"
 		data-elementor-settings="{&quot;entrance_animation&quot;:&quot;fadeIn&quot;,&quot;exit_animation&quot;:&quot;fadeIn&quot;,&quot;entrance_animation_duration&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:0.6,&quot;sizes&quot;:[]},&quot;classes&quot;:&quot;vamtam-bijoux-tabs-mega-menu vamtam-header-mega-menu&quot;,&quot;a11y_navigation&quot;:&quot;yes&quot;,&quot;timing&quot;:[]}"
 		data-elementor-post-type="elementor_library">
 		<section
@@ -255,7 +258,16 @@ $base_path = $base_path ?? './';
 			</div>
 		</section>
 	</div>
-	<div data-elementor-type="popup" data-elementor-id="1122" class="elementor elementor-1122 elementor-location-popup"
+		</div>
+		<div class="dialog-close-button dialog-lightbox-close-button" role="button" tabindex="0" aria-label="Close">
+			<svg viewBox="0 0 1000 1000"><path d="M742 167L500 408 258 167C246 154 233 150 217 150 196 150 179 158 167 167 154 179 150 196 150 212 150 229 154 242 171 254L408 500 167 742C138 771 138 800 167 829 196 858 225 858 254 829L496 587 738 829C750 842 767 846 783 846 800 846 817 842 829 829 842 817 846 800 846 783 846 767 842 750 829 738L588 500 829 258C858 229 858 200 829 171 800 142 771 142 742 167Z"></path></svg>
+		</div>
+	</div>
+</div>
+<div id="elementor-popup-modal-1122" class="dialog-type-lightbox elementor-popup-modal dialog-lightbox-widget dialog-container" style="display: none;" aria-hidden="true">
+	<div class="dialog-widget-content">
+		<div class="dialog-message">
+			<div data-elementor-type="popup" data-elementor-id="1122" class="elementor elementor-1122 elementor-location-popup"
 		data-elementor-settings="{&quot;entrance_animation&quot;:&quot;fadeIn&quot;,&quot;exit_animation&quot;:&quot;fadeIn&quot;,&quot;entrance_animation_duration&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:1,&quot;sizes&quot;:[]},&quot;open_selector&quot;:&quot;.mega-menu&quot;,&quot;classes&quot;:&quot;vamtam-bijoux-popup-close-icon vamtam-header-mega-menu&quot;,&quot;a11y_navigation&quot;:&quot;yes&quot;,&quot;triggers&quot;:[],&quot;timing&quot;:[]}"
 		data-elementor-post-type="elementor_library">
 		<section
@@ -902,7 +914,12 @@ $base_path = $base_path ?? './';
 			</div>
 		</section>
 	</div>
-	<script>
+		</div>
+		<div class="dialog-close-button dialog-lightbox-close-button" role="button" tabindex="0" aria-label="Close">
+			<svg viewBox="0 0 1000 1000"><path d="M742 167L500 408 258 167C246 154 233 150 217 150 196 150 179 158 167 167 154 179 150 196 150 212 150 229 154 242 171 254L408 500 167 742C138 771 138 800 167 829 196 858 225 858 254 829L496 587 738 829C750 842 767 846 783 846 800 846 817 842 829 829 842 817 846 800 846 783 846 767 842 750 829 738L588 500 829 258C858 229 858 200 829 171 800 142 771 142 742 167Z"></path></svg>
+		</div>
+	</div>
+</div>
 		(() => {
 			const lazyloadRunObserver = () => {
 				const lazyloadBackgrounds = document.querySelectorAll(`.e-con.e-parent:not(.e-lazyloaded)`);
