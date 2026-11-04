@@ -1,0 +1,11 @@
+# Backups and archives
+.backup_pre_restructure.tar.gz
+*.tar.gz
+*.zip
+*.tar
+*.bak
+
+# Temporary and log files
+*.log
+.DS_Store
+Thumbs.db
