@@ -1,0 +1,766 @@
+/**
+ * Bijoux Luxury Jewelry - Modern Custom Theme Architecture
+ * Clean, lightweight, professional styles replacing WordPress/Elementor bloat
+ */
+
+:root {
+    --color-primary: #051F34;        /* Deep Luxury Navy */
+    --color-primary-hover: #082d4c;
+    --color-accent: #CB9274;         /* Warm Rose Gold */
+    --color-accent-hover: #b87b5d;
+    --color-cream: #F6F4F2;          /* Soft Cream Background */
+    --color-surface: #FFFFFF;
+    --color-text: #30373E;           /* Primary Body Text */
+    --color-muted: #69727D;          /* Secondary Muted Text */
+    --color-border: rgba(5, 31, 52, 0.08);
+    --color-border-dark: rgba(5, 31, 52, 0.15);
+
+    --font-serif: 'Jomolhari', Georgia, serif;
+    --font-serif-display: 'Sorts Mill Goudy', 'Jomolhari', serif;
+    --font-sans: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+    --site-max-width: 1260px;
+    --header-height: 80px;
+    --radius-sm: 2px;
+    --radius-md: 4px;
+    --radius-lg: 8px;
+    --transition: 0.25s cubic-bezier(0.2, 0, 0.2, 1);
+}
+
+/* ==========================================================================
+   1. Clean Global Resets & Typography
+   ========================================================================== */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body.theme-bijoux,
+body {
+    background-color: var(--color-cream);
+    color: var(--color-text);
+    font-family: var(--font-sans);
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, .font-serif {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    color: var(--color-primary);
+    margin-top: 0;
+    line-height: 1.25;
+}
+
+h5, h6, .font-sans {
+    font-family: var(--font-sans);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+a {
+    color: var(--color-text);
+    text-decoration: none;
+    transition: color var(--transition);
+}
+
+a:hover {
+    color: var(--color-accent);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ==========================================================================
+   2. Layout Utilities
+   ========================================================================== */
+.site-container {
+    max-width: var(--site-max-width);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+.site-container-narrow {
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* ==========================================================================
+   3. Modern Single Header & Navigation (.site-header)
+   ========================================================================== */
+.site-header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgba(246, 244, 242, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--color-border);
+    transition: background-color var(--transition), box-shadow var(--transition);
+}
+
+.site-header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: var(--header-height);
+    max-width: var(--site-max-width);
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Header Left: Desktop Navigation */
+.site-nav-desktop {
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.site-nav-list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 32px;
+}
+
+.site-nav-item {
+    position: relative;
+}
+
+.site-nav-link {
+    font-family: var(--font-sans);
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--color-primary);
+    padding: 8px 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    position: relative;
+}
+
+.site-nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--color-accent);
+    transition: width var(--transition);
+}
+
+.site-nav-link:hover::after,
+.site-nav-item.active .site-nav-link::after {
+    width: 100%;
+}
+
+.site-nav-link:hover {
+    color: var(--color-accent);
+}
+
+/* Dropdown Menu */
+.site-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 220px;
+    background-color: var(--color-surface);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    border: 1px solid var(--color-border);
+    padding: 16px 0;
+    list-style: none;
+    margin: 10px 0 0 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all var(--transition);
+    z-index: 1010;
+}
+
+.site-nav-item:hover .site-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.site-dropdown li a {
+    display: block;
+    padding: 8px 24px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--color-text);
+    text-transform: none;
+    letter-spacing: 0.5px;
+}
+
+.site-dropdown li a:hover {
+    color: var(--color-accent);
+    background-color: var(--color-cream);
+    padding-left: 28px;
+}
+
+/* Header Center: Logo */
+.site-logo-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.site-logo-img {
+    height: 28px;
+    width: auto;
+}
+
+/* Header Right: Actions */
+.site-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1;
+    gap: 20px;
+}
+
+.site-action-btn {
+    background: none;
+    border: none;
+    padding: 6px;
+    color: var(--color-primary);
+    cursor: pointer;
+    font-size: 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: color var(--transition);
+    position: relative;
+}
+
+.site-action-btn:hover {
+    color: var(--color-accent);
+}
+
+/* Cart Toggle with Qty Badge */
+.cart-toggle-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    cursor: pointer;
+}
+
+.cart-icon-wrap {
+    position: relative;
+    display: inline-flex;
+}
+
+.cart-badge {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background-color: var(--color-accent);
+    color: #FFFFFF;
+    font-size: 10px;
+    font-weight: 700;
+    height: 18px;
+    min-width: 18px;
+    line-height: 18px;
+    border-radius: 50%;
+    text-align: center;
+    padding: 0 4px;
+}
+
+.cart-amount-text {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+/* Mobile Hamburger Toggle */
+.mobile-nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    color: var(--color-primary);
+    font-size: 22px;
+}
+
+@media (max-width: 1024px) {
+    .site-nav-desktop {
+        display: none;
+    }
+    .mobile-nav-toggle {
+        display: inline-flex;
+    }
+    .site-actions {
+        gap: 14px;
+    }
+    .cart-amount-text {
+        display: none;
+    }
+}
+
+/* ==========================================================================
+   4. Universal Single Footer Component (.site-footer)
+   ========================================================================== */
+.site-footer {
+    background-color: var(--color-cream);
+    background-image: url("../images/2020/09/bg-lines.svg");
+    background-position: top center;
+    background-repeat: repeat-y;
+    border-top: 1px solid var(--color-border);
+    padding-top: 60px;
+    padding-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-logo-wrap {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.footer-logo-img {
+    height: 30px;
+    width: auto;
+    margin: 0 auto;
+}
+
+/* 3 Balanced Columns */
+.footer-columns-container {
+    max-width: 1000px;
+    margin: 0 auto 50px auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    text-align: center;
+}
+
+.footer-col-title {
+    font-family: var(--font-sans);
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--color-primary);
+    margin-bottom: 20px;
+}
+
+.footer-nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-nav-list li {
+    margin-bottom: 12px;
+}
+
+.footer-nav-list a {
+    font-family: var(--font-sans);
+    font-size: 14px;
+    color: var(--color-text);
+    text-transform: lowercase;
+    transition: color var(--transition);
+}
+
+.footer-nav-list a:hover {
+    color: var(--color-accent);
+}
+
+/* Big Luxury Decorative Typography */
+.footer-marquee-top,
+.footer-marquee-bottom {
+    overflow: hidden;
+    user-select: none;
+    pointer-events: none;
+    text-align: center;
+    line-height: 1;
+}
+
+.footer-marquee-top {
+    margin-top: -20px;
+    margin-bottom: -30px;
+}
+
+.footer-marquee-bottom {
+    margin-top: -30px;
+    margin-bottom: 10px;
+}
+
+.footer-marquee-text {
+    font-family: var(--font-serif-display);
+    font-size: 140px;
+    color: #EFE9E4;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+/* Centered Social Icons */
+.footer-social-wrap {
+    text-align: center;
+    margin: 20px 0;
+    position: relative;
+    z-index: 5;
+}
+
+.footer-social-icons {
+    display: inline-flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.footer-social-link {
+    font-size: 24px;
+    color: var(--color-primary);
+    transition: transform var(--transition), color var(--transition);
+    display: inline-block;
+}
+
+.footer-social-link:hover {
+    color: var(--color-accent);
+    transform: translateY(-3px) scale(1.1);
+}
+
+/* Copyright Bottom Bar */
+.footer-copyright-bar {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid var(--color-border);
+    font-size: 12px;
+    color: var(--color-muted);
+}
+
+.footer-copyright-bar a {
+    color: var(--color-text);
+    font-weight: 500;
+}
+
+.footer-copyright-bar a:hover {
+    color: var(--color-accent);
+}
+
+@media (max-width: 1024px) {
+    .footer-columns-container {
+        gap: 20px;
+    }
+    .footer-marquee-text {
+        font-size: 80px;
+    }
+}
+
+@media (max-width: 767px) {
+    .footer-columns-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .footer-marquee-text {
+        font-size: 42px;
+    }
+    .footer-marquee-top {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .footer-marquee-bottom {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}
+
+/* ==========================================================================
+   5. Clean Page Templates (Decreased Div Classes)
+   ========================================================================== */
+.page-hero-banner {
+    padding: 70px 0 30px 0;
+    text-align: center;
+}
+
+.page-hero-title {
+    font-size: 48px;
+    font-family: var(--font-serif);
+    color: var(--color-primary);
+    margin-bottom: 12px;
+}
+
+.page-hero-subtitle {
+    font-size: 16px;
+    color: var(--color-muted);
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+/* Modern FAQ Accordion (<details> / <summary>) */
+.faq-group {
+    max-width: 820px;
+    margin: 40px auto 60px auto;
+}
+
+.faq-category-title {
+    font-size: 26px;
+    font-family: var(--font-serif);
+    color: var(--color-primary);
+    margin-top: 40px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--color-border-dark);
+}
+
+.faq-item {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    margin-bottom: 14px;
+    border-radius: var(--radius-sm);
+    transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.faq-item[open] {
+    border-color: var(--color-accent);
+    box-shadow: 0 4px 15px rgba(203, 146, 116, 0.08);
+}
+
+.faq-question {
+    list-style: none;
+    padding: 20px 24px;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--color-primary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    user-select: none;
+    transition: color var(--transition);
+}
+
+.faq-question::-webkit-details-marker {
+    display: none;
+}
+
+.faq-question:hover {
+    color: var(--color-accent);
+}
+
+.faq-chevron {
+    font-size: 13px;
+    color: var(--color-muted);
+    transition: transform 0.3s ease;
+}
+
+.faq-item[open] .faq-chevron {
+    transform: rotate(180deg);
+    color: var(--color-accent);
+}
+
+.faq-answer {
+    padding: 0 24px 22px 24px;
+    color: var(--color-text);
+    font-size: 15px;
+    line-height: 1.7;
+    border-top: 1px solid var(--color-border);
+    padding-top: 16px;
+}
+
+.faq-answer p {
+    margin: 0;
+}
+
+/* General Policy & Information Pages */
+.policy-card {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    padding: 50px 60px;
+    margin: 40px auto 80px auto;
+    max-width: 900px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.policy-content h2 {
+    font-size: 24px;
+    margin-top: 36px;
+    margin-bottom: 14px;
+}
+
+.policy-content p {
+    margin-bottom: 18px;
+    line-height: 1.75;
+}
+
+@media (max-width: 768px) {
+    .policy-card {
+        padding: 30px 20px;
+    }
+}
+
+/* ==========================================================================
+   6. Contact Page Custom Grid
+   ========================================================================== */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 1.5fr;
+    gap: 48px;
+    align-items: center;
+    padding: 60px 0 100px 0;
+}
+
+.contact-info-col h1 {
+    font-size: 46px;
+    margin-bottom: 20px;
+}
+
+.contact-info-phone {
+    font-size: 18px;
+    color: var(--color-primary);
+    font-weight: 500;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+.contact-image-col img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-sm);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.contact-form-col {
+    background-color: var(--color-surface);
+    padding: 40px;
+    border: 1px solid var(--color-border);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--color-primary);
+    margin-bottom: 8px;
+}
+
+.form-input,
+.form-textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--color-border-dark);
+    background-color: var(--color-cream);
+    font-family: var(--font-sans);
+    font-size: 14px;
+    color: var(--color-text);
+    border-radius: var(--radius-sm);
+    transition: border-color var(--transition), background-color var(--transition);
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    background-color: #FFFFFF;
+}
+
+.btn-submit {
+    display: inline-block;
+    width: 100%;
+    background-color: var(--color-primary);
+    color: #FFFFFF;
+    border: 1px solid var(--color-primary);
+    padding: 15px 30px;
+    font-family: var(--font-sans);
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all var(--transition);
+}
+
+.btn-submit:hover {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+}
+
+@media (max-width: 1024px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+/* ==========================================================================
+   7. Shopping Cart & Checkout Pages
+   ========================================================================== */
+.cart-page-container,
+.checkout-page-container {
+    padding: 50px 0 100px 0;
+}
+
+.cart-empty-panel,
+.checkout-empty-panel {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    padding: 60px 30px;
+    text-align: center;
+    border-radius: var(--radius-sm);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    max-width: 600px;
+    margin: 40px auto 0 auto;
+}
+
+.cart-empty-panel h2,
+.checkout-empty-panel h2 {
+    font-size: 26px;
+    margin-bottom: 12px;
+}
+
+.cart-empty-panel p,
+.checkout-empty-panel p {
+    color: var(--color-muted);
+    font-size: 15px;
+    margin-bottom: 28px;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: var(--color-primary);
+    color: #FFFFFF;
+    border: 1px solid var(--color-primary);
+    padding: 14px 34px;
+    font-family: var(--font-sans);
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-decoration: none;
+    transition: all var(--transition);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+    color: #FFFFFF;
+}

@@ -1,25 +1,29 @@
 <?php
 /**
  * Page: Checkout – Bijoux
- * Bijoux Jewelry Store
+ * Clean, semantic custom architecture
  */
 require_once __DIR__ . '/../includes/config.php';
 $base_path = '../';
 $page_title = 'Checkout – Bijoux';
-$body_class = 'page-template-default page woocommerce-checkout woocommerce-page wp-custom-logo wp-theme-bijoux theme-bijoux full header-layout-logo-menu has-page-header no-middle-header responsive-layout vamtam-is-elementor elementor-default elementor-kit-4';
-$current_page = 'collections';
+$body_class = 'page page-checkout theme-bijoux';
+$current_page = 'checkout';
 
 require_once __DIR__ . '/../includes/header.php';
 ?>
 
+<main id="main-content" class="site-container-narrow checkout-page-container">
+    <header class="page-hero-banner">
+        <h1 class="page-hero-title">Checkout</h1>
+        <p class="page-hero-subtitle">Secure, insured checkout for your fine jewelry order.</p>
+    </header>
 
-<div class="bijoux-checkout-wrapper">
-    <h1>Checkout</h1>
-    <div class="bijoux-checkout-box">
-        <p>You do not have any items in your bag yet. Please add your favorite jewelry pieces to proceed with checkout.</p>
-        <a href="<?= $base_path ?>shop/collections/index.php" class="bijoux-checkout-btn">Return to Shop</a>
+    <div class="checkout-empty-panel">
+        <h2>Ready to complete your purchase?</h2>
+        <p>Review your selected jewelry pieces in your shopping bag before submitting payment details.</p>
+        <a href="<?= $base_path ?>shop/collections/index.php" class="btn-primary">Return to Shop</a>
     </div>
-</div>
+</main>
 
 <?php
 include __DIR__ . '/../includes/footer.php';
