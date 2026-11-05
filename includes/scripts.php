@@ -92,7 +92,7 @@ $base_path = $base_path ?? './';
             "lightbox_title_src": "title",
             "lightbox_description_src": "description",
             "woocommerce_notices_elements": [],
-            "vamtam_theme_has_theme_cursor": "yes"
+            "vamtam_theme_has_theme_cursor": ""
         },
         "post": { "id": 11, "title": "Bijoux", "excerpt": "", "featuredImage": false }
     };

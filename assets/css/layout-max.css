@@ -97,7 +97,7 @@ body.admin-bar .elementor-widget-woocommerce-menu-cart .elementor-menu-cart__con
 }
 body:not(.wp-admin):not(.elementor-editor-active).has-mouse-dot,
 body:not(.wp-admin):not(.elementor-editor-active).has-mouse-dot * {
-  cursor: none !important;
+  cursor: auto;
 }
 body:not(.wp-admin):not(.elementor-editor-active).has-mouse-dot #wpadminbar,
 body:not(.wp-admin):not(.elementor-editor-active).has-mouse-dot #wpadminbar * {

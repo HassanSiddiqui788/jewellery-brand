@@ -4,33 +4,13 @@
  * Single Source of Truth for Bijoux Jewelry Store
  */
 $base_path = $base_path ?? './';
+
+$current_script = basename($_SERVER['PHP_SELF'] ?? '');
+$current_uri = $_SERVER['REQUEST_URI'] ?? '';
+$is_home = ($current_script === 'index.php' && (strpos($current_uri, '/pages/') === false && strpos($current_uri, '/shop/') === false && strpos($current_uri, '/blog/') === false));
+$is_about = ($current_script === 'about.php' || strpos($current_uri, 'about.php') !== false);
+$is_collections = (strpos($current_uri, 'collections') !== false);
 ?>
-<!-- Top Announcement Marquee Ticker -->
-<div class="site-topbar">
-    <div class="topbar-marquee">
-        <span class="marquee-track">
-            <span>FREE SHIPPING ON ORDERS OVER $150</span>
-            <span class="marquee-bullet">•</span>
-            <span>NEW SEASON ARRIVALS</span>
-            <span class="marquee-bullet">•</span>
-            <span>HANDCRAFTED FINE JEWELRY</span>
-            <span class="marquee-bullet">•</span>
-            <span>100% ETHICAL PRECIOUS METALS</span>
-            <span class="marquee-bullet">•</span>
-            <span>EXCLUSIVE MEMBER PRIVILEGES</span>
-            <span class="marquee-bullet">•</span>
-            <span>FREE SHIPPING ON ORDERS OVER $150</span>
-            <span class="marquee-bullet">•</span>
-            <span>NEW SEASON ARRIVALS</span>
-            <span class="marquee-bullet">•</span>
-            <span>HANDCRAFTED FINE JEWELRY</span>
-            <span class="marquee-bullet">•</span>
-            <span>100% ETHICAL PRECIOUS METALS</span>
-            <span class="marquee-bullet">•</span>
-            <span>EXCLUSIVE MEMBER PRIVILEGES</span>
-        </span>
-    </div>
-</div>
 
 <header class="site-header">
     <div class="site-header-inner">
@@ -38,77 +18,19 @@ $base_path = $base_path ?? './';
         <nav class="site-nav-desktop" aria-label="Main Navigation">
             <ul class="site-nav-list">
                 <li class="site-nav-item">
-                    <a href="<?= $base_path ?>index.php" class="site-nav-link">
-                        Home <i class="fas fa-caret-down nav-caret"></i>
+                    <a href="<?= $base_path ?>index.php" class="site-nav-link <?= $is_home ? 'active' : '' ?>">
+                        <span class="nav-dash">&mdash;</span> HOME
                     </a>
-                    <ul class="site-dropdown">
-                        <li><a href="<?= $base_path ?>index.php">Home Showcase</a></li>
-                        <li><a href="<?= $base_path ?>shop/collections/index.php">Featured Collections</a></li>
-                        <li><a href="<?= $base_path ?>pages/about.php">Our Brand Story</a></li>
-                    </ul>
                 </li>
                 <li class="site-nav-item">
-                    <a href="<?= $base_path ?>shop/index.php" class="site-nav-link">
-                        Shop <i class="fas fa-caret-down nav-caret"></i>
+                    <a href="<?= $base_path ?>pages/about.php" class="site-nav-link <?= $is_about ? 'active' : '' ?>">
+                        <span class="nav-dash">&mdash;</span> ABOUT US
                     </a>
-                    <ul class="site-dropdown">
-                        <li><a href="<?= $base_path ?>shop/index.php">All Products</a></li>
-                        <li><a href="<?= $base_path ?>shop/categories/necklaces/index.php">Necklaces</a></li>
-                        <li><a href="<?= $base_path ?>shop/categories/earrings/index.php">Earrings</a></li>
-                        <li><a href="<?= $base_path ?>shop/categories/rings/index.php">Rings</a></li>
-                        <li><a href="<?= $base_path ?>shop/categories/bracelets/index.php">Bracelets</a></li>
-                        <li><a href="<?= $base_path ?>shop/categories/gift-card/index.php">Gift Cards</a></li>
-                    </ul>
                 </li>
                 <li class="site-nav-item">
-                    <a href="<?= $base_path ?>shop/collections/index.php" class="site-nav-link">
-                        Categories <i class="fas fa-caret-down nav-caret"></i>
+                    <a href="<?= $base_path ?>shop/collections/index.php" class="site-nav-link <?= $is_collections ? 'active' : '' ?>">
+                        <span class="nav-dash">&mdash;</span> COLLECTIONS
                     </a>
-                    <ul class="site-dropdown">
-                        <li><a href="<?= $base_path ?>shop/collections/index.php#necklaces">Necklaces Collection</a></li>
-                        <li><a href="<?= $base_path ?>shop/collections/index.php#earrings">Earrings Collection</a></li>
-                        <li><a href="<?= $base_path ?>shop/collections/index.php#rings">Rings Collection</a></li>
-                        <li><a href="<?= $base_path ?>shop/collections/index.php#bracelets">Bracelets Collection</a></li>
-                    </ul>
-                </li>
-                <li class="site-nav-item">
-                    <a href="<?= $base_path ?>shop/product/angel-hoops/index.php" class="site-nav-link">
-                        Product <i class="fas fa-caret-down nav-caret"></i>
-                    </a>
-                    <ul class="site-dropdown">
-                        <li><a href="<?= $base_path ?>shop/product/angel-hoops/index.php">Angel Hoops</a></li>
-                        <li><a href="<?= $base_path ?>shop/product/arquitectura-golden-earrings/index.php">Arquitectura Earrings</a></li>
-                        <li><a href="<?= $base_path ?>shop/product/bliss-golden-ring/index.php">Bliss Golden Ring</a></li>
-                        <li><a href="<?= $base_path ?>shop/product/exuberant-golden-necklace/index.php">Exuberant Necklace</a></li>
-                    </ul>
-                </li>
-                <li class="site-nav-item">
-                    <a href="<?= $base_path ?>pages/about.php" class="site-nav-link">
-                        Pages <i class="fas fa-caret-down nav-caret"></i>
-                    </a>
-                    <ul class="site-dropdown">
-                        <li><a href="<?= $base_path ?>pages/about.php">Our Story</a></li>
-                        <li><a href="<?= $base_path ?>pages/customer-reviews.php">Customer Reviews</a></li>
-                        <li><a href="<?= $base_path ?>pages/retail-store.php">Retail Store</a></li>
-                        <li><a href="<?= $base_path ?>pages/faq.php">FAQ</a></li>
-                        <li><a href="<?= $base_path ?>pages/shipping.php">Delivery &amp; Shipping</a></li>
-                        <li><a href="<?= $base_path ?>pages/returns.php">Returns &amp; Exchanges</a></li>
-                        <li><a href="<?= $base_path ?>pages/privacy-policy.php">Privacy Policy</a></li>
-                        <li><a href="<?= $base_path ?>pages/terms.php">Terms &amp; Conditions</a></li>
-                    </ul>
-                </li>
-                <li class="site-nav-item">
-                    <a href="<?= $base_path ?>blog/index.php" class="site-nav-link">
-                        Blog <i class="fas fa-caret-down nav-caret"></i>
-                    </a>
-                    <ul class="site-dropdown">
-                        <li><a href="<?= $base_path ?>blog/index.php">All Articles</a></li>
-                        <li><a href="<?= $base_path ?>blog/posts/the-creative-journey-5-steps-to-reawaken-inspiration/index.php">Creative Journey</a></li>
-                        <li><a href="<?= $base_path ?>blog/posts/end-of-year-reflections/index.php">End of Year Reflections</a></li>
-                    </ul>
-                </li>
-                <li class="site-nav-item">
-                    <a href="<?= $base_path ?>pages/contact.php" class="site-nav-link">Contact</a>
                 </li>
             </ul>
         </nav>
@@ -122,42 +44,25 @@ $base_path = $base_path ?? './';
 
         <!-- 3. Right: Luxury Action Icons -->
         <div class="site-actions">
-            <!-- Search Button -->
-            <a href="<?= $base_path ?>shop/index.php" class="site-action-btn search-btn" aria-label="Search" title="Search">
-                <i class="fas fa-search" aria-hidden="true"></i>
-            </a>
-
-            <!-- Wishlist Button -->
+            <!-- Wishlist Button (Heart Icon) -->
             <a href="<?= $base_path ?>shop/collections/index.php" class="site-action-btn wishlist-btn" aria-label="Wishlist" title="Wishlist">
                 <i class="far fa-heart" aria-hidden="true"></i>
+            </a>
+
+            <!-- Login / Account Button (User Icon) -->
+            <a href="<?= $base_path ?>shop/checkout.php" class="site-action-btn login-btn account-btn" aria-label="Login / Account" title="Login / Account">
+                <i class="far fa-user" aria-hidden="true"></i>
             </a>
 
             <!-- Shopping Bag / Cart Toggle -->
             <div class="elementor-menu-cart__toggle cart-toggle-wrap">
                 <a id="elementor-menu-cart__toggle_button" href="<?= $base_path ?>shop/cart.php" class="cart-toggle-btn elementor-menu-cart__toggle_button" aria-label="Shopping Cart" aria-expanded="false" title="Shopping Bag">
-                    <span class="cart-amount-text woocommerce-Price-amount amount">
-                        <bdi><span class="woocommerce-Price-currencySymbol" translate="no">&#36;</span>0.00</bdi>
-                    </span>
                     <span class="cart-icon-wrap elementor-button-icon">
                         <span class="cart-badge elementor-button-icon-qty" data-counter="0">0</span>
                         <i class="e-toggle-cart-custom-icon vamtamtheme- vamtam-theme-shopping-bag" aria-hidden="true"></i>
                     </span>
                 </a>
             </div>
-
-            <!-- User Account Button -->
-            <a href="<?= $base_path ?>shop/checkout.php" class="site-action-btn account-btn" aria-label="My Account" title="My Account">
-                <i class="far fa-user" aria-hidden="true"></i>
-            </a>
-
-            <!-- Desktop Side Menu Hamburger Toggle (Popup 998) -->
-            <a href="#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6Ijk5OCIsInRvZ2dsZSI6dHJ1ZSwiYWxpZ25fd2l0aF9wYXJlbnQiOiIifQ%3D%3D" 
-               class="site-action-btn vamtam-popup-toggle side-menu-toggle" 
-               aria-label="Open Side Menu" 
-               role="button"
-               title="Side Menu">
-                <i aria-hidden="true" class="vamtamtheme- vamtam-theme-side-menu"></i>
-            </a>
 
             <!-- Mobile & Tablet Hamburger Button -->
             <button type="button" class="elementor-menu-toggle mobile-nav-toggle" aria-label="Toggle Mobile Menu" aria-expanded="false">
