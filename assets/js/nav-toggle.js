@@ -1,7 +1,7 @@
 /**
  * Universal Navigation, Hamburger Menu & Side Cart Handler
  * Handles mobile menu, desktop side-drawer menu, collections mega-menu, and interactive side cart
- * Bijoux Jewelry Store
+ * Lorem Ipsum Store
  */
 (function() {
     'use strict';
@@ -79,42 +79,42 @@
         cartContainers.forEach(function(container) {
             if (cart.length === 0) {
                 container.innerHTML = 
-                    '<div class="bijoux-mini-cart-empty">' +
-                        '<svg class="bijoux-mini-cart-empty-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">' +
+                    '<div class="site-mini-cart-empty">' +
+                        '<svg class="site-mini-cart-empty-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">' +
                             '<path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>' +
                             '<line x1="3" y1="6" x2="21" y2="6"></line>' +
                             '<path d="M16 10a4 4 0 0 1-8 0"></path>' +
                         '</svg>' +
-                        '<h3 class="bijoux-mini-cart-empty-title">Your Cart is Empty</h3>' +
-                        '<p class="bijoux-mini-cart-empty-desc">Discover our artisan handcrafted collection to find your next signature piece.</p>' +
-                        '<a href="' + base + 'shop/collections/index.php" class="bijoux-mini-cart-btn">Explore Collections</a>' +
+                        '<h3 class="site-mini-cart-empty-title">Your Cart is Empty</h3>' +
+                        '<p class="site-mini-cart-empty-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor.</p>' +
+                        '<a href="' + base + 'shop/collections/index.php" class="site-mini-cart-btn">Explore Collections</a>' +
                     '</div>';
             } else {
-                var itemsHtml = '<ul class="bijoux-mini-cart-items">';
+                var itemsHtml = '<ul class="site-mini-cart-items">';
                 cart.forEach(function(item, idx) {
                     var itemSub = (parseFloat(item.priceNum) || 0) * (item.qty || 1);
                     itemsHtml += 
-                        '<li class="bijoux-mini-cart-item">' +
-                            (item.img ? '<img src="' + item.img + '" alt="' + (item.title || '') + '" class="bijoux-mini-cart-item-img">' : '') +
-                            '<div class="bijoux-mini-cart-item-info">' +
-                                '<a href="' + (item.url || '#') + '" class="bijoux-mini-cart-item-title">' + (item.title || 'Product') + '</a>' +
-                                '<div class="bijoux-mini-cart-item-meta">' +
-                                    '<span class="bijoux-mini-cart-item-qty">' + item.qty + ' &times;</span>' +
-                                    '<span class="bijoux-mini-cart-item-price">' + formatPrice(item.priceNum) + '</span>' +
+                        '<li class="site-mini-cart-item">' +
+                            (item.img ? '<img src="' + item.img + '" alt="' + (item.title || '') + '" class="site-mini-cart-item-img">' : '') +
+                            '<div class="site-mini-cart-item-info">' +
+                                '<a href="' + (item.url || '#') + '" class="site-mini-cart-item-title">' + (item.title || 'Product') + '</a>' +
+                                '<div class="site-mini-cart-item-meta">' +
+                                    '<span class="site-mini-cart-item-qty">' + item.qty + ' &times;</span>' +
+                                    '<span class="site-mini-cart-item-price">' + formatPrice(item.priceNum) + '</span>' +
                                 '</div>' +
                             '</div>' +
-                            '<button type="button" class="bijoux-mini-cart-item-remove" data-cart-index="' + idx + '" aria-label="Remove item">&times;</button>' +
+                            '<button type="button" class="site-mini-cart-item-remove" data-cart-index="' + idx + '" aria-label="Remove item">&times;</button>' +
                         '</li>';
                 });
                 itemsHtml += '</ul>';
 
                 var footerHtml = 
-                    '<div class="bijoux-mini-cart-footer">' +
-                        '<div class="bijoux-mini-cart-subtotal">' +
+                    '<div class="site-mini-cart-footer">' +
+                        '<div class="site-mini-cart-subtotal">' +
                             '<span>Subtotal:</span>' +
-                            '<span class="bijoux-mini-cart-subtotal-val">' + formatPrice(subtotal) + '</span>' +
+                            '<span class="site-mini-cart-subtotal-val">' + formatPrice(subtotal) + '</span>' +
                         '</div>' +
-                        '<div class="bijoux-mini-cart-actions">' +
+                        '<div class="site-mini-cart-actions">' +
                             '<a href="' + base + 'shop/cart.php" class="btn-view-cart">View Cart</a>' +
                             '<a href="' + base + 'shop/checkout.php" class="btn-checkout">Checkout</a>' +
                         '</div>' +
@@ -257,7 +257,7 @@
             }
 
             // Remove item from mini cart
-            var removeBtn = e.target.closest('.bijoux-mini-cart-item-remove');
+            var removeBtn = e.target.closest('.site-mini-cart-item-remove');
             if (removeBtn) {
                 e.preventDefault();
                 e.stopPropagation();

@@ -1,337 +1,327 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://bijoux.example.com/</loc>
+    <loc>https://example.com/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://bijoux.example.com/shop/index.php</loc>
+    <loc>https://example.com/shop/index.php</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bijoux.example.com/shop/collections/index.php</loc>
+    <loc>https://example.com/shop/collections/index.php</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bijoux.example.com/shop/cart.php</loc>
+    <loc>https://example.com/shop/cart.php</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bijoux.example.com/shop/checkout.php</loc>
+    <loc>https://example.com/shop/checkout.php</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bijoux.example.com/pages/about.php</loc>
+    <loc>https://example.com/pages/about.php</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bijoux.example.com/pages/contact.php</loc>
+    <loc>https://example.com/pages/contact.php</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bijoux.example.com/pages/faq.php</loc>
+    <loc>https://example.com/pages/faq.php</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bijoux.example.com/pages/shipping.php</loc>
+    <loc>https://example.com/pages/shipping.php</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bijoux.example.com/pages/returns.php</loc>
+    <loc>https://example.com/pages/returns.php</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bijoux.example.com/pages/privacy-policy.php</loc>
+    <loc>https://example.com/pages/privacy-policy.php</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bijoux.example.com/pages/terms.php</loc>
+    <loc>https://example.com/pages/terms.php</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bijoux.example.com/pages/customer-reviews.php</loc>
+    <loc>https://example.com/pages/customer-reviews.php</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bijoux.example.com/pages/our-materials.php</loc>
+    <loc>https://example.com/pages/our-materials.php</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bijoux.example.com/pages/retail-store.php</loc>
+    <loc>https://example.com/pages/retail-store.php</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bijoux.example.com/pages/gift-cards.php</loc>
+    <loc>https://example.com/pages/gift-cards.php</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bijoux.example.com/blog/index.php</loc>
+    <loc>https://example.com/blog/index.php</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bijoux.example.com/shop/product/angel-hoops/index.php</loc>
+    <loc>https://example.com/shop/product/angel-hoops/index.php</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bijoux.example.com/shop/product/arquitectura-golden-bracelet-copy/index.php</loc>
+    <loc>https://example.com/shop/product/arquitectura-golden-bracelet-copy/index.php</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bijoux.example.com/shop/product/arquitectura-golden-earrings/index.php</loc>
+    <loc>https://example.com/shop/product/arquitectura-golden-earrings/index.php</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bijoux.example.com/shop/product/bliss-golden-ring/index.php</loc>
+    <loc>https://example.com/shop/product/bliss-golden-ring/index.php</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bijoux.example.com/shop/product/blossom-golden-bracelet/index.php</loc>
+    <loc>https://example.com/shop/product/blossom-golden-bracelet/index.php</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bijoux.example.com/shop/product/blush-golden-bracelet/index.php</loc>
+    <loc>https://example.com/shop/product/blush-golden-bracelet/index.php</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bijoux.example.com/shop/product/carla-golden-earrings/index.php</loc>
+    <loc>https://example.com/shop/product/carla-golden-earrings/index.php</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bijoux.example.com/shop/product/carla-golden-ring/index.php</loc>
+    <loc>https://example.com/shop/product/carla-golden-ring/index.php</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bijoux.example.com/shop/product/curves-golden-earrings/index.php</loc>
+    <loc>https://example.com/shop/product/curves-golden-earrings/index.php</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bijoux.example.com/shop/product/curves-golden-ring/index.php</loc>
+    <loc>https://example.com/shop/product/curves-golden-ring/index.php</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bijoux.example.com/shop/product/esplendida-golden-earrings-2/index.php</loc>
+    <loc>https://example.com/shop/product/esplendida-golden-earrings-2/index.php</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bijoux.example.com/shop/product/esplendida-golden-earrings/index.php</loc>
+    <loc>https://example.com/shop/product/esplendida-golden-earrings/index.php</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bijoux.example.com/shop/product/exuberant-golden-necklace/index.php</loc>
+    <loc>https://example.com/shop/product/exuberant-golden-necklace/index.php</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bijoux.example.com/shop/product/exuberant-golden-ring/index.php</loc>
+    <loc>https://example.com/shop/product/exuberant-golden-ring/index.php</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bijoux.example.com/shop/product/gift-card-2/index.php</loc>
+    <loc>https://example.com/shop/product/gift-card-2/index.php</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bijoux.example.com/shop/product/gift-card-3/index.php</loc>
+    <loc>https://example.com/shop/product/gift-card-3/index.php</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bijoux.example.com/shop/product/gift-card-4/index.php</loc>
+    <loc>https://example.com/shop/product/gift-card-4/index.php</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bijoux.example.com/shop/product/gift-card/index.php</loc>
+    <loc>https://example.com/shop/product/gift-card/index.php</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bijoux.example.com/shop/product/magnolia-golden-ring/index.php</loc>
+    <loc>https://example.com/shop/product/magnolia-golden-ring/index.php</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bijoux.example.com/shop/product/meandres-golden-necklace/index.php</loc>
+    <loc>https://example.com/shop/product/meandres-golden-necklace/index.php</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bijoux.example.com/shop/product/miro-jewelry-golden-bracelet/index.php</loc>
+    <loc>https://example.com/shop/product/miro-jewelry-golden-bracelet/index.php</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bijoux.example.com/shop/product/monochrome/index.php</loc>
+    <loc>https://example.com/shop/product/monochrome/index.php</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bijoux.example.com/shop/product/moonrise-golden-necklace/index.php</loc>
+    <loc>https://example.com/shop/product/moonrise-golden-necklace/index.php</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bijoux.example.com/shop/product/nighwave-golden-necklace/index.php</loc>
+    <loc>https://example.com/shop/product/nighwave-golden-necklace/index.php</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bijoux.example.com/shop/product/olivia-golden-bracelet/index.php</loc>
+    <loc>https://example.com/shop/product/olivia-golden-bracelet/index.php</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bijoux.example.com/shop/product/portlligat-golden-bracelet/index.php</loc>
+    <loc>https://example.com/shop/product/portlligat-golden-bracelet/index.php</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bijoux.example.com/shop/product/portlligat-golden-earrings/index.php</loc>
+    <loc>https://example.com/shop/product/portlligat-golden-earrings/index.php</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bijoux.example.com/shop/product/portlligat-golden-necklace/index.php</loc>
+    <loc>https://example.com/shop/product/portlligat-golden-necklace/index.php</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bijoux.example.com/shop/product/splash-golden-necklace/index.php</loc>
+    <loc>https://example.com/shop/product/splash-golden-necklace/index.php</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bijoux.example.com/shop/product/twilight-golden-necklace/index.php</loc>
+    <loc>https://example.com/shop/product/twilight-golden-necklace/index.php</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bijoux.example.com/shop/categories/bracelets/index.php</loc>
+    <loc>https://example.com/shop/categories/bracelets/index.php</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bijoux.example.com/shop/categories/earrings/index.php</loc>
+    <loc>https://example.com/shop/categories/earrings/index.php</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bijoux.example.com/shop/categories/gift-card/index.php</loc>
+    <loc>https://example.com/shop/categories/necklaces/index.php</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bijoux.example.com/shop/categories/necklaces/index.php</loc>
+    <loc>https://example.com/shop/tags/bracelet/index.php</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bijoux.example.com/shop/categories/rings/index.php</loc>
+    <loc>https://example.com/shop/tags/earrings/index.php</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bijoux.example.com/shop/tags/bracelet/index.php</loc>
+    <loc>https://example.com/shop/tags/gift-card/index.php</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bijoux.example.com/shop/tags/earrings/index.php</loc>
+    <loc>https://example.com/shop/tags/golden/index.php</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bijoux.example.com/shop/tags/gift-card/index.php</loc>
+    <loc>https://example.com/shop/tags/necklaces/index.php</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bijoux.example.com/shop/tags/golden/index.php</loc>
+    <loc>https://example.com/shop/tags/ring/index.php</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bijoux.example.com/shop/tags/necklaces/index.php</loc>
+    <loc>https://example.com/blog/posts/end-of-year-reflections/index.php</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bijoux.example.com/shop/tags/ring/index.php</loc>
+    <loc>https://example.com/blog/posts/holiday-inspiration-the-night-sky/index.php</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bijoux.example.com/blog/posts/end-of-year-reflections/index.php</loc>
+    <loc>https://example.com/blog/posts/inspiration-behind-the-new-chakras-collection/index.php</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bijoux.example.com/blog/posts/holiday-inspiration-the-night-sky/index.php</loc>
+    <loc>https://example.com/blog/posts/introducing-the-beautiful-you-in-honor-of-autism-awareness/index.php</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bijoux.example.com/blog/posts/inspiration-behind-the-new-chakras-collection/index.php</loc>
+    <loc>https://example.com/blog/posts/the-creative-journey-5-steps-to-reawaken-inspiration/index.php</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bijoux.example.com/blog/posts/introducing-the-beautiful-you-in-honor-of-autism-awareness/index.php</loc>
+    <loc>https://example.com/blog/posts/the-inspiration-behind-the-universal-strength-collection/index.php</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bijoux.example.com/blog/posts/the-creative-journey-5-steps-to-reawaken-inspiration/index.php</loc>
+    <loc>https://example.com/blog/tags/creative/index.php</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bijoux.example.com/blog/posts/the-inspiration-behind-the-universal-strength-collection/index.php</loc>
+    <loc>https://example.com/blog/tags/inspiration/index.php</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bijoux.example.com/blog/tags/creative/index.php</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://bijoux.example.com/blog/tags/inspiration/index.php</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://bijoux.example.com/blog/tags/tips/index.php</loc>
+    <loc>https://example.com/blog/tags/tips/index.php</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>

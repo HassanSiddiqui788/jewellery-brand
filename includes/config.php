@@ -1,19 +1,22 @@
 <?php
 /**
  * Site Configuration & Global Helpers
- * Bijoux Jewelry Store
+ * Lorem Ipsum Store
  */
 
+if (!defined('LOREM_APP')) {
+    define('LOREM_APP', true);
+}
 if (!defined('BIJOUX_APP')) {
     define('BIJOUX_APP', true);
 }
 
 // Site Details
 if (!defined('SITE_NAME')) {
-    define('SITE_NAME', 'Bijoux');
+    define('SITE_NAME', 'Lorem Ipsum');
 }
 if (!defined('SITE_TAGLINE')) {
-    define('SITE_TAGLINE', 'Artisan Handcrafted Jewelry');
+    define('SITE_TAGLINE', 'Lorem Ipsum Dolor Sit Amet');
 }
 
 /**

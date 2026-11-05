@@ -1,5 +1,5 @@
 /**
- * Bijoux Luxury Jewelry - Modern Custom Theme Architecture
+ * Lorem Ipsum Store - Modern Custom Architecture
  * Clean, lightweight, professional styles replacing WordPress/Elementor bloat
  */
 
@@ -35,19 +35,44 @@
 }
 
 /* Ensure cursor remains 100% visible and interactive across the entire website */
-html, body, body * {
-    cursor: auto !important;
+html, body {
+    cursor: default;
 }
 
-a, button, [role="button"], input[type="submit"], input[type="button"], select,
-.site-nav-link, .cart-toggle-btn, .side-menu-toggle, .mobile-nav-toggle,
-.elementor-menu-toggle, .pointer, [tabindex="0"], .vamtam-popup-toggle {
+a, a *, button, button *, [role="button"], [role="button"] *, 
+input[type="submit"], input[type="button"], select,
+.site-nav-link, .site-nav-link *,
+.home-product-card, .home-product-card *,
+.product, .product *, .product-card, .product-card *,
+.woocommerce-loop-product__link, .woocommerce-loop-product__link *,
+.cart-toggle-btn, .cart-toggle-btn *,
+.site-action-btn, .site-action-btn *,
+.side-menu-toggle, .mobile-nav-toggle,
+.elementor-menu-toggle, .pointer, .pointer *,
+[tabindex="0"], .vamtam-popup-toggle,
+.woocommerce-product-gallery__image, .woocommerce-product-gallery__image *,
+.category-card, .category-card *,
+.editorial-btn, .editorial-btn *,
+.home-story-btn, .home-story-btn *,
+.showcase-tab-btn, .showcase-tab-btn *,
+.site-category-pills a, .site-category-pills a *,
+.footer-nav-list a, .footer-nav-list a * {
     cursor: pointer !important;
 }
 
 input[type="text"], input[type="email"], input[type="tel"], input[type="search"],
 input[type="password"], input[type="number"], textarea {
     cursor: text !important;
+}
+
+/* Product Details Gallery & Images Visibility Fix */
+.woocommerce-product-gallery,
+.woocommerce-product-gallery--vamtam,
+.woocommerce-product-gallery__wrapper,
+.woocommerce-product-gallery__image,
+.woocommerce-product-gallery img {
+    opacity: 1 !important;
+    visibility: visible !important;
 }
 
 #mouseDot, #mouseCircle, .mouse-dot, .mouse-circle {
@@ -131,7 +156,8 @@ img {
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000;
+    z-index: 99999 !important;
+    pointer-events: auto !important;
     background-color: var(--color-cream);
     box-shadow: 0 1px 8px rgba(0, 0, 0, 0.04);
     border-bottom: 1px solid rgba(5, 31, 52, 0.06);
@@ -282,7 +308,7 @@ img {
    ========================================================================== */
 
 /* 1. Desktop & Laptop screens: Strictly REMOVE hamburger menu */
-@media (min-width: 1025px) {
+@media (min-width: 769px) {
     .mobile-nav-toggle,
     .elementor-menu-toggle,
     .side-menu-toggle,
@@ -294,11 +320,13 @@ img {
 
     .site-nav-desktop {
         display: flex !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
     }
 }
 
-/* 2. Responsive mobile & tablet screens (max-width: 1024px): Hamburger menu enabled */
-@media (max-width: 1024px) {
+/* 2. Responsive mobile screens (max-width: 768px): Hamburger menu enabled */
+@media (max-width: 768px) {
     .site-nav-desktop {
         display: none !important;
     }

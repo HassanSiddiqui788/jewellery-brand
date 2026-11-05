@@ -1,11 +1,11 @@
 <?php
 /**
- * Page: Carla Golden Ring &#8211; Bijoux
- * Bijoux Jewelry Store
+ * Page: Carla Golden Ring &#8211; Lorem Ipsum
+ * Lorem Ipsum Jewelry Store
  */
 require_once __DIR__ . '/../../../includes/config.php';
 $base_path = '../../../';
-$page_title = 'Carla Golden Ring – Bijoux';
+$page_title = 'Carla Golden Ring – Lorem Ipsum';
 $body_class = 'wp-singular product-template-default single single-product postid-409 wp-custom-logo wp-embed-responsive wp-theme-bijoux theme-bijoux woocommerce woocommerce-page woocommerce-no-js full header-layout-logo-menu no-page-header no-middle-header responsive-layout has-post-thumbnail single-post-one-column elementor-active elementor-pro-active vamtam-wc-cart-empty wc-product-gallery-zoom-active wc-product-gallery-slider-active layout-full elementor-default elementor-template-full-width elementor-kit-4 elementor-page-5024';
 $current_page = 'collections';
 
@@ -23,7 +23,7 @@ require_once __DIR__ . '/../../../includes/header.php';
 			<div class="elementor-widget-wrap elementor-element-populated">
 						<div class="elementor-element elementor-element-5f360727 vamtam-has-full-sized-gallery vamtam-mbrowser-no-fsg elementor-widget elementor-widget-woocommerce-product-images" data-id="5f360727" data-element_type="widget" data-e-type="widget" data-widget_type="woocommerce-product-images.default">
 				<div class="elementor-widget-container">
-					<div class="woocommerce-product-gallery woocommerce-product-gallery--with-images woocommerce-product-gallery--columns-1 images" data-columns="1" style="opacity: 0; transition: opacity .25s ease-in-out;">
+					<div class="woocommerce-product-gallery woocommerce-product-gallery--with-images woocommerce-product-gallery--columns-1 images" data-columns="1" style="opacity: 1; transition: opacity .25s ease-in-out;">
 	<div class="woocommerce-product-gallery__wrapper">
 		<div data-thumb="<?= $base_path ?>assets/images/2020/03/j3343an0232-2500.pw-1280-630x572.jpg" data-thumb-alt="Carla Golden Ring" data-thumb-srcset="<?= $base_path ?>assets/images/2020/03/j3343an0232-2500.pw-1280-630x572.jpg 630w, <?= $base_path ?>assets/images/2020/03/j3343an0232-2500.pw-1280-420x381.jpg 420w, <?= $base_path ?>assets/images/2020/03/j3343an0232-2500.pw-1280-300x272.jpg 300w, <?= $base_path ?>assets/images/2020/03/j3343an0232-2500.pw-1280-768x697.jpg 768w, <?= $base_path ?>assets/images/2020/03/j3343an0232-2500.pw-1280-315x286.jpg 315w, <?= $base_path ?>assets/images/2020/03/j3343an0232-2500.pw-1280.jpg 810w"  data-thumb-sizes="(max-width: 630px) 100vw, 630px" class="woocommerce-product-gallery__image"><a href="<?= $base_path ?>assets/images/2020/03/j3343an0232-2500.pw-1280.jpg"><img fetchpriority="high" width="630" height="572" src="<?= $base_path ?>assets/images/2020/03/j3343an0232-2500.pw-1280-630x572.jpg" class="wp-post-image" alt="Carla Golden Ring" data-caption="" data-src="<?= $base_path ?>assets/images/2020/03/j3343an0232-2500.pw-1280.jpg" data-large_image="<?= $base_path ?>assets/images/2020/03/j3343an0232-2500.pw-1280.jpg" data-large_image_width="810" data-large_image_height="735" decoding="async" srcset="<?= $base_path ?>assets/images/2020/03/j3343an0232-2500.pw-1280-630x572.jpg 630w, <?= $base_path ?>assets/images/2020/03/j3343an0232-2500.pw-1280-420x381.jpg 420w, <?= $base_path ?>assets/images/2020/03/j3343an0232-2500.pw-1280-300x272.jpg 300w, <?= $base_path ?>assets/images/2020/03/j3343an0232-2500.pw-1280-768x697.jpg 768w, <?= $base_path ?>assets/images/2020/03/j3343an0232-2500.pw-1280-315x286.jpg 315w, <?= $base_path ?>assets/images/2020/03/j3343an0232-2500.pw-1280.jpg 810w" sizes="(max-width: 630px) 100vw, 630px" /></a></div><div data-thumb="<?= $base_path ?>assets/images/2020/10/j3343an0232-2.pw-1280-630x572.jpg" data-thumb-alt="Carla Golden Ring - Image 2" data-thumb-srcset="<?= $base_path ?>assets/images/2020/10/j3343an0232-2.pw-1280-630x572.jpg 630w, <?= $base_path ?>assets/images/2020/10/j3343an0232-2.pw-1280-420x381.jpg 420w, <?= $base_path ?>assets/images/2020/10/j3343an0232-2.pw-1280-300x272.jpg 300w, <?= $base_path ?>assets/images/2020/10/j3343an0232-2.pw-1280-768x697.jpg 768w, <?= $base_path ?>assets/images/2020/10/j3343an0232-2.pw-1280-315x286.jpg 315w, <?= $base_path ?>assets/images/2020/10/j3343an0232-2.pw-1280.jpg 810w"  data-thumb-sizes="(max-width: 630px) 100vw, 630px" class="woocommerce-product-gallery__image"><a href="<?= $base_path ?>assets/images/2020/10/j3343an0232-2.pw-1280.jpg"><img width="630" height="572" src="<?= $base_path ?>assets/images/2020/10/j3343an0232-2.pw-1280-630x572.jpg" class="" alt="Carla Golden Ring - Image 2" data-caption="" data-src="<?= $base_path ?>assets/images/2020/10/j3343an0232-2.pw-1280.jpg" data-large_image="<?= $base_path ?>assets/images/2020/10/j3343an0232-2.pw-1280.jpg" data-large_image_width="810" data-large_image_height="735" decoding="async" srcset="<?= $base_path ?>assets/images/2020/10/j3343an0232-2.pw-1280-630x572.jpg 630w, <?= $base_path ?>assets/images/2020/10/j3343an0232-2.pw-1280-420x381.jpg 420w, <?= $base_path ?>assets/images/2020/10/j3343an0232-2.pw-1280-300x272.jpg 300w, <?= $base_path ?>assets/images/2020/10/j3343an0232-2.pw-1280-768x697.jpg 768w, <?= $base_path ?>assets/images/2020/10/j3343an0232-2.pw-1280-315x286.jpg 315w, <?= $base_path ?>assets/images/2020/10/j3343an0232-2.pw-1280.jpg 810w" sizes="(max-width: 630px) 100vw, 630px" /></a></div>	</div>
 </div>
@@ -116,7 +116,7 @@ require_once __DIR__ . '/../../../includes/header.php';
 				</div>
 				<div class="elementor-element elementor-element-437b28b elementor-widget elementor-widget-text-editor" data-id="437b28b" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default">
 				<div class="elementor-widget-container">
-									Sun Rays Golden Ring is crafted from interlocking bands that gently shift shape as they glide with the body, always falling back together as a whole. This bold five-band ring is fluid and elegant.								</div>
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</div>
 				</div>
 				<div class="elementor-element elementor-element-e8c4a0c elementor-widget elementor-widget-heading" data-id="e8c4a0c" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
 				<div class="elementor-widget-container">

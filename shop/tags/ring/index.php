@@ -1,12 +1,12 @@
 <?php
 /**
- * Page: ring &#8211; Bijoux
- * Bijoux Jewelry Store
+ * Page: ring &#8211; Lorem Ipsum
+ * Lorem Ipsum Jewelry Store
  */
 require_once __DIR__ . '/../../../includes/config.php';
 $base_path = '../../../';
-$page_title = 'Ring – Bijoux';
-$body_class = 'archive tax-product_tag term-ring term-27 wp-custom-logo wp-embed-responsive wp-theme-bijoux theme-bijoux woocommerce woocommerce-page woocommerce-no-js full header-layout-logo-menu has-page-header no-middle-header responsive-layout elementor-active elementor-pro-active vamtam-wc-cart-empty wc-product-gallery-zoom-active wc-product-gallery-slider-active layout-full elementor-page-4964 elementor-default elementor-template-full-width elementor-kit-4';
+$page_title = 'Ring – Lorem Ipsum';
+$body_class = 'archive tax-product_tag term-ring term-27 wp-custom-logo wp-embed-responsive wp-theme-lorem ipsum theme-lorem ipsum woocommerce woocommerce-page woocommerce-no-js full header-layout-logo-menu has-page-header no-middle-header responsive-layout elementor-active elementor-pro-active vamtam-wc-cart-empty wc-product-gallery-zoom-active wc-product-gallery-slider-active layout-full elementor-page-4964 elementor-default elementor-template-full-width elementor-kit-4';
 $current_page = 'collections';
 
 $page_css = 'post-4964.css';

@@ -1,12 +1,12 @@
 <?php
 /**
- * Page: inspiration &#8211; Bijoux
- * Bijoux Jewelry Store
+ * Page: inspiration &#8211; Lorem Ipsum
+ * Lorem Ipsum Jewelry Store
  */
 require_once __DIR__ . '/../../../includes/config.php';
 $base_path = '../../../';
-$page_title = 'Inspiration – Bijoux';
-$body_class = 'archive tag tag-inspiration tag-70 wp-custom-logo wp-embed-responsive wp-theme-bijoux theme-bijoux woocommerce-no-js full header-layout-logo-menu has-page-header no-middle-header responsive-layout vamtam-is-elementor elementor-active elementor-pro-active vamtam-wc-cart-empty wc-product-gallery-zoom-active wc-product-gallery-slider-active layout-full elementor-page-6313 elementor-default elementor-template-full-width elementor-kit-4';
+$page_title = 'Inspiration – Lorem Ipsum';
+$body_class = 'archive tag tag-inspiration tag-70 wp-custom-logo wp-embed-responsive wp-theme-lorem ipsum theme-lorem ipsum woocommerce-no-js full header-layout-logo-menu has-page-header no-middle-header responsive-layout vamtam-is-elementor elementor-active elementor-pro-active vamtam-wc-cart-empty wc-product-gallery-zoom-active wc-product-gallery-slider-active layout-full elementor-page-6313 elementor-default elementor-template-full-width elementor-kit-4';
 $current_page = 'journal';
 
 $page_css = 'post-6313.css';

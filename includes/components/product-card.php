@@ -1,7 +1,7 @@
 <?php
 /**
  * Product Card Component
- * Bijoux Jewelry Store
+ * Lorem Ipsum Store
  *
  * @param array $product Array containing title, price, image, url, and optional badge
  */

@@ -1,11 +1,10 @@
 <?php
 /**
- * Category: Bracelets – Bijoux
- * Bijoux Jewelry Store
+ * Category: Bracelets – Lorem Ipsum
  */
 require_once __DIR__ . '/../../../includes/config.php';
 $base_path = '../../../';
-$page_title = 'Bracelets – Bijoux';
+$page_title = 'Bracelets – Lorem Ipsum';
 $current_page = 'collections';
 
 require_once __DIR__ . '/../../../includes/header.php';
@@ -59,7 +58,7 @@ $products = [
 <main id="main-content" class="site-main">
     <header class="about-page-header">
         <h1 class="about-page-title">Bracelets</h1>
-        <p class="about-page-subtitle">Showing all 6 handcrafted gold &amp; diamond bracelet creations</p>
+        <p class="about-page-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
     </header>
 
     <div class="about-container" style="max-width: var(--site-max-width);">

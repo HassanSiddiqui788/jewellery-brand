@@ -1,11 +1,11 @@
 <?php
 /**
- * Page: Home – Bijoux Artisan Handcrafted Jewelry
- * Bijoux Jewelry Store
+ * Page: Home – Lorem Ipsum
+ * Lorem Ipsum Store
  */
 require_once __DIR__ . '/includes/config.php';
 $base_path = './';
-$page_title = 'Bijoux – Artisan Handcrafted Jewelry';
+$page_title = 'Home – Lorem Ipsum';
 $current_page = 'home';
 
 $page_css = ['swiper.min.css', 'hero-banner.css'];
@@ -20,18 +20,18 @@ require_once __DIR__ . '/includes/header.php';
     <!-- 2. Brand Mission Statement -->
     <section class="home-statement-section" aria-label="Brand Philosophy">
         <p class="home-statement-text">
-            It has always been to produce awesome products for the dynamic urban lifestyle of the modern woman.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
         <a href="<?= $base_path ?>pages/about.php" class="home-story-btn">
-            Our Story
+            Lorem Ipsum
         </a>
     </section>
 
     <!-- 3. Selected Works / Featured Products Grid -->
     <section id="position1" class="home-featured-section" aria-label="Selected Works">
         <div class="home-section-header">
-            <h2 class="home-section-heading">Selected works:</h2>
-            <a href="<?= $base_path ?>shop/index.php" class="home-section-link">View All Catalog &rarr;</a>
+            <h2 class="home-section-heading">Lorem Ipsum:</h2>
+            <a href="<?= $base_path ?>shop/index.php" class="home-section-link">Lorem Ipsum &rarr;</a>
         </div>
 
         <div class="home-products-grid">
@@ -49,17 +49,17 @@ require_once __DIR__ . '/includes/header.php';
                 </div>
             </a>
 
-            <!-- Product 2: Monochrome Ring -->
-            <a href="<?= $base_path ?>shop/product/monochrome/index.php" class="home-product-card">
+            <!-- Product 2: Curves Golden Earrings -->
+            <a href="<?= $base_path ?>shop/product/curves-golden-earrings/index.php" class="home-product-card">
                 <div class="home-product-thumb">
-                    <img src="<?= $base_path ?>assets/images/2020/09/j3368an0132.pw-1280-420x381.jpg" 
-                         alt="Monochrome Ring" 
-                         width="420" height="381" loading="lazy">
+                    <img src="<?= $base_path ?>assets/images/2020/10/j3378ar043200.pw-1280-420x583.jpg" 
+                         alt="Curves Golden Earrings" 
+                         width="420" height="583" loading="lazy">
                 </div>
                 <div class="home-product-info">
-                    <h3 class="home-product-title">Monochrome Ring</h3>
-                    <div class="home-product-price">&#36;229.00</div>
-                    <div class="home-product-meta">golden &bull; ring</div>
+                    <h3 class="home-product-title">Curves Golden Earrings</h3>
+                    <div class="home-product-price">&#36;189.00</div>
+                    <div class="home-product-meta">golden &bull; earrings</div>
                 </div>
             </a>
 
@@ -93,33 +93,33 @@ require_once __DIR__ . '/includes/header.php';
         </div>
     </section>
 
-    <!-- 4. Editorial Split 1: Antique Diamond Necklaces -->
+    <!-- 4. Editorial Split 1: Lorem Ipsum Dolor -->
     <section class="home-editorial-split" aria-label="Featured Collection">
         <div class="editorial-row">
             <div class="editorial-image-wrap">
                 <img src="<?= $base_path ?>assets/images/2020/05/iStock-1136336605.jpg" 
-                     alt="Antique Diamond Necklaces Editorial" 
+                     alt="Lorem Ipsum Editorial" 
                      width="1070" height="1552" loading="lazy">
             </div>
             <div class="editorial-content">
-                <h2 class="editorial-title">Antique<br>Diamond Necklaces</h2>
-                <p class="editorial-subtitle">beautiful colors. excellent quality.</p>
+                <h2 class="editorial-title">Lorem Ipsum<br>Dolor Sit Amet</h2>
+                <p class="editorial-subtitle">consectetur adipiscing elit sed do eiusmod tempor.</p>
                 <a href="<?= $base_path ?>shop/collections/index.php#necklaces" class="editorial-btn">
                     discover
                 </a>
             </div>
         </div>
 
-        <!-- 5. Editorial Split 2: Perfect Match for Every Occasion -->
+        <!-- 5. Editorial Split 2: Sed Do Eiusmod -->
         <div class="editorial-row reverse">
             <div class="editorial-image-wrap">
                 <img src="<?= $base_path ?>assets/images/2020/05/iStock-1136336598.jpg" 
-                     alt="Perfect Match for Every Occasion" 
+                     alt="Consectetur Adipiscing" 
                      width="1070" height="1552" loading="lazy">
             </div>
             <div class="editorial-content">
-                <h2 class="editorial-title">Perfect Match<br>for Every Occasion</h2>
-                <p class="editorial-subtitle">coordinate with other pieces from the collection for a classic look.</p>
+                <h2 class="editorial-title">Sed Do Eiusmod<br>Tempor Incididunt</h2>
+                <p class="editorial-subtitle">ut enim ad minim veniam quis nostrud exercitation.</p>
                 <a href="<?= $base_path ?>shop/collections/index.php" class="editorial-btn">
                     discover the set
                 </a>
@@ -127,43 +127,17 @@ require_once __DIR__ . '/includes/header.php';
         </div>
     </section>
 
-    <!-- 6. Collections Showcase Intro & Categories -->
+    <!-- 6. Collections Showcase Intro & Categories (Necklaces, Bracelets, Earrings) -->
     <section class="home-categories-section" aria-label="Product Categories">
         <img src="<?= $base_path ?>assets/images/2020/11/iStock-1164770941-Hand.png" 
              alt="Artisan Jewelry Handcraft" 
              class="home-hand-icon" width="169" height="524" loading="lazy">
         <p class="home-quote-text">
-            Inspired by our multi-ethnic life,<br>we create fine jewelry to share our wonderful tales&hellip;
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua&hellip;
         </p>
 
         <div class="categories-grid">
-            <!-- Category 1: Rings -->
-            <a href="<?= $base_path ?>shop/categories/rings/index.php" class="category-card" aria-label="Rings Collection">
-                <div class="category-card-thumb">
-                    <img src="<?= $base_path ?>assets/images/2020/09/iStock-1153651470-rings_category-420x641.jpg" 
-                         alt="Rings Collection" 
-                         width="420" height="641" loading="lazy">
-                </div>
-                <div class="category-card-body">
-                    <span class="category-card-letter">R</span>
-                    <h3 class="category-card-title">Rings <span class="category-card-count">(6)</span></h3>
-                </div>
-            </a>
-
-            <!-- Category 2: Earrings -->
-            <a href="<?= $base_path ?>shop/categories/earrings/index.php" class="category-card" aria-label="Earrings Collection">
-                <div class="category-card-thumb">
-                    <img src="<?= $base_path ?>assets/images/2020/04/iStock-1153651611-Earrings-420x641.jpg" 
-                         alt="Earrings Collection" 
-                         width="420" height="641" loading="lazy">
-                </div>
-                <div class="category-card-body">
-                    <span class="category-card-letter">E</span>
-                    <h3 class="category-card-title">Earrings <span class="category-card-count">(6)</span></h3>
-                </div>
-            </a>
-
-            <!-- Category 3: Necklaces -->
+            <!-- Category 1: Necklaces -->
             <a href="<?= $base_path ?>shop/categories/necklaces/index.php" class="category-card" aria-label="Necklaces Collection">
                 <div class="category-card-thumb">
                     <img src="<?= $base_path ?>assets/images/2020/09/iStock-1030302600-necklaces_category-420x641.jpg" 
@@ -173,6 +147,32 @@ require_once __DIR__ . '/includes/header.php';
                 <div class="category-card-body">
                     <span class="category-card-letter">N</span>
                     <h3 class="category-card-title">Necklaces <span class="category-card-count">(6)</span></h3>
+                </div>
+            </a>
+
+            <!-- Category 2: Bracelets -->
+            <a href="<?= $base_path ?>shop/categories/bracelets/index.php" class="category-card" aria-label="Bracelets Collection">
+                <div class="category-card-thumb">
+                    <img src="<?= $base_path ?>assets/images/2020/10/m-9-9-9-9-p-o-1-5-3-2-0-0.pw-1280-420x381.jpg" 
+                         alt="Bracelets Collection" 
+                         width="420" height="641" style="object-fit: cover;" loading="lazy">
+                </div>
+                <div class="category-card-body">
+                    <span class="category-card-letter">B</span>
+                    <h3 class="category-card-title">Bracelets <span class="category-card-count">(6)</span></h3>
+                </div>
+            </a>
+
+            <!-- Category 3: Earrings -->
+            <a href="<?= $base_path ?>shop/categories/earrings/index.php" class="category-card" aria-label="Earrings Collection">
+                <div class="category-card-thumb">
+                    <img src="<?= $base_path ?>assets/images/2020/04/iStock-1153651611-Earrings-420x641.jpg" 
+                         alt="Earrings Collection" 
+                         width="420" height="641" loading="lazy">
+                </div>
+                <div class="category-card-body">
+                    <span class="category-card-letter">E</span>
+                    <h3 class="category-card-title">Earrings <span class="category-card-count">(6)</span></h3>
                 </div>
             </a>
         </div>

@@ -1,7 +1,7 @@
 <?php
 /**
  * Global Universal Footer Component
- * Single Source of Truth for Bijoux Jewelry Store
+ * Single Source of Truth for Lorem Ipsum Store
  */
 $base_path = $base_path ?? './';
 ?>
@@ -15,8 +15,8 @@ $base_path = $base_path ?? './';
         <div class="site-container">
             <!-- Brand Logo -->
             <div class="footer-logo-wrap">
-                <a href="<?= $base_path ?>index.php" aria-label="Bijoux Home">
-                    <img width="156" height="30" src="<?= $base_path ?>assets/icons/logo.svg" alt="Bijoux Jewelry" class="footer-logo-img">
+                <a href="<?= $base_path ?>index.php" aria-label="Home">
+                    <img width="156" height="30" src="<?= $base_path ?>assets/icons/logo.svg" alt="Lorem Ipsum" class="footer-logo-img">
                 </a>
             </div>
 
@@ -26,9 +26,9 @@ $base_path = $base_path ?? './';
                 <div class="footer-col">
                     <h5 class="footer-col-title">About</h5>
                     <ul class="footer-nav-list">
-                        <li><a href="<?= $base_path ?>pages/about.php">Our Story</a></li>
+                        <li><a href="<?= $base_path ?>pages/about.php">About Us</a></li>
                         <li><a href="<?= $base_path ?>blog/index.php">Journal</a></li>
-                        <li><a href="<?= $base_path ?>pages/our-materials.php">Our Materials</a></li>
+                        <li><a href="<?= $base_path ?>pages/our-materials.php">Materials</a></li>
                         <li><a href="<?= $base_path ?>pages/contact.php">Contact Us</a></li>
                     </ul>
                 </div>
@@ -38,9 +38,9 @@ $base_path = $base_path ?? './';
                     <h5 class="footer-col-title">Store</h5>
                     <ul class="footer-nav-list">
                         <li><a href="<?= $base_path ?>shop/collections/index.php">Collections</a></li>
-                        <li><a href="<?= $base_path ?>pages/customer-reviews.php">Customer Reviews</a></li>
-                        <li><a href="<?= $base_path ?>pages/retail-store.php">Retail Store</a></li>
-                        <li><a href="<?= $base_path ?>pages/gift-cards.php">Gift Cards</a></li>
+                        <li><a href="<?= $base_path ?>shop/categories/necklaces/index.php">Necklaces</a></li>
+                        <li><a href="<?= $base_path ?>shop/categories/bracelets/index.php">Bracelets</a></li>
+                        <li><a href="<?= $base_path ?>shop/categories/earrings/index.php">Earrings</a></li>
                     </ul>
                 </div>
 
@@ -59,7 +59,7 @@ $base_path = $base_path ?? './';
 
         <!-- Luxury Decorative Typography Banner -->
         <div class="footer-marquee-top">
-            <span class="footer-marquee-text">Anything less is</span>
+            <span class="footer-marquee-text">Lorem ipsum dolor sit</span>
         </div>
 
         <!-- Centered Social Icons -->
@@ -78,13 +78,13 @@ $base_path = $base_path ?? './';
         </div>
 
         <div class="footer-marquee-bottom">
-            <span class="footer-marquee-text">simply unacceptable.</span>
+            <span class="footer-marquee-text">amet consectetur adipiscing.</span>
         </div>
 
         <!-- Copyright Bottom Bar -->
         <div class="footer-copyright-bar">
             <div class="site-container">
-                <p>Copyright &copy; <?= date('Y') ?> <a href="<?= $base_path ?>index.php">Bijoux</a>. All rights reserved.</p>
+                <p>Copyright &copy; <?= date('Y') ?> <a href="<?= $base_path ?>index.php">Lorem Ipsum</a>. All rights reserved.</p>
             </div>
         </div>
     </footer>

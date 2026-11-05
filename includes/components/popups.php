@@ -1,7 +1,7 @@
 <?php
 /**
  * Mega Menu Popups Include
- * Bijoux Jewelry Store
+ * Lorem Ipsum Store
  */
 $base_path = $base_path ?? './';
 ?>

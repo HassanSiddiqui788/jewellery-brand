@@ -1,7 +1,7 @@
 <?php
 /**
  * Essential Frontend Scripts Include
- * Bijoux Jewelry Store
+ * Lorem Ipsum Store
  */
 $base_path = $base_path ?? './';
 ?>
@@ -94,7 +94,7 @@ $base_path = $base_path ?? './';
             "woocommerce_notices_elements": [],
             "vamtam_theme_has_theme_cursor": ""
         },
-        "post": { "id": 11, "title": "Bijoux", "excerpt": "", "featuredImage": false }
+        "post": { "id": 11, "title": "Lorem Ipsum", "excerpt": "", "featuredImage": false }
     };
 </script>
 <script id="elementor-frontend-js" src="<?= $base_path ?>assets/js/elementor-frontend.min.js" defer></script>

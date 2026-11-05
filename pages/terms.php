@@ -1,13 +1,12 @@
 <?php
 /**
- * Page: Terms & Conditions – Bijoux
- * Clean, semantic custom architecture
+ * Page: Terms & Conditions – Lorem Ipsum
  */
 require_once __DIR__ . '/../includes/config.php';
 $base_path = '../';
-$page_title = 'Terms & Conditions – Bijoux';
-$body_class = 'page page-terms theme-bijoux';
-$current_page = 'terms';
+$page_title = 'Terms & Conditions – Lorem Ipsum';
+$body_class = 'page page-terms';
+$current_page = 'about';
 
 require_once __DIR__ . '/../includes/header.php';
 ?>
@@ -18,28 +17,20 @@ require_once __DIR__ . '/../includes/header.php';
         <p class="page-hero-subtitle"><em>Last updated: November 2026</em></p>
     </header>
 
-    <article class="policy-card">
-        <div class="policy-content">
-            <p>Welcome to Bijoux. By browsing or purchasing from our website, you agree to comply with and be bound by the following terms and conditions.</p>
-            
-            <h2>1. Handcrafted Artisan Jewelry</h2>
-            <p>Each Bijoux piece is handcrafted with precision using authentic gold, silver, and ethically sourced gemstones. Because of the artisanal handcrafted nature of our jewelry, slight variations in finish, stone cut, or color may occur, making every piece unique.</p>
+    <article class="page-body-content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 
-            <h2>2. Orders &amp; Pricing</h2>
-            <p>All prices are listed in USD and are subject to change without notice. We reserve the right to limit quantities or refuse an order if pricing errors occur.</p>
+        <h2>1. Lorem Ipsum Dolor</h2>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-            <h2>3. Shipping &amp; Delivery</h2>
-            <p>Orders are packaged in signature Bijoux boxes and shipped via insured trackable carriers. For complete delivery estimates and shipping policies, please review our <a href="<?= $base_path ?>pages/shipping.php">Delivery &amp; Shipping</a> page.</p>
+        <h2>2. Consectetur Adipiscing</h2>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
 
-            <h2>4. Returns &amp; Exchanges</h2>
-            <p>We want you to love your jewelry. We accept returns of unworn pieces in their original condition within 14 days of delivery. Custom-engraved items are final sale. See our full <a href="<?= $base_path ?>pages/returns.php">Returns &amp; Cancellations</a> policy.</p>
-
-            <h2>5. Intellectual Property</h2>
-            <p>All jewelry designs, photographs, branding, and written content on this website are the proprietary property of Bijoux and protected by international intellectual property laws.</p>
-        </div>
+        <h2>3. Sed Do Eiusmod</h2>
+        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
     </article>
 </main>
 
 <?php
-include __DIR__ . '/../includes/footer.php';
+require_once __DIR__ . '/../includes/footer.php';
 ?>

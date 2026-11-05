@@ -1,7 +1,7 @@
 <?php
 /**
  * Global Header Include
- * Bijoux Jewelry Store
+ * Lorem Ipsum Store
  */
 if (!defined('BIJOUX_APP')) {
     require_once __DIR__ . '/config.php';

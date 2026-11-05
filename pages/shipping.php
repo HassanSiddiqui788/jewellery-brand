@@ -1,13 +1,12 @@
 <?php
 /**
- * Page: Delivery & Shipping – Bijoux
- * Clean, semantic custom architecture
+ * Page: Delivery & Shipping – Lorem Ipsum
  */
 require_once __DIR__ . '/../includes/config.php';
 $base_path = '../';
-$page_title = 'Delivery & Shipping – Bijoux';
-$body_class = 'page page-delivery theme-bijoux';
-$current_page = 'shipping';
+$page_title = 'Delivery & Shipping – Lorem Ipsum';
+$body_class = 'page page-delivery';
+$current_page = 'about';
 
 require_once __DIR__ . '/../includes/header.php';
 ?>
@@ -15,35 +14,21 @@ require_once __DIR__ . '/../includes/header.php';
 <main id="main-content" class="site-container-narrow">
     <header class="page-hero-banner">
         <h1 class="page-hero-title">Delivery &amp; Shipping</h1>
-        <p class="page-hero-subtitle">Fast, complimentary, and fully insured delivery on all fine jewelry orders.</p>
+        <p class="page-hero-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor.</p>
     </header>
 
-    <article class="policy-card">
-        <div class="policy-content">
-            <h2>Free Standard Domestic Shipping</h2>
-            <p>Our online store offers complimentary 3-5 day shipping for US domestic addresses on all orders. In-stock orders are carefully packed in signature Bijoux luxury packaging and dispatched within 24 hours of confirmation.</p>
+    <article class="page-body-content">
+        <h2>Lorem Ipsum Shipping</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        
+        <h2>Consectetur Adipiscing</h2>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-            <h2>Order Tracking &amp; Confirmation</h2>
-            <p>Once your order has been packaged and handed over to our shipping carriers (USPS or FedEx), you will immediately receive a dispatch confirmation email containing your trackable shipping number.</p>
-            <p>Shipments depart Monday through Saturday. Orders placed after 12:00 PM Pacific Standard Time depart on the following business morning.</p>
-
-            <h2>Carriers &amp; Delivery Notifications</h2>
-            <ul>
-                <li>We partner exclusively with USPS Priority Mail and FedEx Express for insured, signature-required delivery.</li>
-                <li>Your tracking number updates automatically as the carrier scans your package through each sorting checkpoint.</li>
-                <li>Please allow 12-24 hours after receiving your tracking email for the initial carrier scan to appear online.</li>
-            </ul>
-
-            <h2>Expedited &amp; International Delivery</h2>
-            <p>Expedited 2-day delivery and overnight services are available at checkout. International shipping rates are calculated at checkout based on weight and country of destination. Customs duties or taxes may apply upon arrival depending on your country's regulations.</p>
-
-            <h2>Questions About Your Delivery?</h2>
-            <p>If you have any special delivery instructions, require a specific delivery date for an anniversary or proposal, or have questions about tracking, please reach out via our <a href="<?= $base_path ?>pages/contact.php">Contact Us</a> page.</p>
-        </div>
+        <h2>Sed Do Eiusmod</h2>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
     </article>
 </main>
 
 <?php
-include __DIR__ . '/../includes/footer.php';
+require_once __DIR__ . '/../includes/footer.php';
 ?>
-

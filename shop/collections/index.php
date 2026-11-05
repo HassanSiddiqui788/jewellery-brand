@@ -1,11 +1,10 @@
 <?php
 /**
- * Page: Collections – Bijoux
- * Bijoux Jewelry Store
+ * Page: Collections – Lorem Ipsum
  */
 require_once __DIR__ . '/../../includes/config.php';
 $base_path = '../../';
-$page_title = 'Collections – Bijoux';
+$page_title = 'Collections – Lorem Ipsum';
 $current_page = 'collections';
 
 require_once __DIR__ . '/../../includes/header.php';
@@ -14,10 +13,9 @@ require_once __DIR__ . '/../../includes/header.php';
 <main id="main-content" class="site-main">
     <header class="about-page-header">
         <h1 class="about-page-title">Curated Collections</h1>
-        <p class="about-page-subtitle">Ethically hand-crafted heirloom jewelry across four distinct categories</p>
-        <div class="bijoux-category-pills" style="margin-top: 25px;">
+        <p class="about-page-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor</p>
+        <div class="site-category-pills" style="margin-top: 25px;">
             <a href="#necklaces">Necklaces</a>
-            <a href="#rings">Rings</a>
             <a href="#bracelets">Bracelets</a>
             <a href="#earrings">Earrings</a>
         </div>
@@ -32,9 +30,9 @@ require_once __DIR__ . '/../../includes/header.php';
             </div>
             <div class="home-products-grid" style="grid-template-columns: repeat(3, 1fr);">
                 <!-- 1. Exuberant Golden Necklace -->
-                <a href="<?= $base_path ?>shop/product/exuberant-golden-necklace/index.php" class="home-product-card">
+                <a href="<?= $base_path ?>shop/product/exuberant-golden-necklace/index.php" class="home-product-card" style="position: relative; z-index: 1; pointer-events: auto !important; cursor: pointer !important;">
                     <div class="home-product-thumb">
-                        <img src="<?= $base_path ?>assets/images/2020/02/j3370co033200.pw-1280-420x583.jpg" alt="Exuberant Golden Necklace" loading="lazy">
+                        <img src="<?= $base_path ?>assets/images/2020/10/j3376co023200.pw-1280-420x583.jpg" alt="Exuberant Golden Necklace" loading="lazy">
                     </div>
                     <div class="home-product-info">
                         <h3 class="home-product-title">Exuberant Golden Necklace</h3>
@@ -105,88 +103,7 @@ require_once __DIR__ . '/../../includes/header.php';
             </div>
         </section>
 
-        <!-- 2. Rings Collection -->
-        <section id="rings" class="home-featured-section" style="padding: 30px 0 70px;" aria-label="Rings Collection">
-            <div class="home-section-header">
-                <h2 class="home-section-heading">Rings</h2>
-                <a href="<?= $base_path ?>shop/categories/rings/index.php" class="home-section-link">View Category &rarr;</a>
-            </div>
-            <div class="home-products-grid" style="grid-template-columns: repeat(3, 1fr);">
-                <!-- 1. Magnolia Golden Ring -->
-                <a href="<?= $base_path ?>shop/product/magnolia-golden-ring/index.php" class="home-product-card">
-                    <div class="home-product-thumb">
-                        <img src="<?= $base_path ?>assets/images/2020/09/j3368an0132.pw-1280-420x381.jpg" alt="Magnolia Golden Ring" loading="lazy">
-                    </div>
-                    <div class="home-product-info">
-                        <h3 class="home-product-title">Magnolia Golden Ring</h3>
-                        <div class="home-product-price">&#36;199.00</div>
-                        <div class="home-product-meta">golden &bull; ring</div>
-                    </div>
-                </a>
-
-                <!-- 2. Curves Golden Ring -->
-                <a href="<?= $base_path ?>shop/product/curves-golden-ring/index.php" class="home-product-card">
-                    <div class="home-product-thumb">
-                        <img src="<?= $base_path ?>assets/images/2020/09/j3368an0132.pw-1280-420x381.jpg" alt="Curves Golden Ring" loading="lazy">
-                    </div>
-                    <div class="home-product-info">
-                        <h3 class="home-product-title">Curves Golden Ring</h3>
-                        <div class="home-product-price">&#36;210.00</div>
-                        <div class="home-product-meta">golden &bull; ring</div>
-                    </div>
-                </a>
-
-                <!-- 3. Exuberant Golden Ring -->
-                <a href="<?= $base_path ?>shop/product/exuberant-golden-ring/index.php" class="home-product-card">
-                    <div class="home-product-thumb">
-                        <img src="<?= $base_path ?>assets/images/2020/09/j3368an0132.pw-1280-420x381.jpg" alt="Exuberant Golden Ring" loading="lazy">
-                    </div>
-                    <div class="home-product-info">
-                        <h3 class="home-product-title">Exuberant Golden Ring</h3>
-                        <div class="home-product-price">&#36;245.00</div>
-                        <div class="home-product-meta">golden &bull; ring</div>
-                    </div>
-                </a>
-
-                <!-- 4. Monochrome Ring -->
-                <a href="<?= $base_path ?>shop/product/monochrome/index.php" class="home-product-card">
-                    <div class="home-product-thumb">
-                        <img src="<?= $base_path ?>assets/images/2020/09/j3368an0132.pw-1280-420x381.jpg" alt="Monochrome Ring" loading="lazy">
-                    </div>
-                    <div class="home-product-info">
-                        <h3 class="home-product-title">Monochrome Ring</h3>
-                        <div class="home-product-price">&#36;229.00</div>
-                        <div class="home-product-meta">golden &bull; ring</div>
-                    </div>
-                </a>
-
-                <!-- 5. Bliss Golden Ring -->
-                <a href="<?= $base_path ?>shop/product/bliss-golden-ring/index.php" class="home-product-card">
-                    <div class="home-product-thumb">
-                        <img src="<?= $base_path ?>assets/images/2020/09/j3368an0132.pw-1280-420x381.jpg" alt="Bliss Golden Ring" loading="lazy">
-                    </div>
-                    <div class="home-product-info">
-                        <h3 class="home-product-title">Bliss Golden Ring</h3>
-                        <div class="home-product-price">&#36;229.00</div>
-                        <div class="home-product-meta">golden &bull; ring</div>
-                    </div>
-                </a>
-
-                <!-- 6. Carla Golden Ring -->
-                <a href="<?= $base_path ?>shop/product/carla-golden-ring/index.php" class="home-product-card">
-                    <div class="home-product-thumb">
-                        <img src="<?= $base_path ?>assets/images/2020/09/j3368an0132.pw-1280-420x381.jpg" alt="Carla Golden Ring" loading="lazy">
-                    </div>
-                    <div class="home-product-info">
-                        <h3 class="home-product-title">Carla Golden Ring</h3>
-                        <div class="home-product-price">&#36;185.00</div>
-                        <div class="home-product-meta">golden &bull; ring</div>
-                    </div>
-                </a>
-            </div>
-        </section>
-
-        <!-- 3. Bracelets Collection -->
+        <!-- 2. Bracelets Collection -->
         <section id="bracelets" class="home-featured-section" style="padding: 30px 0 70px;" aria-label="Bracelets Collection">
             <div class="home-section-header">
                 <h2 class="home-section-heading">Bracelets</h2>
@@ -267,7 +184,7 @@ require_once __DIR__ . '/../../includes/header.php';
             </div>
         </section>
 
-        <!-- 4. Earrings Collection -->
+        <!-- 3. Earrings Collection -->
         <section id="earrings" class="home-featured-section" style="padding: 30px 0 70px;" aria-label="Earrings Collection">
             <div class="home-section-header">
                 <h2 class="home-section-heading">Earrings</h2>

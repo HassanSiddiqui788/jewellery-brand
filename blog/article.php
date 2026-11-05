@@ -1,7 +1,7 @@
 <?php
 /**
  * Blog Article Helper & Dispatcher
- * Bijoux Jewelry Store
+ * Lorem Ipsum Store
  */
 require_once __DIR__ . '/../includes/config.php';
 $base_path = '../';

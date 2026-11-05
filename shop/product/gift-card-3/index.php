@@ -1,11 +1,11 @@
 <?php
 /**
- * Page: Gift Card &#8211; Bijoux
- * Bijoux Jewelry Store
+ * Page: Gift Card &#8211; Lorem Ipsum
+ * Lorem Ipsum Jewelry Store
  */
 require_once __DIR__ . '/../../../includes/config.php';
 $base_path = '../../../';
-$page_title = 'Gift Card 3 – Bijoux';
+$page_title = 'Gift Card 3 – Lorem Ipsum';
 $body_class = 'wp-singular product-template-default single single-product postid-3442 wp-custom-logo wp-embed-responsive wp-theme-bijoux theme-bijoux woocommerce woocommerce-page woocommerce-no-js full header-layout-logo-menu no-page-header no-middle-header responsive-layout has-post-thumbnail single-post-one-column vamtam-is-elementor elementor-active elementor-pro-active vamtam-wc-cart-empty wc-product-gallery-zoom-active wc-product-gallery-slider-active layout-full elementor-default elementor-template-full-width elementor-kit-4 elementor-page elementor-page-3442 elementor-page-4537';
 $current_page = 'collections';
 
@@ -23,7 +23,7 @@ require_once __DIR__ . '/../../../includes/header.php';
 			<div class="elementor-widget-wrap elementor-element-populated">
 						<div class="elementor-element elementor-element-48844d1e vamtam-has-full-sized-gallery yes elementor-widget elementor-widget-woocommerce-product-images" data-id="48844d1e" data-element_type="widget" data-e-type="widget" data-settings="{&quot;sticky&quot;:&quot;top&quot;,&quot;sticky_on&quot;:[&quot;desktop&quot;,&quot;tablet&quot;],&quot;sticky_offset&quot;:150,&quot;sticky_parent&quot;:&quot;yes&quot;,&quot;sticky_effects_offset&quot;:0,&quot;sticky_anchor_link_offset&quot;:0}" data-widget_type="woocommerce-product-images.default">
 				<div class="elementor-widget-container">
-					<div class="woocommerce-product-gallery woocommerce-product-gallery--with-images woocommerce-product-gallery--columns-1 images" data-columns="1" style="opacity: 0; transition: opacity .25s ease-in-out;">
+					<div class="woocommerce-product-gallery woocommerce-product-gallery--with-images woocommerce-product-gallery--columns-1 images" data-columns="1" style="opacity: 1; transition: opacity .25s ease-in-out;">
 	<div class="woocommerce-product-gallery__wrapper">
 		<div data-thumb="<?= $base_path ?>assets/images/2020/11/gift_card_01-630x875.jpg" data-thumb-alt="Gift Card" data-thumb-srcset="<?= $base_path ?>assets/images/2020/11/gift_card_01-630x875.jpg 630w, <?= $base_path ?>assets/images/2020/11/gift_card_01-420x583.jpg 420w, <?= $base_path ?>assets/images/2020/11/gift_card_01-216x300.jpg 216w, <?= $base_path ?>assets/images/2020/11/gift_card_01-737x1024.jpg 737w, <?= $base_path ?>assets/images/2020/11/gift_card_01-315x438.jpg 315w, <?= $base_path ?>assets/images/2020/11/gift_card_01.jpg 756w"  data-thumb-sizes="(max-width: 630px) 100vw, 630px" class="woocommerce-product-gallery__image"><a href="<?= $base_path ?>assets/images/2020/11/gift_card_01.jpg"><img fetchpriority="high" width="630" height="875" src="<?= $base_path ?>assets/images/2020/11/gift_card_01-630x875.jpg" class="wp-post-image" alt="Gift Card" data-caption="" data-src="<?= $base_path ?>assets/images/2020/11/gift_card_01.jpg" data-large_image="<?= $base_path ?>assets/images/2020/11/gift_card_01.jpg" data-large_image_width="756" data-large_image_height="1050" decoding="async" srcset="<?= $base_path ?>assets/images/2020/11/gift_card_01-630x875.jpg 630w, <?= $base_path ?>assets/images/2020/11/gift_card_01-420x583.jpg 420w, <?= $base_path ?>assets/images/2020/11/gift_card_01-216x300.jpg 216w, <?= $base_path ?>assets/images/2020/11/gift_card_01-737x1024.jpg 737w, <?= $base_path ?>assets/images/2020/11/gift_card_01-315x438.jpg 315w, <?= $base_path ?>assets/images/2020/11/gift_card_01.jpg 756w" sizes="(max-width: 630px) 100vw, 630px" /></a></div>	</div>
 </div>

@@ -1,7 +1,7 @@
 <?php
 /**
  * Universal Navigation Bar Component
- * Single Source of Truth for Bijoux Jewelry Store
+ * Single Source of Truth for Lorem Ipsum Store
  */
 $base_path = $base_path ?? './';
 
@@ -37,8 +37,8 @@ $is_collections = (strpos($current_uri, 'collections') !== false);
 
         <!-- 2. Center: Brand Logo -->
         <div class="site-logo-wrap">
-            <a href="<?= $base_path ?>index.php" aria-label="Bijoux Home" class="site-logo-link">
-                <img width="156" height="30" src="<?= $base_path ?>assets/icons/logo.svg" alt="Bijoux Jewelry" class="site-logo-img">
+            <a href="<?= $base_path ?>index.php" aria-label="Home" class="site-logo-link">
+                <img width="156" height="30" src="<?= $base_path ?>assets/icons/logo.svg" alt="Lorem Ipsum" class="site-logo-img">
             </a>
         </div>
 
@@ -86,10 +86,8 @@ $is_collections = (strpos($current_uri, 'collections') !== false);
                 <ul class="sub-menu">
                     <li><a href="<?= $base_path ?>shop/index.php" class="elementor-sub-item">All Products</a></li>
                     <li><a href="<?= $base_path ?>shop/categories/necklaces/index.php" class="elementor-sub-item">Necklaces</a></li>
-                    <li><a href="<?= $base_path ?>shop/categories/earrings/index.php" class="elementor-sub-item">Earrings</a></li>
-                    <li><a href="<?= $base_path ?>shop/categories/rings/index.php" class="elementor-sub-item">Rings</a></li>
                     <li><a href="<?= $base_path ?>shop/categories/bracelets/index.php" class="elementor-sub-item">Bracelets</a></li>
-                    <li><a href="<?= $base_path ?>shop/categories/gift-card/index.php" class="elementor-sub-item">Gift Cards</a></li>
+                    <li><a href="<?= $base_path ?>shop/categories/earrings/index.php" class="elementor-sub-item">Earrings</a></li>
                 </ul>
             </li>
             <li class="menu-item">

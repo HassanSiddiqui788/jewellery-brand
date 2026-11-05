@@ -1,6 +1,6 @@
 /**
  * Luxury Hero Banner Slider Initializer
- * Bijoux Jewelry Store
+ * Lorem Ipsum Store
  */
 document.addEventListener('DOMContentLoaded', function () {
     if (typeof Swiper !== 'undefined' && document.querySelector('.luxury-hero-slider')) {

@@ -1,12 +1,12 @@
 <?php
 /**
- * Page: The Inspiration Behind The Universal Strength Collection &#8211; Bijoux
- * Bijoux Jewelry Store
+ * Page: The Inspiration Behind The Universal Strength Collection &#8211; Lorem Ipsum
+ * Lorem Ipsum Jewelry Store
  */
 require_once __DIR__ . '/../../../includes/config.php';
 $base_path = '../../../';
-$page_title = 'The Inspiration Behind The Universal Strength Collection – Bijoux';
-$body_class = 'wp-singular post-template-default single single-post postid-1483 single-format-standard wp-custom-logo wp-embed-responsive wp-theme-bijoux theme-bijoux woocommerce-no-js full header-layout-logo-menu has-page-header no-middle-header responsive-layout has-post-thumbnail single-post-one-column vamtam-is-elementor elementor-active elementor-pro-active vamtam-wc-cart-empty wc-product-gallery-zoom-active wc-product-gallery-slider-active layout-full elementor-default elementor-kit-4 elementor-page elementor-page-1483 elementor-page-1437';
+$page_title = 'The Inspiration Behind The Universal Strength Collection – Lorem Ipsum';
+$body_class = 'wp-singular post-template-default single single-post postid-1483 single-format-standard wp-custom-logo wp-embed-responsive wp-theme-lorem ipsum theme-lorem ipsum woocommerce-no-js full header-layout-logo-menu has-page-header no-middle-header responsive-layout has-post-thumbnail single-post-one-column vamtam-is-elementor elementor-active elementor-pro-active vamtam-wc-cart-empty wc-product-gallery-zoom-active wc-product-gallery-slider-active layout-full elementor-default elementor-kit-4 elementor-page elementor-page-1483 elementor-page-1437';
 $current_page = 'journal';
 
 $page_css = ['post-1437.css', 'post-1483.css'];

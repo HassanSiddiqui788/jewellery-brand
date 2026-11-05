@@ -1,7 +1,7 @@
 <?php
 /**
  * Breadcrumb Component
- * Bijoux Jewelry Store
+ * Lorem Ipsum Store
  *
  * @param array $breadcrumbs List of ['title' => '...', 'url' => '...']
  */
