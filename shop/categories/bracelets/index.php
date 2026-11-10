@@ -59,6 +59,12 @@ $products = [
     <header class="about-page-header">
         <h1 class="about-page-title">Bracelets</h1>
         <p class="about-page-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+        <div class="site-category-pills">
+            <a href="<?= $base_path ?>shop/index.php">All Pieces</a>
+            <a href="<?= $base_path ?>shop/categories/necklaces/index.php">Necklaces</a>
+            <a href="<?= $base_path ?>shop/categories/bracelets/index.php" class="active">Bracelets</a>
+            <a href="<?= $base_path ?>shop/categories/earrings/index.php">Earrings</a>
+        </div>
     </header>
 
     <div class="about-container" style="max-width: var(--site-max-width);">

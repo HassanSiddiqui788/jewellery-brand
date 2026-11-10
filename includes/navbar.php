@@ -50,7 +50,7 @@ $is_collections = (strpos($current_uri, 'collections') !== false);
             </a>
 
             <!-- Login / Account Button (User Icon) -->
-            <a href="<?= $base_path ?>shop/checkout.php" class="site-action-btn login-btn account-btn" aria-label="Login / Account" title="Login / Account">
+            <a href="<?= $base_path ?>pages/login.php" class="site-action-btn login-btn account-btn" aria-label="Sign In / Account" title="Sign In / Account">
                 <i class="far fa-user" aria-hidden="true"></i>
             </a>
 
@@ -99,6 +99,7 @@ $is_collections = (strpos($current_uri, 'collections') !== false);
                     <span class="sub-arrow"><i class="fas fa-caret-down" aria-hidden="true"></i></span>
                 </a>
                 <ul class="sub-menu">
+                    <li><a href="<?= $base_path ?>pages/login.php" class="elementor-sub-item">Sign In / Account</a></li>
                     <li><a href="<?= $base_path ?>pages/about.php" class="elementor-sub-item">Our Story</a></li>
                     <li><a href="<?= $base_path ?>pages/customer-reviews.php" class="elementor-sub-item">Customer Reviews</a></li>
                     <li><a href="<?= $base_path ?>pages/retail-store.php" class="elementor-sub-item">Retail Store</a></li>

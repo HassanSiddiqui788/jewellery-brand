@@ -14,7 +14,8 @@ require_once __DIR__ . '/../../includes/header.php';
     <header class="about-page-header">
         <h1 class="about-page-title">Curated Collections</h1>
         <p class="about-page-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor</p>
-        <div class="site-category-pills" style="margin-top: 25px;">
+        <div class="site-category-pills">
+            <a href="<?= $base_path ?>shop/index.php">All Pieces</a>
             <a href="#necklaces">Necklaces</a>
             <a href="#bracelets">Bracelets</a>
             <a href="#earrings">Earrings</a>

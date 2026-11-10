@@ -1365,6 +1365,50 @@ img {
     text-transform: uppercase;
     letter-spacing: 2px;
     color: var(--color-muted);
+    max-width: 720px;
+    margin: 10px auto 0;
+    line-height: 1.6;
+}
+
+/* Category Filter Pills */
+.site-category-pills {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+.site-category-pills a {
+    display: inline-block;
+    padding: 8px 22px;
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--color-primary);
+    background-color: transparent;
+    border: 1px solid rgba(5, 31, 52, 0.2);
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all var(--transition);
+    cursor: pointer !important;
+}
+
+.site-category-pills a:hover {
+    color: #FFFFFF;
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(5, 31, 52, 0.12);
+}
+
+.site-category-pills a.active {
+    color: #FFFFFF;
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
 }
 
 .about-container {
