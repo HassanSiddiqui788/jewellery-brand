@@ -151,6 +151,37 @@
 }
 
 /* -------------------------------------------------------------
+ * 2. Inactive Modal & Drawer Strict Isolation (Zero Overlay Blockage)
+ * ------------------------------------------------------------- */
+#elementor-popup-modal-998:not(.is-active),
+#elementor-popup-modal-1122:not(.is-active) {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    opacity: 0 !important;
+    z-index: -9999 !important;
+}
+
+#elementor-popup-modal-998:not(.is-active) *,
+#elementor-popup-modal-1122:not(.is-active) * {
+    visibility: hidden !important;
+    pointer-events: none !important;
+}
+
+.elementor-menu-cart__container:not(.elementor-menu-cart--shown):not(.is-active) {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    opacity: 0 !important;
+    z-index: -9999 !important;
+}
+
+.elementor-menu-cart__container:not(.elementor-menu-cart--shown):not(.is-active) * {
+    visibility: hidden !important;
+    pointer-events: none !important;
+}
+
+/* -------------------------------------------------------------
  * 2. Desktop Side Drawer Menu (Popup 998)
  * ------------------------------------------------------------- */
 #elementor-popup-modal-998 {
@@ -167,7 +198,6 @@
     visibility: hidden;
     pointer-events: none;
     transition: opacity 0.35s ease, visibility 0.35s ease;
-    display: flex !important;
     align-items: center;
     justify-content: center;
     margin: 0 !important;
@@ -175,6 +205,7 @@
 }
 
 #elementor-popup-modal-998.is-active {
+    display: flex !important;
     opacity: 1 !important;
     visibility: visible !important;
     pointer-events: all !important;
@@ -194,10 +225,12 @@
     transform: translateY(-20px);
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     box-sizing: border-box;
+    pointer-events: none;
 }
 
 #elementor-popup-modal-998.is-active .dialog-widget-content {
     transform: translateY(0) !important;
+    pointer-events: all !important;
 }
 
 #elementor-popup-modal-998 .dialog-message {
@@ -214,7 +247,7 @@
     min-height: 100vh !important;
 }
 
-#elementor-popup-modal-998 .elementor-invisible {
+#elementor-popup-modal-998.is-active .elementor-invisible {
     visibility: visible !important;
     opacity: 1 !important;
 }
@@ -275,12 +308,12 @@
     visibility: hidden;
     pointer-events: none;
     transition: opacity 0.3s ease, visibility 0.3s ease;
-    display: flex !important;
     align-items: flex-start;
     justify-content: center;
 }
 
 #elementor-popup-modal-1122.is-active {
+    display: flex !important;
     opacity: 1 !important;
     visibility: visible !important;
     pointer-events: all !important;
@@ -292,6 +325,11 @@
     max-height: 85vh !important;
     overflow-y: auto !important;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12) !important;
+    pointer-events: none;
+}
+
+#elementor-popup-modal-1122.is-active .dialog-widget-content {
+    pointer-events: all !important;
 }
 
 #elementor-popup-modal-1122 .elementor-1122 {
@@ -330,7 +368,6 @@
     visibility: hidden !important;
     pointer-events: none !important;
     transition: opacity 0.35s ease, visibility 0.35s ease !important;
-    display: flex !important;
     justify-content: flex-end !important;
     align-items: stretch !important;
     transform: none !important;
@@ -340,8 +377,14 @@
 .elementor-menu-cart__container.elementor-menu-cart--shown,
 .elementor-widget-woocommerce-menu-cart.elementor-menu-cart--shown .elementor-menu-cart__container,
 .elementor-menu-cart__container.is-active {
+    display: flex !important;
     opacity: 1 !important;
     visibility: visible !important;
+    pointer-events: all !important;
+}
+
+.elementor-menu-cart__container.elementor-menu-cart--shown .elementor-menu-cart__main,
+.elementor-menu-cart__container.is-active .elementor-menu-cart__main {
     pointer-events: all !important;
 }
 

@@ -65,6 +65,22 @@ input[type="password"], input[type="number"], textarea {
     cursor: text !important;
 }
 
+/* Ensure clean text selection and image pointer interactions across content */
+body, main, article, section, p, h1, h2, h3, h4, h5, h6, span, blockquote, li, td, th {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
+
+img, picture,
+.home-product-card,
+.category-card,
+.editorial-image-wrap,
+.home-product-thumb {
+    pointer-events: auto !important;
+}
+
 /* Product Details Gallery & Images Visibility Fix */
 .woocommerce-product-gallery,
 .woocommerce-product-gallery--vamtam,
@@ -179,6 +195,8 @@ img {
     display: flex;
     align-items: center;
     flex: 1;
+    z-index: 100000 !important;
+    pointer-events: auto !important;
 }
 
 .site-nav-list {
@@ -188,10 +206,12 @@ img {
     margin: 0;
     padding: 0;
     gap: 36px;
+    pointer-events: auto !important;
 }
 
 .site-nav-item {
     position: relative;
+    pointer-events: auto !important;
 }
 
 .site-nav-link {
@@ -206,6 +226,9 @@ img {
     align-items: center;
     gap: 8px;
     position: relative;
+    text-decoration: none;
+    pointer-events: auto !important;
+    cursor: pointer !important;
     transition: color var(--transition);
 }
 
@@ -214,15 +237,18 @@ img {
     color: var(--color-primary);
     font-weight: 300;
     transition: color var(--transition);
+    pointer-events: none;
 }
 
 .site-nav-link.active .nav-dash,
-.site-nav-link:hover .nav-dash {
-    color: var(--color-accent);
+.site-nav-link:hover .nav-dash,
+.site-nav-link:focus .nav-dash {
+    color: var(--color-accent) !important;
 }
 
-.site-nav-link:hover {
-    color: var(--color-accent);
+.site-nav-link:hover,
+.site-nav-link:focus {
+    color: var(--color-accent) !important;
 }
 
 /* Header Center: Logo */

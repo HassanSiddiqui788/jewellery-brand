@@ -5,7 +5,7 @@
  */
 $base_path = $base_path ?? './';
 ?>
-<div class="elementor-menu-cart__container elementor-lightbox" id="site-side-cart-drawer" aria-hidden="true">
+<div class="elementor-menu-cart__container elementor-lightbox" id="site-side-cart-drawer" aria-hidden="true" style="display: none;">
     <div class="elementor-menu-cart__main" aria-hidden="true">
         <div class="vamtam-elementor-menu-cart__header">
             <span class="label">Shopping Bag</span>

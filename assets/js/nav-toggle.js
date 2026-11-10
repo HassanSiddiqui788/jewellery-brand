@@ -130,6 +130,8 @@
         var cartWidgets = document.querySelectorAll('.elementor-widget-woocommerce-menu-cart');
 
         cartContainers.forEach(function(el) {
+            el.style.display = 'flex';
+            void el.offsetWidth;
             el.classList.add('elementor-menu-cart--shown', 'is-active');
             el.setAttribute('aria-hidden', 'false');
         });
@@ -149,6 +151,11 @@
         cartContainers.forEach(function(el) {
             el.classList.remove('elementor-menu-cart--shown', 'is-active');
             el.setAttribute('aria-hidden', 'true');
+            setTimeout(function() {
+                if (!el.classList.contains('is-active') && !el.classList.contains('elementor-menu-cart--shown')) {
+                    el.style.display = 'none';
+                }
+            }, 350);
         });
 
         cartWidgets.forEach(function(el) {
