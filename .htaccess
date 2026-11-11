@@ -9,6 +9,12 @@ DirectoryIndex index.php index.html
     RewriteBase /
 
     # --------------------------------------------------------------------------
+    # 0. Block direct HTTP access to internal architecture directories & dotfiles
+    # --------------------------------------------------------------------------
+    RewriteRule ^(app|bootstrap|config|core|database|includes|resources|routes|storage|tests|vendor)(/|$) - [F,L,NC]
+    RewriteRule ^(\.env|composer\.(json|lock)|README\.md|database/migrate\.php)$ - [F,L,NC]
+
+    # --------------------------------------------------------------------------
     # 1. 301 Permanent Redirects for Legacy URLs (SEO Preservation)
     # --------------------------------------------------------------------------
     
@@ -44,21 +50,34 @@ DirectoryIndex index.php index.html
     RewriteRule ^wp-content/uploads/2020/(.*)$ assets/images/2020/$1 [L]
     RewriteRule ^wp-content/uploads/2024/(.*)$ assets/images/2024/$1 [L]
     RewriteRule ^wp-content/uploads/2020/05/logo\.svg$ assets/icons/logo.svg [L]
+
+    # --------------------------------------------------------------------------
+    # 3. Gradual Front Controller Fallback (Only for non-file/non-dir routes)
+    # --------------------------------------------------------------------------
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^ public/index.php [L,QSA]
 </IfModule>
 
 # ------------------------------------------------------------------------------
-# 3. Security Headers & Options
+# 4. Security Headers & File Protection
 # ------------------------------------------------------------------------------
 <IfModule mod_headers.c>
     Header set X-Content-Type-Options "nosniff"
     Header set X-Frame-Options "SAMEORIGIN"
-    Header set X-XSS-Protection "1; mode=block"
     Header set Referrer-Policy "strict-origin-when-cross-origin"
+    Header set Permissions-Policy "geolocation=(), microphone=(), camera=()"
 </IfModule>
 
-# Block access to hidden files and include templates
-<FilesMatch "^\.">
-    Require all denied
+# Block access to dotfiles, environment files, logs, backups, SQL dumps, and Composer manifests
+<FilesMatch "(^\.|composer\.(json|lock)$|\.(env|sql|log|bak)$)">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
 </FilesMatch>
 
 # ------------------------------------------------------------------------------

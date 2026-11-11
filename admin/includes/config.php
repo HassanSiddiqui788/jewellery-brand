@@ -12,6 +12,12 @@ if (!defined('ADMIN_APP')) {
     define('ADMIN_APP', true);
 }
 
+require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
+$__adminCoreApp = app_bootstrap(PHP_SAPI !== 'cli');
+if (PHP_SAPI !== 'cli' && !headers_sent()) {
+    $__adminCoreApp->session()->start();
+}
+
 if (!defined('ADMIN_SITE_NAME')) {
     define('ADMIN_SITE_NAME', 'LOREM');
 }

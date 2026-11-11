@@ -1,7 +1,7 @@
 <?php
 /**
  * Site Configuration & Global Helpers
- * Lorem Ipsum Store
+ * Lorem Ipsum Store (Backward-Compatible Bridge to bootstrap/app.php)
  */
 
 if (!defined('LOREM_APP')) {
@@ -11,12 +11,19 @@ if (!defined('BIJOUX_APP')) {
     define('BIJOUX_APP', true);
 }
 
-// Site Details
+// Initialize Core Application Container, Environment, Logging, and Session Infrastructure
+require_once __DIR__ . '/../bootstrap/app.php';
+$__legacyApp = app_bootstrap(PHP_SAPI !== 'cli');
+if (PHP_SAPI !== 'cli' && !headers_sent()) {
+    $__legacyApp->session()->start();
+}
+
+// Site Details (backed by .env / config/app.php with legacy defaults)
 if (!defined('SITE_NAME')) {
-    define('SITE_NAME', 'Lorem Ipsum');
+    define('SITE_NAME', (string) $__legacyApp->config()->get('app.name', 'Lorem Ipsum'));
 }
 if (!defined('SITE_TAGLINE')) {
-    define('SITE_TAGLINE', 'Lorem Ipsum Dolor Sit Amet');
+    define('SITE_TAGLINE', (string) $__legacyApp->config()->get('app.tagline', 'Lorem Ipsum Dolor Sit Amet'));
 }
 
 /**
@@ -50,12 +57,13 @@ function asset_url($asset_path, $base = null) {
  * @param string $string
  * @return string
  */
-function e($string) {
-    return htmlspecialchars((string)$string, ENT_QUOTES, 'UTF-8');
+if (!function_exists('e')) {
+    function e($string) {
+        return htmlspecialchars((string) $string, ENT_QUOTES, 'UTF-8');
+    }
 }
 
-// Global Database Connection
+// Global Database Connection (MySQLi backward-compatibility bridge)
 if (file_exists(__DIR__ . '/../config/db.php')) {
     require_once __DIR__ . '/../config/db.php';
 }
-

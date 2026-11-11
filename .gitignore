@@ -1,12 +1,30 @@
-# Backups and archives
-.backup_pre_restructure.tar.gz
+# Archives & Backups
 *.tar.gz
 *.zip
 *.tar
 *.bak
+database/backups/pre_phase1/
 
-# Temporary and log files
+# Logs & Environment Secrets
 *.log
+.env
+.env.local
+.env.*.local
+
+# Composer Dependencies
+/vendor/
+
+# Storage Runtime Artifacts
+/storage/logs/*
+!/storage/logs/.gitkeep
+!/storage/logs/.htaccess
+/storage/cache/*
+!/storage/cache/.gitkeep
+!/storage/cache/.htaccess
+/storage/uploads/*
+!/storage/uploads/.gitkeep
+!/storage/uploads/.htaccess
+
+# OS Files
 .DS_Store
 Thumbs.db
-
