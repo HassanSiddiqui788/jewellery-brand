@@ -23,11 +23,18 @@ $db_error = null;
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
 try {
+    $socket = env('DB_SOCKET') ?: (file_exists('/tmp/mysql.sock') ? '/tmp/mysql.sock' : null);
     try {
-        $conn = @new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME, DB_PORT);
+        if ($socket) {
+            $conn = @new mysqli(null, DB_USER, DB_PASS, DB_NAME, null, $socket);
+        } else {
+            $conn = @new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME, DB_PORT);
+        }
     } catch (Throwable $socketException) {
-        if (DB_HOST === 'localhost') {
+        if (DB_HOST === 'localhost' && !$socket) {
             $conn = @new mysqli('127.0.0.1', DB_USER, DB_PASS, DB_NAME, DB_PORT);
+        } elseif (file_exists('/tmp/mysql.sock')) {
+            $conn = @new mysqli(null, DB_USER, DB_PASS, DB_NAME, null, '/tmp/mysql.sock');
         } else {
             throw $socketException;
         }

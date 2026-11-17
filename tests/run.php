@@ -10,6 +10,7 @@ use Tests\Unit\ConfigAndEnvTest;
 use Tests\Unit\DatabaseLayerTest;
 use Tests\Unit\RouterAndMiddlewareTest;
 use Tests\Unit\SecurityAndLoggingTest;
+use Tests\Unit\UserRegistrationTest;
 
 if (PHP_SAPI !== 'cli') {
     http_response_code(403);
@@ -25,6 +26,7 @@ $suites = [
     RouterAndMiddlewareTest::class,
     SecurityAndLoggingTest::class,
     ApplicationSmokeTest::class,
+    UserRegistrationTest::class,
 ];
 
 $passed = 0;

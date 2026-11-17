@@ -1,9 +1,14 @@
 <?php
 /**
  * Page: Register / Create Account – Lorem Ipsum
- * Luxury Authentication Frontend
+ * Dynamic Core PHP + MySQL Registration System
  */
+
+declare(strict_types=1);
+
 require_once __DIR__ . '/../includes/config.php';
+require_once __DIR__ . '/../app/Services/RegistrationService.php';
+
 $base_path = '../';
 $page_title = 'Create an Account – Lorem Ipsum';
 $body_class = 'page page-auth page-register';
@@ -11,6 +16,43 @@ $current_page = 'register';
 
 $page_css = ['auth.css'];
 $page_scripts = ['auth.js'];
+
+$success_message = '';
+$error_message = '';
+$form_errors = [];
+$old_inputs = [
+    'full_name' => '',
+    'email' => '',
+];
+
+// Handle Registration Form Submission (AJAX & Standard POST)
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $isAjax = (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest')
+        || (isset($_SERVER['HTTP_ACCEPT']) && str_contains(strtolower($_SERVER['HTTP_ACCEPT']), 'application/json'))
+        || isset($_POST['ajax']);
+
+    $result = \App\Services\RegistrationService::register($_POST);
+
+    if ($isAjax) {
+        header('Content-Type: application/json; charset=utf-8');
+        http_response_code($result['success'] ? 200 : 422);
+        echo json_encode($result);
+        exit;
+    }
+
+    // Standard POST fallback (without JavaScript)
+    if ($result['success']) {
+        $success_message = $result['message'];
+        $old_inputs = ['full_name' => '', 'email' => ''];
+    } else {
+        $error_message = $result['message'];
+        $form_errors = $result['errors'] ?? [];
+        $old_inputs = [
+            'full_name' => (string) ($_POST['full_name'] ?? ''),
+            'email' => (string) ($_POST['email'] ?? ''),
+        ];
+    }
+}
 
 require_once __DIR__ . '/../includes/header.php';
 ?>
@@ -36,37 +78,39 @@ require_once __DIR__ . '/../includes/header.php';
         </div>
 
         <!-- Interactive Alert Notification Box -->
-        <div id="auth-alert" class="auth-alert"></div>
+        <div id="auth-alert" class="auth-alert <?= !empty($success_message) ? 'alert-success show' : (!empty($error_message) ? 'alert-error show' : '') ?>">
+            <?php if (!empty($success_message)): ?>
+                <i class="fas fa-check-circle"></i> <span><?= e($success_message) ?></span>
+            <?php elseif (!empty($error_message)): ?>
+                <i class="fas fa-exclamation-circle"></i> <span><?= e($error_message) ?></span>
+            <?php endif; ?>
+        </div>
 
-        <!-- Registration Form -->
-        <form id="register-form" class="auth-form" action="" method="post" autocomplete="on">
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="reg-first-name">First Name <span style="color: var(--color-accent);">&bull;</span></label>
-                    <div class="input-wrap">
-                        <input type="text" id="reg-first-name" name="first_name" required class="form-input" placeholder="e.g. Eleanor" autocomplete="given-name">
-                    </div>
+        <!-- Dynamic Registration Form -->
+        <form id="register-form" class="auth-form" action="<?= $base_path ?>pages/register.php" method="post" autocomplete="on" novalidate>
+            <!-- 1. Full Name -->
+            <div class="form-group">
+                <label for="reg-full-name">Full Name <span style="color: var(--color-accent);">&bull;</span></label>
+                <div class="input-wrap">
+                    <input type="text" id="reg-full-name" name="full_name" required class="form-input <?= isset($form_errors['full_name']) ? 'is-invalid' : '' ?>" placeholder="e.g. Eleanor Vance" autocomplete="name" value="<?= e($old_inputs['full_name']) ?>">
                 </div>
-
-                <div class="form-group">
-                    <label for="reg-last-name">Last Name <span style="color: var(--color-accent);">&bull;</span></label>
-                    <div class="input-wrap">
-                        <input type="text" id="reg-last-name" name="last_name" required class="form-input" placeholder="e.g. Vance" autocomplete="family-name">
-                    </div>
-                </div>
+                <div class="field-error <?= isset($form_errors['full_name']) ? 'show' : '' ?>" id="error-full_name"><?= e($form_errors['full_name'] ?? '') ?></div>
             </div>
 
+            <!-- 2. Email Address -->
             <div class="form-group">
                 <label for="reg-email">Email Address <span style="color: var(--color-accent);">&bull;</span></label>
                 <div class="input-wrap">
-                    <input type="email" id="reg-email" name="email" required class="form-input" placeholder="e.g. client@loremipsum.com" autocomplete="email">
+                    <input type="email" id="reg-email" name="email" required class="form-input <?= isset($form_errors['email']) ? 'is-invalid' : '' ?>" placeholder="e.g. client@loremipsum.com" autocomplete="email" value="<?= e($old_inputs['email']) ?>">
                 </div>
+                <div class="field-error <?= isset($form_errors['email']) ? 'show' : '' ?>" id="error-email"><?= e($form_errors['email'] ?? '') ?></div>
             </div>
 
+            <!-- 3. Password -->
             <div class="form-group">
                 <label for="reg-password">Password <span style="color: var(--color-accent);">&bull;</span></label>
                 <div class="input-wrap">
-                    <input type="password" id="reg-password" name="password" minlength="8" required class="form-input" placeholder="At least 8 characters" autocomplete="new-password">
+                    <input type="password" id="reg-password" name="password" minlength="8" required class="form-input <?= isset($form_errors['password']) ? 'is-invalid' : '' ?>" placeholder="At least 8 characters" autocomplete="new-password">
                     <button type="button" class="password-toggle-btn" aria-label="Show password" title="Toggle password visibility">
                         <i class="far fa-eye" aria-hidden="true"></i>
                     </button>
@@ -78,28 +122,25 @@ require_once __DIR__ . '/../includes/header.php';
                     <div class="strength-bar"></div>
                 </div>
                 <span class="strength-text"></span>
+                <div class="field-error <?= isset($form_errors['password']) ? 'show' : '' ?>" id="error-password"><?= e($form_errors['password'] ?? '') ?></div>
             </div>
 
+            <!-- 4. Confirm Password -->
             <div class="form-group">
                 <label for="reg-confirm-password">Confirm Password <span style="color: var(--color-accent);">&bull;</span></label>
                 <div class="input-wrap">
-                    <input type="password" id="reg-confirm-password" name="confirm_password" minlength="8" required class="form-input" placeholder="Re-enter your password" autocomplete="new-password">
+                    <input type="password" id="reg-confirm-password" name="confirm_password" minlength="8" required class="form-input <?= isset($form_errors['confirm_password']) ? 'is-invalid' : '' ?>" placeholder="Re-enter your password" autocomplete="new-password">
                     <button type="button" class="password-toggle-btn" aria-label="Show password" title="Toggle password visibility">
                         <i class="far fa-eye" aria-hidden="true"></i>
                     </button>
                 </div>
+                <div class="field-error <?= isset($form_errors['confirm_password']) ? 'show' : '' ?>" id="error-confirm_password"><?= e($form_errors['confirm_password'] ?? '') ?></div>
             </div>
 
-            <div class="form-group" style="margin-bottom: 24px;">
-                <label class="auth-remember" style="font-size: 11px; line-height: 1.5; text-transform: none; letter-spacing: 0;">
-                    <input type="checkbox" name="terms" required checked>
-                    <span>I agree to the <a href="<?= $base_path ?>pages/terms.php" target="_blank" style="color: var(--color-accent); text-decoration: underline;">Terms &amp; Conditions</a> and <a href="<?= $base_path ?>pages/privacy-policy.php" target="_blank" style="color: var(--color-accent); text-decoration: underline;">Privacy Policy</a>.</span>
-                </label>
-            </div>
-
-            <button type="submit" class="auth-btn-submit">
-                <span>Create My Account</span>
-                <i class="fas fa-arrow-right" aria-hidden="true" style="font-size: 11px;"></i>
+            <!-- 5. Register Button -->
+            <button type="submit" id="reg-submit-btn" class="auth-btn-submit">
+                <span class="btn-text">Register</span>
+                <i class="fas fa-arrow-right btn-icon" aria-hidden="true" style="font-size: 11px;"></i>
             </button>
         </form>
 
@@ -112,4 +153,3 @@ require_once __DIR__ . '/../includes/header.php';
 </main>
 
 <?php require_once __DIR__ . '/../includes/footer.php'; ?>
-

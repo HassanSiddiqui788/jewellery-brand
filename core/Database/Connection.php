@@ -85,12 +85,26 @@ final class Connection
                     $tcpDsn = $this->buildMysqlDsn('127.0.0.1', $port, $database, $charset);
                     $this->pdo = new \PDO($tcpDsn, $username, $password, $options);
                 } catch (\PDOException $fallbackException) {
-                    $this->logDatabaseFailure($fallbackException);
-                    throw new DatabaseConnectionException(
-                        'Unable to connect to the MySQL database.',
-                        (int) $fallbackException->getCode(),
-                        $fallbackException
-                    );
+                    if (file_exists('/tmp/mysql.sock')) {
+                        try {
+                            $sockDsn = sprintf('mysql:unix_socket=/tmp/mysql.sock;dbname=%s;charset=%s', $database, $charset);
+                            $this->pdo = new \PDO($sockDsn, $username, $password, $options);
+                        } catch (\PDOException $sockException) {
+                            $this->logDatabaseFailure($sockException);
+                            throw new DatabaseConnectionException(
+                                'Unable to connect to the MySQL database.',
+                                (int) $sockException->getCode(),
+                                $sockException
+                            );
+                        }
+                    } else {
+                        $this->logDatabaseFailure($fallbackException);
+                        throw new DatabaseConnectionException(
+                            'Unable to connect to the MySQL database.',
+                            (int) $fallbackException->getCode(),
+                            $fallbackException
+                        );
+                    }
                 }
             } else {
                 $this->logDatabaseFailure($primaryException);

@@ -99,38 +99,178 @@
             });
         }
 
-        // 4. Register Form handler
+        // 4. Dynamic Register Form handler (AJAX with PHP + MySQL)
         var registerForm = document.getElementById('register-form');
         if (registerForm) {
             registerForm.addEventListener('submit', function (e) {
                 e.preventDefault();
-                var pwd = document.getElementById('reg-password');
-                var confirmPwd = document.getElementById('reg-confirm-password');
-                var alertBox = document.getElementById('auth-alert');
-                var submitBtn = registerForm.querySelector('.auth-btn-submit');
 
-                if (pwd && confirmPwd && pwd.value !== confirmPwd.value) {
+                var alertBox = document.getElementById('auth-alert');
+                var submitBtn = document.getElementById('reg-submit-btn') || registerForm.querySelector('.auth-btn-submit');
+                if (!submitBtn) return;
+
+                // Inputs
+                var fullNameInput = document.getElementById('reg-full-name');
+                var emailInput = document.getElementById('reg-email');
+                var passwordInput = document.getElementById('reg-password');
+                var confirmPasswordInput = document.getElementById('reg-confirm-password');
+
+                // Error text containers below inputs
+                var errFullName = document.getElementById('error-full_name');
+                var errEmail = document.getElementById('error-email');
+                var errPassword = document.getElementById('error-password');
+                var errConfirmPassword = document.getElementById('error-confirm_password');
+
+                function clearErrors() {
+                    [errFullName, errEmail, errPassword, errConfirmPassword].forEach(function (el) {
+                        if (el) {
+                            el.textContent = '';
+                            el.classList.remove('show');
+                        }
+                    });
+                    [fullNameInput, emailInput, passwordInput, confirmPasswordInput].forEach(function (inp) {
+                        if (inp) {
+                            inp.classList.remove('is-invalid');
+                        }
+                    });
+                    if (alertBox) {
+                        alertBox.className = 'auth-alert';
+                        alertBox.innerHTML = '';
+                    }
+                }
+
+                function showFieldError(input, errorEl, message) {
+                    if (input) input.classList.add('is-invalid');
+                    if (errorEl) {
+                        errorEl.textContent = message;
+                        errorEl.classList.add('show');
+                    }
+                }
+
+                clearErrors();
+
+                // Quick client-side pre-validation
+                var fullName = fullNameInput ? fullNameInput.value.trim() : '';
+                var email = emailInput ? emailInput.value.trim() : '';
+                var password = passwordInput ? passwordInput.value : '';
+                var confirmPassword = confirmPasswordInput ? confirmPasswordInput.value : '';
+
+                var hasClientError = false;
+
+                if (!fullName) {
+                    showFieldError(fullNameInput, errFullName, 'Full Name is required.');
+                    hasClientError = true;
+                } else if (fullName.length < 2) {
+                    showFieldError(fullNameInput, errFullName, 'Full Name must be at least 2 characters.');
+                    hasClientError = true;
+                }
+
+                if (!email) {
+                    showFieldError(emailInput, errEmail, 'Email Address is required.');
+                    hasClientError = true;
+                } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                    showFieldError(emailInput, errEmail, 'Please enter a valid email address.');
+                    hasClientError = true;
+                }
+
+                if (!password) {
+                    showFieldError(passwordInput, errPassword, 'Password is required.');
+                    hasClientError = true;
+                } else if (password.length < 8) {
+                    showFieldError(passwordInput, errPassword, 'Password must contain at least 8 characters.');
+                    hasClientError = true;
+                }
+
+                if (!confirmPassword) {
+                    showFieldError(confirmPasswordInput, errConfirmPassword, 'Please confirm your password.');
+                    hasClientError = true;
+                } else if (password && password !== confirmPassword) {
+                    showFieldError(confirmPasswordInput, errConfirmPassword, 'Passwords do not match.');
+                    hasClientError = true;
+                }
+
+                if (hasClientError) {
                     if (alertBox) {
                         alertBox.className = 'auth-alert alert-error show';
-                        alertBox.innerHTML = '<i class="fas fa-exclamation-circle"></i> <span>The passwords do not match. Please verify and try again.</span>';
+                        alertBox.innerHTML = '<i class="fas fa-exclamation-circle"></i> <span>Please correct the highlighted errors.</span>';
                     }
                     return;
                 }
 
-                if (submitBtn) {
-                    submitBtn.disabled = true;
-                    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Creating Account...';
+                // Prevent multiple submissions
+                if (submitBtn.disabled) {
+                    return;
                 }
 
-                setTimeout(function () {
-                    if (alertBox) {
-                        alertBox.className = 'auth-alert alert-success show';
-                        alertBox.innerHTML = '<i class="fas fa-check-circle"></i> <span>Account successfully created! Welcome to our exclusive circle. Redirecting...</span>';
+                // Loading state on Register button
+                submitBtn.disabled = true;
+                var originalHtml = submitBtn.innerHTML;
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Registering...';
+
+                var formData = new FormData(registerForm);
+                formData.append('ajax', '1');
+
+                var targetUrl = registerForm.getAttribute('action') || window.location.href;
+
+                fetch(targetUrl, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest',
+                        'Accept': 'application/json'
                     }
-                    setTimeout(function () {
-                        window.location.href = './login.php?registered=1';
-                    }, 1200);
-                }, 900);
+                })
+                .then(function (response) {
+                    return response.json().then(function (data) {
+                        return { ok: response.ok, status: response.status, data: data };
+                    });
+                })
+                .then(function (result) {
+                    var data = result.data;
+                    if (result.ok && data.success) {
+                        // Display success message
+                        if (alertBox) {
+                            alertBox.className = 'auth-alert alert-success show';
+                            alertBox.innerHTML = '<i class="fas fa-check-circle"></i> <span>' + (data.message || 'Account registered successfully!') + '</span>';
+                        }
+                        registerForm.reset();
+                        submitBtn.innerHTML = '<i class="fas fa-check"></i> Registered!';
+                        submitBtn.disabled = false;
+
+                        // Clear strength bars if any
+                        strengthBars.forEach(function (b) { b.style.backgroundColor = 'rgba(5, 31, 52, 0.1)'; });
+                        if (strengthText) strengthText.textContent = '';
+
+                        // Reset button text after 3 seconds
+                        setTimeout(function () {
+                            submitBtn.innerHTML = originalHtml;
+                        }, 3000);
+                    } else {
+                        // Display error message
+                        if (alertBox) {
+                            alertBox.className = 'auth-alert alert-error show';
+                            alertBox.innerHTML = '<i class="fas fa-exclamation-circle"></i> <span>' + (data.message || 'Registration failed.') + '</span>';
+                        }
+                        // Display validation errors below relevant fields
+                        if (data.errors) {
+                            if (data.errors.full_name) showFieldError(fullNameInput, errFullName, data.errors.full_name);
+                            if (data.errors.email) showFieldError(emailInput, errEmail, data.errors.email);
+                            if (data.errors.password) showFieldError(passwordInput, errPassword, data.errors.password);
+                            if (data.errors.confirm_password) showFieldError(confirmPasswordInput, errConfirmPassword, data.errors.confirm_password);
+                        }
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = originalHtml;
+                    }
+                })
+                .catch(function (error) {
+                    console.error('Registration AJAX Error:', error);
+                    if (alertBox) {
+                        alertBox.className = 'auth-alert alert-error show';
+                        alertBox.innerHTML = '<i class="fas fa-exclamation-triangle"></i> <span>A network error occurred. Please try again.</span>';
+                    }
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalHtml;
+                });
             });
         }
 
