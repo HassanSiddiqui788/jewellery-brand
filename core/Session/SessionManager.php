@@ -92,6 +92,14 @@ final class SessionManager
 
         $cookieOptions = $this->getCookieOptions();
 
+        $currentPath = session_save_path();
+        if (empty($currentPath) || !is_writable($currentPath)) {
+            $tempPath = sys_get_temp_dir();
+            if (is_writable($tempPath)) {
+                session_save_path($tempPath);
+            }
+        }
+
         @ini_set('session.use_only_cookies', '1');
         @ini_set('session.use_strict_mode', ($this->config['use_strict_mode'] ?? true) ? '1' : '0');
         @ini_set('session.cookie_httponly', $cookieOptions['httponly'] ? '1' : '0');

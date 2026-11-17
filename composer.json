@@ -20,13 +20,7 @@
             "core/Helpers/functions.php"
         ]
     },
-    "autoload-dev": {
-        "psr-4": {
-            "Tests\\": "tests/"
-        }
-    },
     "scripts": {
-        "test": "php tests/run.php",
         "migrate": "php database/migrate.php up",
         "migrate:status": "php database/migrate.php status"
     },

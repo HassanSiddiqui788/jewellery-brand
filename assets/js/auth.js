@@ -70,32 +70,137 @@
             });
         }
 
-        // 3. Login Form handler
+        // 3. Dynamic Login Form handler (AJAX with PHP + MySQL)
         var loginForm = document.getElementById('login-form');
         if (loginForm) {
             loginForm.addEventListener('submit', function (e) {
                 e.preventDefault();
-                var alertBox = document.getElementById('auth-alert');
-                var submitBtn = loginForm.querySelector('.auth-btn-submit');
-                var originalText = submitBtn ? submitBtn.innerHTML : 'Sign In';
 
-                if (submitBtn) {
-                    submitBtn.disabled = true;
-                    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Signing In...';
+                var alertBox = document.getElementById('auth-alert');
+                var submitBtn = document.getElementById('login-submit-btn') || loginForm.querySelector('.auth-btn-submit');
+                if (!submitBtn) return;
+
+                var emailInput = document.getElementById('login-email');
+                var passwordInput = document.getElementById('login-password');
+
+                var errEmail = document.getElementById('error-login-email');
+                var errPassword = document.getElementById('error-login-password');
+
+                function clearLoginErrors() {
+                    [errEmail, errPassword].forEach(function (el) {
+                        if (el) {
+                            el.textContent = '';
+                            el.classList.remove('show');
+                        }
+                    });
+                    [emailInput, passwordInput].forEach(function (inp) {
+                        if (inp) {
+                            inp.classList.remove('is-invalid');
+                        }
+                    });
+                    if (alertBox) {
+                        alertBox.className = 'auth-alert';
+                        alertBox.innerHTML = '';
+                    }
                 }
 
-                setTimeout(function () {
+                function showLoginFieldError(input, errorEl, message) {
+                    if (input) input.classList.add('is-invalid');
+                    if (errorEl) {
+                        errorEl.textContent = message;
+                        errorEl.classList.add('show');
+                    }
+                }
+
+                clearLoginErrors();
+
+                var email = emailInput ? emailInput.value.trim() : '';
+                var password = passwordInput ? passwordInput.value : '';
+                var hasClientError = false;
+
+                if (!email) {
+                    showLoginFieldError(emailInput, errEmail, 'Email Address is required.');
+                    hasClientError = true;
+                } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                    showLoginFieldError(emailInput, errEmail, 'Please enter a valid email address.');
+                    hasClientError = true;
+                }
+
+                if (!password) {
+                    showLoginFieldError(passwordInput, errPassword, 'Password is required.');
+                    hasClientError = true;
+                }
+
+                if (hasClientError) {
                     if (alertBox) {
-                        alertBox.className = 'auth-alert alert-success show';
-                        alertBox.innerHTML = '<i class="fas fa-check-circle"></i> <span>Welcome back! Authentication successful. Redirecting to your account...</span>';
+                        alertBox.className = 'auth-alert alert-error show';
+                        alertBox.innerHTML = '<i class="fas fa-exclamation-circle"></i> <span>Please fill in all required fields.</span>';
                     }
-                    if (submitBtn) {
+                    return;
+                }
+
+                // Prevent multiple submissions
+                if (submitBtn.disabled) {
+                    return;
+                }
+
+                // Button loading state
+                submitBtn.disabled = true;
+                var originalHtml = submitBtn.innerHTML;
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Signing In...';
+
+                var formData = new FormData(loginForm);
+                formData.append('ajax', '1');
+
+                var targetUrl = loginForm.getAttribute('action') || window.location.href;
+
+                fetch(targetUrl, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest',
+                        'Accept': 'application/json'
+                    }
+                })
+                .then(function (response) {
+                    return response.json().then(function (data) {
+                        return { ok: response.ok, status: response.status, data: data };
+                    });
+                })
+                .then(function (result) {
+                    var data = result.data;
+                    if (result.ok && data.success) {
+                        if (alertBox) {
+                            alertBox.className = 'auth-alert alert-success show';
+                            alertBox.innerHTML = '<i class="fas fa-check-circle"></i> <span>' + (data.message || 'Login successful! Welcome back.') + '</span>';
+                        }
                         submitBtn.innerHTML = '<i class="fas fa-check"></i> Success';
+
+                        setTimeout(function () {
+                            window.location.href = data.redirect || '../index.php';
+                        }, 600);
+                    } else {
+                        if (alertBox) {
+                            alertBox.className = 'auth-alert alert-error show';
+                            alertBox.innerHTML = '<i class="fas fa-exclamation-circle"></i> <span>' + (data.message || 'Sign in failed. Please check your credentials.') + '</span>';
+                        }
+                        if (data.errors) {
+                            if (data.errors.email) showLoginFieldError(emailInput, errEmail, data.errors.email);
+                            if (data.errors.password) showLoginFieldError(passwordInput, errPassword, data.errors.password);
+                        }
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = originalHtml;
                     }
-                    setTimeout(function () {
-                        window.location.href = '../index.php';
-                    }, 1200);
-                }, 800);
+                })
+                .catch(function (error) {
+                    console.error('Login AJAX Error:', error);
+                    if (alertBox) {
+                        alertBox.className = 'auth-alert alert-error show';
+                        alertBox.innerHTML = '<i class="fas fa-exclamation-triangle"></i> <span>A network error occurred. Please try again.</span>';
+                    }
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalHtml;
+                });
             });
         }
 

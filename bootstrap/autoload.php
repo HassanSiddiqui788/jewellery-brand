@@ -19,7 +19,6 @@ if (!defined('NATIVE_PSR4_AUTOLOADER_REGISTERED')) {
         $prefixes = [
             'App\\' => BASE_PATH . '/app/',
             'Core\\' => BASE_PATH . '/core/',
-            'Tests\\' => BASE_PATH . '/tests/',
         ];
 
         foreach ($prefixes as $prefix => $baseDir) {
