@@ -155,6 +155,7 @@ $body_class = $body_class ?? '';
 </head>
 <body class="<?= e($body_class) ?>">
     <div id="top"></div>
+    <?php include __DIR__ . '/components/top-ticker.php'; ?>
     <?php include __DIR__ . '/navbar.php'; ?>
     <div id="page" class="main-container">
         <div id="main-content">

@@ -28,7 +28,6 @@ $base_path = $base_path ?? './';
                     <ul class="footer-nav-list">
                         <li><a href="<?= $base_path ?>pages/about.php">About Us</a></li>
                         <li><a href="<?= $base_path ?>blog/index.php">Journal</a></li>
-                        <li><a href="<?= $base_path ?>pages/our-materials.php">Materials</a></li>
                         <li><a href="<?= $base_path ?>pages/contact.php">Contact Us</a></li>
                     </ul>
                 </div>
@@ -65,13 +64,13 @@ $base_path = $base_path ?? './';
         <!-- Centered Social Icons -->
         <div class="footer-social-wrap">
             <div class="footer-social-icons">
-                <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram" class="footer-social-link">
+                <a href="" target="_blank" rel="noopener" aria-label="Instagram" class="footer-social-link">
                     <i class="fab fa-instagram"></i>
                 </a>
-                <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook" class="footer-social-link">
+                <a href="" target="_blank" rel="noopener" aria-label="Facebook" class="footer-social-link">
                     <i class="fab fa-facebook"></i>
                 </a>
-                <a href="https://etsy.com" target="_blank" rel="noopener" aria-label="Etsy" class="footer-social-link">
+                <a href="" target="_blank" rel="noopener" aria-label="Etsy" class="footer-social-link">
                     <i class="fab fa-etsy"></i>
                 </a>
             </div>

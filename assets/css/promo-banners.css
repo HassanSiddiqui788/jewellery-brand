@@ -570,3 +570,89 @@
         letter-spacing: 1.5px;
     }
 }
+
+/* ==========================================================================
+   Top Announcement Marquee Ticker (.site-top-ticker)
+   ========================================================================== */
+.site-top-ticker {
+    width: 100%;
+    background-color: #272523;
+    color: #ffffff;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    padding: 7px 0;
+    line-height: 1.2;
+    z-index: 100000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    user-select: none;
+}
+
+.site-top-ticker-track {
+    display: flex;
+    width: max-content;
+    will-change: transform;
+    animation: topTickerScroll 30s linear infinite;
+}
+
+.site-top-ticker:hover .site-top-ticker-track {
+    animation-play-state: paused;
+}
+
+.top-ticker-group {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.top-ticker-group .ticker-item {
+    font-family: var(--font-sans, 'Montserrat', sans-serif);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    color: #ffffff;
+    padding: 0 18px;
+    display: inline-block;
+}
+
+.top-ticker-group .ticker-star {
+    color: #CB9274;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 6px;
+    flex-shrink: 0;
+    line-height: 1;
+}
+
+.top-ticker-group .ticker-star-icon {
+    width: 13px;
+    height: 13px;
+    display: block;
+}
+
+@keyframes topTickerScroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 640px) {
+    .site-top-ticker {
+        padding: 6px 0;
+    }
+    .top-ticker-group .ticker-item {
+        font-size: 10px;
+        letter-spacing: 1.2px;
+        padding: 0 12px;
+    }
+    .top-ticker-group .ticker-star-icon {
+        width: 11px;
+        height: 11px;
+    }
+}
+
