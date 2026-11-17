@@ -184,84 +184,106 @@ require_once __DIR__ . '/includes/header.php';
         </div>
     </section>
 
-    <!-- 7. Interactive Artisan Showcase Tabs -->
-    <section class="home-showcase-tabs" aria-label="Artisan Spotlight">
-        <div class="showcase-tabs-nav" role="tablist">
-            <button class="showcase-tab-btn active" data-target="#tab-panel-1" role="tab" aria-selected="true">Curated Set 01</button>
-            <button class="showcase-tab-btn" data-target="#tab-panel-2" role="tab" aria-selected="false">Curated Set 02</button>
-            <button class="showcase-tab-btn" data-target="#tab-panel-3" role="tab" aria-selected="false">Curated Set 03</button>
-        </div>
+    <!-- 7. Customer Testimonials -->
+    <section class="home-testimonials-section" aria-label="Customer Testimonials">
+        <div class="home-testimonials-container">
+            <div class="home-testimonials-header">
+                <h2 class="home-testimonials-title">What Our Clients Say</h2>
+                <p class="home-testimonials-subtitle">Adorn Yourself in Glamour: Find Your Perfect Piece Today</p>
+            </div>
 
-        <!-- Panel 1 -->
-        <div id="tab-panel-1" class="showcase-tab-panel active" role="tabpanel">
-            <img src="<?= $base_path ?>assets/images/2020/11/j3378po023200-4.jpg" 
-                 alt="Artisan Gold Bracelet Showcase" 
-                 class="showcase-model-img" loading="lazy">
-            <div class="showcase-item-body">
-                <img src="<?= $base_path ?>assets/images/2020/11/j3371po033200.png" 
-                     alt="Featured Bracelet Detail" 
-                     class="showcase-item-img" loading="lazy">
-                <a href="<?= $base_path ?>shop/collections/index.php#bracelets" class="editorial-btn">
-                    discover pieces
-                </a>
+            <div class="home-testimonials-grid">
+                <!-- Testimonial 1 -->
+                <article class="home-testimonial-card">
+                    <div class="testimonial-stars" aria-label="5 out of 5 stars">
+                        &#9733;&#9733;&#9733;&#9733;&#9733;
+                    </div>
+                    <h3 class="testimonial-quote-title">&ldquo; Golden Bracelets &rdquo;</h3>
+                    <p class="testimonial-text">
+                        Montluc claim to offer the finest diamond jewellery . I did my research, compared with some of the big brands and now I will never walk into a store again.
+                    </p>
+                    <div class="testimonial-author">
+                        <img src="<?= $base_path ?>assets/images/testimonials/avatar-1.jpg" alt="Rose Ether" class="testimonial-avatar" width="36" height="36" loading="lazy">
+                        <div class="testimonial-author-meta">
+                            <strong class="testimonial-author-name">Rose Ether</strong>
+                            <span class="testimonial-author-role">Fresh Design</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Testimonial 2 -->
+                <article class="home-testimonial-card">
+                    <div class="testimonial-stars" aria-label="5 out of 5 stars">
+                        &#9733;&#9733;&#9733;&#9733;&#9733;
+                    </div>
+                    <h3 class="testimonial-quote-title">&ldquo; Charming Golden Jewellery &rdquo;</h3>
+                    <p class="testimonial-text">
+                        I did my research, compared with some of the big brands and now Aenean pulvinar maximus. Montluc claim to offer the finest diamond jewellery you can buy direct from the maker.
+                    </p>
+                    <div class="testimonial-author">
+                        <img src="<?= $base_path ?>assets/images/testimonials/avatar-2.jpg" alt="Clara Weton" class="testimonial-avatar" width="36" height="36" loading="lazy">
+                        <div class="testimonial-author-meta">
+                            <strong class="testimonial-author-name">Clara Weton</strong>
+                            <span class="testimonial-author-role">Fresh Design</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Testimonial 3 -->
+                <article class="home-testimonial-card">
+                    <div class="testimonial-stars" aria-label="5 out of 5 stars">
+                        &#9733;&#9733;&#9733;&#9733;&#9733;
+                    </div>
+                    <h3 class="testimonial-quote-title">&ldquo; Charming Golden Jewellery &rdquo;</h3>
+                    <p class="testimonial-text">
+                        Integer nunc viverra laoreet est the is porta pretium metus aliquam eget maecenas porta is nunc viverra Aenean pulvinar maximus. Consectetur adipiscing elit.
+                    </p>
+                    <div class="testimonial-author">
+                        <img src="<?= $base_path ?>assets/images/testimonials/avatar-3.jpg" alt="Seraton Suth" class="testimonial-avatar" width="36" height="36" loading="lazy">
+                        <div class="testimonial-author-meta">
+                            <strong class="testimonial-author-name">Seraton Suth</strong>
+                            <span class="testimonial-author-role">Fresh Design</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Testimonial 4 -->
+                <article class="home-testimonial-card">
+                    <div class="testimonial-stars" aria-label="5 out of 5 stars">
+                        &#9733;&#9733;&#9733;&#9733;&#9733;
+                    </div>
+                    <h3 class="testimonial-quote-title">&ldquo; Charming Golden Jewellery &rdquo;</h3>
+                    <p class="testimonial-text">
+                        Consectetur adipiscing elit. Integer nunc viverra laoreet est the is porta pretium metus aliquam eget maecenas porta is nunc viverra Aenean pulvinar maximus
+                    </p>
+                    <div class="testimonial-author">
+                        <img src="<?= $base_path ?>assets/images/testimonials/avatar-4.jpg" alt="Alex Rony" class="testimonial-avatar" width="36" height="36" loading="lazy">
+                        <div class="testimonial-author-meta">
+                            <strong class="testimonial-author-name">Alex Rony</strong>
+                            <span class="testimonial-author-role">Fresh Design</span>
+                        </div>
+                    </div>
+                </article>
             </div>
         </div>
+    </section>
 
-        <!-- Panel 2 -->
-        <div id="tab-panel-2" class="showcase-tab-panel" role="tabpanel">
-            <img src="<?= $base_path ?>assets/images/2020/11/j3378po023200-3-1.jpg" 
-                 alt="Artisan Gold Bracelet Showcase" 
-                 class="showcase-model-img" loading="lazy">
-            <div class="showcase-item-body">
-                <img src="<?= $base_path ?>assets/images/2020/11/j3371po033200-2-1.png" 
-                     alt="Featured Bracelet Detail" 
-                     class="showcase-item-img" loading="lazy">
-                <a href="<?= $base_path ?>shop/collections/index.php#bracelets" class="editorial-btn">
-                    discover pieces
-                </a>
-            </div>
-        </div>
-
-        <!-- Panel 3 -->
-        <div id="tab-panel-3" class="showcase-tab-panel" role="tabpanel">
-            <img src="<?= $base_path ?>assets/images/2020/11/j3378po023200-2-1.jpg" 
-                 alt="Artisan Gold Bracelet Showcase" 
-                 class="showcase-model-img" loading="lazy">
-            <div class="showcase-item-body">
-                <img src="<?= $base_path ?>assets/images/2020/11/j3371po033200-3-2.png" 
-                     alt="Featured Bracelet Detail" 
-                     class="showcase-item-img" loading="lazy">
-                <a href="<?= $base_path ?>shop/collections/index.php#bracelets" class="editorial-btn">
-                    discover pieces
-                </a>
+    <!-- 8. Shop The Latest Trends Full-Width Banner -->
+    <section class="home-trends-banner-section" style="background-image: url('<?= $base_path ?>assets/images/2024/h1_bn-6.jpg');" aria-label="Shop The Latest Trends">
+        <div class="home-trends-banner-container">
+            <div class="home-trends-banner-content">
+                <span class="home-trends-eyebrow">OLIGHT COLLECTION</span>
+                <h2 class="home-trends-title">Shop The Latest Trends</h2>
+                <p class="home-trends-desc">
+                    Exceptional Handcrafted Design to Enhance<br>the Magnificent Glow
+                </p>
+                <div class="home-trends-action">
+                    <a href="<?= $base_path ?>shop/index.php" class="home-trends-btn">Shop Now</a>
+                </div>
             </div>
         </div>
     </section>
 </main>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const tabBtns = document.querySelectorAll('.showcase-tab-btn');
-    const tabPanels = document.querySelectorAll('.showcase-tab-panel');
-
-    tabBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-            tabBtns.forEach(b => {
-                b.classList.remove('active');
-                b.setAttribute('aria-selected', 'false');
-            });
-            tabPanels.forEach(p => p.classList.remove('active'));
-
-            this.classList.add('active');
-            this.setAttribute('aria-selected', 'true');
-            const targetPanel = document.querySelector(this.getAttribute('data-target'));
-            if (targetPanel) {
-                targetPanel.classList.add('active');
-            }
-        });
-    });
-});
-</script>
 
 <?php
 require_once __DIR__ . '/includes/footer.php';

@@ -1851,3 +1851,639 @@ img {
     color: var(--color-accent, #CB9274);
     transform: translateY(-1px);
 }
+
+/* ==========================================================================
+   What Our Clients Say (Customer Testimonials Section)
+   ========================================================================== */
+.home-testimonials-section {
+    background-color: #F8F7F5;
+    padding: 85px 24px 80px;
+    margin: 40px 0 0 0;
+    position: relative;
+    border-top: 1px solid rgba(5, 31, 52, 0.05);
+}
+
+.home-testimonials-container {
+    max-width: 1320px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.home-testimonials-header {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.home-testimonials-title {
+    font-family: var(--font-serif-display, 'Sorts Mill Goudy', 'Jomolhari', Georgia, serif);
+    font-size: clamp(30px, 3.2vw, 40px);
+    font-weight: 500;
+    color: #111111;
+    margin: 0 0 10px 0;
+    letter-spacing: -0.3px;
+}
+
+.home-testimonials-subtitle {
+    font-family: var(--font-sans, 'Montserrat', sans-serif);
+    font-size: 14px;
+    color: #69727D;
+    margin: 0;
+}
+
+.home-testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.home-testimonial-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 32px 26px 28px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(5, 31, 52, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+}
+
+.home-testimonial-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(5, 31, 52, 0.07);
+}
+
+.testimonial-stars {
+    color: #E29B63;
+    font-size: 14px;
+    letter-spacing: 4px;
+    margin-bottom: 14px;
+    line-height: 1;
+}
+
+.testimonial-quote-title {
+    font-family: var(--font-sans, 'Montserrat', sans-serif);
+    font-size: 14px;
+    font-weight: 700;
+    color: #111111;
+    margin: 0 0 14px 0;
+    line-height: 1.35;
+}
+
+.testimonial-text {
+    font-family: var(--font-sans, 'Montserrat', sans-serif);
+    font-size: 13px;
+    line-height: 1.65;
+    color: #555555;
+    margin: 0 0 24px 0;
+    flex-grow: 1;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: auto;
+    padding-top: 14px;
+    border-top: 1px solid rgba(5, 31, 52, 0.04);
+}
+
+.testimonial-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.testimonial-author-meta {
+    display: flex;
+    flex-direction: column;
+}
+
+.testimonial-author-name {
+    font-family: var(--font-sans, 'Montserrat', sans-serif);
+    font-size: 13px;
+    font-weight: 600;
+    color: #111111;
+    line-height: 1.3;
+}
+
+.testimonial-author-role {
+    font-family: var(--font-sans, 'Montserrat', sans-serif);
+    font-size: 11px;
+    color: #888888;
+}
+
+/* ==========================================================================
+   Shop The Latest Trends (Full-Width h1_bn-6.jpg Banner Section)
+   ========================================================================== */
+.home-trends-banner-section {
+    position: relative;
+    width: 100%;
+    min-height: 480px;
+    height: 480px;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    margin: 0;
+    overflow: hidden;
+}
+
+.home-trends-banner-container {
+    width: 100%;
+    max-width: 680px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.home-trends-banner-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.home-trends-eyebrow {
+    display: inline-block;
+    font-family: var(--font-sans, 'Montserrat', sans-serif);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #666666;
+    margin-bottom: 12px;
+}
+
+.home-trends-title {
+    font-family: var(--font-serif-display, 'Sorts Mill Goudy', 'Jomolhari', Georgia, serif);
+    font-size: clamp(30px, 3.6vw, 46px);
+    line-height: 1.2;
+    font-weight: 500;
+    color: #111111;
+    margin: 0 0 14px 0;
+    letter-spacing: -0.3px;
+}
+
+.home-trends-desc {
+    font-family: var(--font-sans, 'Montserrat', sans-serif);
+    font-size: 14px;
+    line-height: 1.6;
+    color: #555555;
+    margin: 0 0 28px 0;
+    max-width: 500px;
+}
+
+.home-trends-action {
+    display: block;
+}
+
+.home-trends-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 40px;
+    border: 1px solid var(--color-primary, #051F34);
+    border-radius: 4px;
+    background-color: var(--color-primary, #051F34);
+    color: #ffffff;
+    font-family: var(--font-sans, 'Montserrat', sans-serif);
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-decoration: none;
+    transition: all var(--transition, 0.25s ease);
+    box-shadow: 0 4px 16px rgba(5, 31, 52, 0.18);
+    cursor: pointer;
+    line-height: 1;
+}
+
+.home-trends-btn:hover {
+    background-color: var(--color-accent, #CB9274);
+    border-color: var(--color-accent, #CB9274);
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(203, 146, 116, 0.35);
+}
+
+.home-trends-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 10px rgba(5, 31, 52, 0.12);
+}
+
+.promo-banner-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    color: var(--color-primary, #051F34);
+    font-family: var(--font-sans, 'Montserrat', sans-serif);
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 13px 36px;
+    border-radius: 4px;
+    text-decoration: none;
+    border: 1px solid var(--color-primary, #051F34);
+    box-shadow: 0 4px 14px rgba(5, 31, 52, 0.08);
+    transition: all var(--transition, 0.25s ease);
+    cursor: pointer;
+    line-height: 1;
+}
+
+.promo-banner-btn:hover {
+    background-color: var(--color-primary, #051F34);
+    color: #ffffff;
+    border-color: var(--color-primary, #051F34);
+    box-shadow: 0 8px 24px rgba(5, 31, 52, 0.24);
+    transform: translateY(-2px);
+}
+
+.promo-banner-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 12px rgba(5, 31, 52, 0.16);
+}
+
+@media (max-width: 1150px) {
+    .home-testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (max-width: 992px) {
+    .home-testimonials-section {
+        padding: 60px 20px 50px;
+    }
+
+    .home-trends-banner-section {
+        height: 440px;
+        min-height: 400px;
+    }
+}
+
+@media (max-width: 640px) {
+    .home-testimonials-section {
+        padding: 50px 16px 40px;
+    }
+
+    .home-testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .home-testimonial-card {
+        padding: 24px 20px;
+    }
+
+    .home-trends-banner-section {
+        height: auto;
+        min-height: 380px;
+        padding: 50px 16px;
+    }
+
+    .home-trends-title {
+        font-size: 26px;
+        margin-bottom: 10px;
+    }
+
+    .home-trends-desc {
+        font-size: 13px;
+        margin-bottom: 22px;
+    }
+
+    .home-trends-btn {
+        padding: 12px 30px;
+        font-size: 11px;
+        letter-spacing: 1.5px;
+    }
+}
+
+/* ==========================================================================
+   What Our Clients Say (Customer Testimonials Section)
+   ========================================================================== */
+.home-testimonials-section {
+    background-color: #F8F7F5;
+    padding: 85px 24px 80px;
+    margin: 40px 0 0 0;
+    position: relative;
+    border-top: 1px solid rgba(5, 31, 52, 0.05);
+}
+
+.home-testimonials-container {
+    max-width: 1320px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.home-testimonials-header {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.home-testimonials-title {
+    font-family: var(--font-serif-display, 'Sorts Mill Goudy', 'Jomolhari', Georgia, serif);
+    font-size: clamp(30px, 3.2vw, 40px);
+    font-weight: 500;
+    color: #111111;
+    margin: 0 0 10px 0;
+    letter-spacing: -0.3px;
+}
+
+.home-testimonials-subtitle {
+    font-family: var(--font-sans, 'Montserrat', sans-serif);
+    font-size: 14px;
+    color: #69727D;
+    margin: 0;
+}
+
+.home-testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.home-testimonial-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 32px 26px 28px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(5, 31, 52, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+}
+
+.home-testimonial-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(5, 31, 52, 0.07);
+}
+
+.testimonial-stars {
+    color: #E29B63;
+    font-size: 14px;
+    letter-spacing: 4px;
+    margin-bottom: 14px;
+    line-height: 1;
+}
+
+.testimonial-quote-title {
+    font-family: var(--font-sans, 'Montserrat', sans-serif);
+    font-size: 14px;
+    font-weight: 700;
+    color: #111111;
+    margin: 0 0 14px 0;
+    line-height: 1.35;
+}
+
+.testimonial-text {
+    font-family: var(--font-sans, 'Montserrat', sans-serif);
+    font-size: 13px;
+    line-height: 1.65;
+    color: #555555;
+    margin: 0 0 24px 0;
+    flex-grow: 1;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: auto;
+    padding-top: 14px;
+    border-top: 1px solid rgba(5, 31, 52, 0.04);
+}
+
+.testimonial-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.testimonial-author-meta {
+    display: flex;
+    flex-direction: column;
+}
+
+.testimonial-author-name {
+    font-family: var(--font-sans, 'Montserrat', sans-serif);
+    font-size: 13px;
+    font-weight: 600;
+    color: #111111;
+    line-height: 1.3;
+}
+
+.testimonial-author-role {
+    font-family: var(--font-sans, 'Montserrat', sans-serif);
+    font-size: 11px;
+    color: #888888;
+}
+
+/* ==========================================================================
+   Shop The Latest Trends (Full-Width h1_bn-6.jpg Banner Section)
+   ========================================================================== */
+.home-trends-banner-section {
+    position: relative;
+    width: 100%;
+    min-height: 480px;
+    height: 480px;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    margin: 0;
+    overflow: hidden;
+}
+
+.home-trends-banner-container {
+    width: 100%;
+    max-width: 680px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.home-trends-banner-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.home-trends-eyebrow {
+    display: inline-block;
+    font-family: var(--font-sans, 'Montserrat', sans-serif);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #666666;
+    margin-bottom: 12px;
+}
+
+.home-trends-title {
+    font-family: var(--font-serif-display, 'Sorts Mill Goudy', 'Jomolhari', Georgia, serif);
+    font-size: clamp(30px, 3.6vw, 46px);
+    line-height: 1.2;
+    font-weight: 500;
+    color: #111111;
+    margin: 0 0 14px 0;
+    letter-spacing: -0.3px;
+}
+
+.home-trends-desc {
+    font-family: var(--font-sans, 'Montserrat', sans-serif);
+    font-size: 14px;
+    line-height: 1.6;
+    color: #555555;
+    margin: 0 0 28px 0;
+    max-width: 500px;
+}
+
+.home-trends-action {
+    display: block;
+}
+
+.home-trends-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 40px;
+    border: 1px solid var(--color-primary, #051F34);
+    border-radius: 4px;
+    background-color: var(--color-primary, #051F34);
+    color: #ffffff !important;
+    font-family: var(--font-sans, 'Montserrat', sans-serif);
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-decoration: none;
+    transition: all var(--transition, 0.25s ease);
+    box-shadow: 0 4px 16px rgba(5, 31, 52, 0.18);
+    cursor: pointer;
+    line-height: 1;
+}
+
+.home-trends-btn:hover {
+    background-color: var(--color-accent, #CB9274);
+    border-color: var(--color-accent, #CB9274);
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(203, 146, 116, 0.35);
+}
+
+.home-trends-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 10px rgba(5, 31, 52, 0.12);
+}
+
+.promo-banner-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    color: var(--color-primary, #051F34);
+    font-family: var(--font-sans, 'Montserrat', sans-serif);
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 13px 36px;
+    border-radius: 4px;
+    text-decoration: none;
+    border: 1px solid var(--color-primary, #051F34);
+    box-shadow: 0 4px 14px rgba(5, 31, 52, 0.08);
+    transition: all var(--transition, 0.25s ease);
+    cursor: pointer;
+    line-height: 1;
+}
+
+.promo-banner-btn:hover {
+    background-color: var(--color-primary, #051F34);
+    color: #ffffff;
+    border-color: var(--color-primary, #051F34);
+    box-shadow: 0 8px 24px rgba(5, 31, 52, 0.24);
+    transform: translateY(-2px);
+}
+
+.promo-banner-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 12px rgba(5, 31, 52, 0.16);
+}
+
+@media (max-width: 1150px) {
+    .home-testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (max-width: 992px) {
+    .home-testimonials-section {
+        padding: 60px 20px 50px;
+    }
+
+    .home-trends-banner-section {
+        height: 440px;
+        min-height: 400px;
+    }
+}
+
+@media (max-width: 640px) {
+    .home-testimonials-section {
+        padding: 50px 16px 40px;
+    }
+
+    .home-testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .home-testimonial-card {
+        padding: 24px 20px;
+    }
+
+    .home-trends-banner-section {
+        height: auto;
+        min-height: 380px;
+        padding: 50px 16px;
+    }
+
+    .home-trends-title {
+        font-size: 26px;
+        margin-bottom: 10px;
+    }
+
+    .home-trends-desc {
+        font-size: 13px;
+        margin-bottom: 22px;
+    }
+
+    .home-trends-btn {
+        padding: 12px 30px;
+        font-size: 11px;
+        letter-spacing: 1.5px;
+    }
+}
