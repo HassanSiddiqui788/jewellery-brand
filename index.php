@@ -8,7 +8,7 @@ $base_path = './';
 $page_title = 'Home – Lorem Ipsum';
 $current_page = 'home';
 
-$page_css = ['swiper.min.css', 'hero-banner.css'];
+$page_css = ['swiper.min.css', 'hero-banner.css', 'promo-banners.css'];
 $page_scripts = ['swiper.min.js', 'hero-banner.js'];
 require_once __DIR__ . '/includes/header.php';
 ?>
@@ -17,15 +17,8 @@ require_once __DIR__ . '/includes/header.php';
 <?php include __DIR__ . '/includes/components/hero-slider.php'; ?>
 
 <main id="main-content" class="site-main">
-    <!-- 2. Brand Mission Statement -->
-    <section class="home-statement-section" aria-label="Brand Philosophy">
-        <p class="home-statement-text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </p>
-        <a href="<?= $base_path ?>pages/about.php" class="home-story-btn">
-            Lorem Ipsum
-        </a>
-    </section>
+    <!-- 2. Dual Promotional Banners & Sliding Black Ribbon -->
+    <?php include __DIR__ . '/includes/components/promo-dual-banner.php'; ?>
 
     <!-- 3. Selected Works / Featured Products Grid -->
     <section id="position1" class="home-featured-section" aria-label="Selected Works">
@@ -129,9 +122,14 @@ require_once __DIR__ . '/includes/header.php';
 
     <!-- 6. Collections Showcase Intro & Categories (Necklaces, Bracelets, Earrings) -->
     <section class="home-categories-section" aria-label="Product Categories">
-        <img src="<?= $base_path ?>assets/images/2020/11/iStock-1164770941-Hand.png" 
-             alt="Artisan Jewelry Handcraft" 
-             class="home-hand-icon" width="169" height="524" loading="lazy">
+        <div class="collections-watermark-wrap">
+            <span class="collections-back-text" aria-hidden="true">collections</span>
+            <div class="collections-hand-wrap">
+                <img src="<?= $base_path ?>assets/images/2020/11/iStock-1164770941-Hand.png" 
+                     alt="Artisan Jewelry Handcraft" 
+                     class="home-hand-showcase" width="169" height="524" loading="lazy">
+            </div>
+        </div>
         <p class="home-quote-text">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua&hellip;
         </p>

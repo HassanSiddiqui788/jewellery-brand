@@ -182,6 +182,9 @@ window.lazyLoadOptions = [{
 <!-- Universal Navigation, Hamburger Menu & Side Cart Engine -->
 <script src="<?= $base_path ?>assets/js/nav-toggle.js" defer></script>
 
+<!-- Luxury Interactive Custom Cursor -->
+<script src="<?= $base_path ?>assets/js/custom-cursor.js" defer></script>
+
 <!-- Page Specific Scripts -->
 <?php if (!empty($page_scripts)): ?>
 <?php foreach ((array)$page_scripts as $script_file): ?>

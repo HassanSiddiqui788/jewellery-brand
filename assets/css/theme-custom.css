@@ -2829,3 +2829,204 @@ img {
         height: 11px;
     }
 }
+
+/* ==========================================================================
+   Collections Watermark & Hand Showcase
+   ========================================================================== */
+.collections-watermark-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 35px auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 360px;
+    min-height: 340px;
+    overflow: visible;
+}
+
+/* Subtle architectural editorial vertical lines */
+.collections-watermark-wrap::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 1100px;
+    background-image: linear-gradient(
+        to right,
+        transparent 0%,
+        transparent calc(20% - 1px), rgba(5, 31, 52, 0.04) calc(20% - 1px), transparent 20%,
+        transparent calc(40% - 1px), rgba(5, 31, 52, 0.04) calc(40% - 1px), transparent 40%,
+        transparent calc(60% - 1px), rgba(5, 31, 52, 0.04) calc(60% - 1px), transparent 60%,
+        transparent calc(80% - 1px), rgba(5, 31, 52, 0.04) calc(80% - 1px), transparent 80%,
+        transparent 100%
+    );
+    pointer-events: none;
+    z-index: 0;
+}
+
+.collections-back-text {
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--font-serif-display, 'Sorts Mill Goudy', 'Jomolhari', Georgia, serif);
+    font-size: clamp(60px, 14vw, 175px);
+    font-weight: 400;
+    line-height: 0.95;
+    letter-spacing: 3px;
+    color: #D5B49E;
+    z-index: 1;
+    pointer-events: none;
+    user-select: none;
+    white-space: nowrap;
+    text-transform: lowercase;
+}
+
+.collections-hand-wrap {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 100%;
+}
+
+.home-hand-showcase {
+    width: auto;
+    max-width: 169px;
+    height: 360px;
+    max-height: 360px;
+    object-fit: contain;
+    object-position: bottom center;
+    display: block;
+    margin: 0 auto;
+    filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.05));
+    transition: transform 0.4s cubic-bezier(0.2, 0, 0.2, 1);
+}
+
+.collections-watermark-wrap:hover .home-hand-showcase {
+    transform: translateY(-6px);
+}
+
+/* ==========================================================================
+   Luxury Interactive Custom Cursor
+   ========================================================================== */
+.custom-cursor-dot {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 6px;
+    background-color: var(--color-accent, #CB9274);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999999;
+    opacity: 0;
+    margin-left: -3px;
+    margin-top: -3px;
+    transition: opacity 0.3s ease, background-color 0.25s ease;
+    will-change: transform;
+}
+
+.custom-cursor-ring {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 42px;
+    height: 42px;
+    border: 1px solid rgba(203, 146, 116, 0.45);
+    background-color: rgba(203, 146, 116, 0.03);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999998;
+    opacity: 0;
+    margin-left: -21px;
+    margin-top: -21px;
+    transition: opacity 0.3s ease, width 0.25s cubic-bezier(0.2, 0, 0.2, 1), height 0.25s cubic-bezier(0.2, 0, 0.2, 1), margin 0.25s cubic-bezier(0.2, 0, 0.2, 1), background-color 0.25s ease, border-color 0.25s ease;
+    will-change: transform;
+}
+
+.custom-cursor-ring.cursor-hover {
+    width: 60px;
+    height: 60px;
+    margin-left: -30px;
+    margin-top: -30px;
+    border-color: rgba(203, 146, 116, 0.85);
+    background-color: rgba(203, 146, 116, 0.09);
+}
+
+.custom-cursor-ring.cursor-active {
+    width: 26px;
+    height: 26px;
+    margin-left: -13px;
+    margin-top: -13px;
+    background-color: rgba(203, 146, 116, 0.25);
+    border-color: var(--color-accent, #CB9274);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    body.has-custom-cursor,
+    body.has-custom-cursor a,
+    body.has-custom-cursor button,
+    body.has-custom-cursor [role="button"],
+    body.has-custom-cursor .site-nav-link,
+    body.has-custom-cursor .home-product-card,
+    body.has-custom-cursor .category-card,
+    body.has-custom-cursor .promo-banner-card,
+    body.has-custom-cursor .editorial-btn,
+    body.has-custom-cursor .home-story-btn,
+    body.has-custom-cursor .home-trends-btn {
+        cursor: none !important;
+    }
+
+    body.has-custom-cursor input[type="text"],
+    body.has-custom-cursor input[type="email"],
+    body.has-custom-cursor input[type="password"],
+    body.has-custom-cursor textarea {
+        cursor: text !important;
+    }
+}
+
+@media (max-width: 992px) {
+    .collections-watermark-wrap {
+        height: 290px;
+        min-height: 270px;
+    }
+    .collections-back-text {
+        top: 10px;
+        font-size: clamp(52px, 15vw, 120px);
+    }
+    .home-hand-showcase {
+        height: 290px;
+        max-width: 135px;
+    }
+}
+
+@media (max-width: 640px) {
+    .collections-watermark-wrap {
+        height: 210px;
+        min-height: 190px;
+        margin-bottom: 20px;
+    }
+    .collections-back-text {
+        top: 5px;
+        font-size: clamp(42px, 16vw, 75px);
+        letter-spacing: 1.5px;
+    }
+    .home-hand-showcase {
+        height: 210px;
+        max-width: 100px;
+    }
+}
+
+@media (hover: none) and (pointer: coarse) {
+    .custom-cursor-dot,
+    .custom-cursor-ring {
+        display: none !important;
+    }
+}
