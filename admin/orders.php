@@ -3,12 +3,57 @@
  * Admin Page: Orders Management
  */
 require_once __DIR__ . '/includes/config.php';
+require_once __DIR__ . '/../app/Services/OrderService.php';
+
+use App\Services\OrderService;
 
 $page_title = 'Orders';
 $page_subtitle = 'Track Purchases & Fulfillment';
 $active_nav = 'orders';
 
-$orders = get_sample_orders();
+$dbOrders = [];
+try {
+    $rawDbOrders = OrderService::getAllOrders();
+    foreach ($rawDbOrders as $dbOrd) {
+        $formattedItems = [];
+        if (!empty($dbOrd['items'])) {
+            foreach ($dbOrd['items'] as $it) {
+                $formattedItems[] = [
+                    'name'  => $it['product_name'],
+                    'qty'   => (int) $it['quantity'],
+                    'price' => (float) $it['price'],
+                    'image' => !empty($it['product_image']) ? $it['product_image'] : 'assets/images/2020/10/j3376co023200.pw-1280-420x583.jpg',
+                ];
+            }
+        }
+
+        $addr = $dbOrd['shipping_address'];
+        if (!empty($dbOrd['apartment'])) $addr .= ', ' . $dbOrd['apartment'];
+        if (!empty($dbOrd['city'])) $addr .= ', ' . $dbOrd['city'];
+        if (!empty($dbOrd['country'])) $addr .= ', ' . $dbOrd['country'];
+
+        $dbOrders[] = [
+            'id'             => $dbOrd['order_number'],
+            'customer_id'    => $dbOrd['user_id'],
+            'customer_name'  => $dbOrd['customer_name'],
+            'customer_email' => $dbOrd['customer_email'],
+            'customer_phone' => $dbOrd['customer_phone'],
+            'shipping_addr'  => $addr,
+            'date'           => date('Y-m-d', strtotime($dbOrd['created_at'])),
+            'total'          => (float) $dbOrd['total_amount'],
+            'subtotal'       => (float) $dbOrd['subtotal'],
+            'shipping'       => (float) $dbOrd['shipping_fee'],
+            'payment_status' => $dbOrd['payment_status'],
+            'order_status'   => $dbOrd['order_status'],
+            'items'          => $formattedItems,
+        ];
+    }
+} catch (\Throwable $e) {
+    // If DB read fails, fall through
+}
+
+$sampleOrders = get_sample_orders();
+$orders = !empty($dbOrders) ? array_merge($dbOrders, $sampleOrders) : $sampleOrders;
 
 require_once __DIR__ . '/includes/header.php';
 ?>
