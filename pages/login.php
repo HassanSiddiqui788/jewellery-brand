@@ -1,6 +1,6 @@
 <?php
 /**
- * Page: Account Sign In – Lorem Ipsum
+ * Page: Account Sign In – JARWAYA JEWELS
  * Luxury Authentication Frontend & Dynamic Login Processing
  */
 
@@ -10,7 +10,7 @@ require_once __DIR__ . '/../includes/config.php';
 require_once __DIR__ . '/../app/Services/AuthService.php';
 
 $base_path = '../';
-$page_title = 'Sign In – Lorem Ipsum';
+$page_title = 'Sign In – JARWAYA JEWELS';
 $body_class = 'page page-auth page-login';
 $current_page = 'login';
 
@@ -63,7 +63,7 @@ require_once __DIR__ . '/../includes/header.php';
         <!-- Brand Header -->
         <header class="auth-header">
             <a href="<?= $base_path ?>index.php" class="auth-logo-link" aria-label="Home">
-                <img src="<?= $base_path ?>assets/icons/logo.svg" alt="Lorem Ipsum" class="auth-logo-img">
+                <img src="<?= $base_path ?>assets/icons/logo.svg" alt="JARWAYA JEWELS" class="auth-logo-img">
             </a>
             <h1 class="auth-title">Welcome Back</h1>
             <p class="auth-subtitle">Sign in to access your saved wishlist, exclusive pieces, and personal orders.</p>

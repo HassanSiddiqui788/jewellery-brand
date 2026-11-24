@@ -1,6 +1,6 @@
 <?php
 /**
- * Page: Order Confirmation & Receipt – Lorem Ipsum
+ * Page: Order Confirmation & Receipt – JARWAYA JEWELS
  * Displays the verified customer order saved in MySQL database with invoice details.
  */
 
@@ -18,7 +18,7 @@ if (session_status() === PHP_SESSION_NONE && !headers_sent()) {
 use App\Services\OrderService;
 
 $base_path = '../';
-$page_title = 'Order Confirmed – Lorem Ipsum';
+$page_title = 'Order Confirmed – JARWAYA JEWELS';
 $body_class = 'page page-order-confirmation';
 $current_page = 'order_confirmation';
 $page_css = ['checkout.css'];
@@ -84,7 +84,7 @@ require_once __DIR__ . '/../includes/header.php';
                 </div>
                 <div class="conf-meta-box">
                     <span>Total Amount</span>
-                    <strong style="color: var(--color-accent); font-size: 16px;">$<?= number_format((float) $order['total_amount'], 2) ?></strong>
+                    <strong style="color: var(--color-accent); font-size: 16px;"><?= format_price($order['total_amount']) ?></strong>
                 </div>
                 <div class="conf-meta-box">
                     <span>Payment Method</span>
@@ -150,8 +150,8 @@ require_once __DIR__ . '/../includes/header.php';
                                     </div>
                                 </td>
                                 <td style="text-align: center; font-weight: 600;"><?= (int) $item['quantity'] ?></td>
-                                <td style="text-align: right;">$<?= number_format((float) $item['price'], 2) ?></td>
-                                <td style="text-align: right; font-weight: 600; color: var(--color-primary);">$<?= number_format((float) $item['line_total'], 2) ?></td>
+                                <td style="text-align: right;"><?= format_price($item['price']) ?></td>
+                                <td style="text-align: right; font-weight: 600; color: var(--color-primary);"><?= format_price($item['line_total']) ?></td>
                             </tr>
                         <?php endforeach; ?>
                     <?php endif; ?>
@@ -162,7 +162,7 @@ require_once __DIR__ . '/../includes/header.php';
             <div style="max-width: 320px; margin-left: auto; border-top: 1px solid var(--color-border); padding-top: 14px;">
                 <div style="display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 14px; color: var(--color-muted);">
                     <span>Subtotal:</span>
-                    <strong style="color: var(--color-primary);">$<?= number_format((float) $order['subtotal'], 2) ?></strong>
+                    <strong style="color: var(--color-primary);"><?= format_price($order['subtotal']) ?></strong>
                 </div>
                 <div style="display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 14px; color: var(--color-muted);">
                     <span>Express Delivery:</span>
@@ -170,7 +170,7 @@ require_once __DIR__ . '/../includes/header.php';
                 </div>
                 <div style="display: flex; justify-content: space-between; padding-top: 10px; border-top: 1px dashed var(--color-border); font-size: 18px; font-weight: 700; color: var(--color-primary);">
                     <span>Grand Total:</span>
-                    <span style="font-family: var(--font-serif-display); font-size: 22px; color: var(--color-accent);">$<?= number_format((float) $order['total_amount'], 2) ?></span>
+                    <span style="font-family: var(--font-serif-display); font-size: 22px; color: var(--color-accent);"><?= format_price($order['total_amount']) ?></span>
                 </div>
             </div>
 

@@ -1,11 +1,11 @@
 <?php
 /**
- * Page: Portlligat Golden Earrings &#8211; Lorem Ipsum
- * Lorem Ipsum Jewelry Store
+ * Page: Portlligat Golden Earrings – JARWAYA JEWELS
  */
 require_once __DIR__ . '/../../../includes/config.php';
 $base_path = '../../../';
-$page_title = 'Portlligat Golden Earrings – Lorem Ipsum';
+$db_product = get_catalog_product_by_slug('portlligat-golden-earrings');
+$page_title = ($db_product ? $db_product->name : 'Portlligat Golden Earrings') . ' – JARWAYA JEWELS';
 $body_class = 'wp-singular product-template-default single single-product postid-5081 wp-custom-logo wp-embed-responsive wp-theme-bijoux theme-bijoux woocommerce woocommerce-page woocommerce-no-js full header-layout-logo-menu no-page-header no-middle-header responsive-layout has-post-thumbnail single-post-one-column elementor-active elementor-pro-active vamtam-wc-cart-empty wc-product-gallery-zoom-active wc-product-gallery-slider-active layout-full elementor-default elementor-template-full-width elementor-kit-4 elementor-page-5024';
 $current_page = 'collections';
 
@@ -73,7 +73,7 @@ require_once __DIR__ . '/../../../includes/header.php';
 				</div>
 				<div class="elementor-element elementor-element-59c40b4b elementor-widget elementor-widget-woocommerce-product-price" data-id="59c40b4b" data-element_type="widget" data-e-type="widget" data-widget_type="woocommerce-product-price.default">
 				<div class="elementor-widget-container">
-					<p class="price"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol" translate="no">&#36;</span>119.00</bdi></span></p>
+					<p class="price"><span class="woocommerce-Price-amount amount"><?= $db_product ? format_price($db_product->effectivePrice()) : 'Rs. 11,500' ?></span></p>
 				</div>
 				</div>
 				<div class="elementor-element elementor-element-1befffac vamtam-has-bijoux-alt elementor-add-to-cart-mobile--align-left e-add-to-cart--show-quantity-yes elementor-invisible elementor-widget elementor-widget-woocommerce-product-add-to-cart" data-id="1befffac" data-element_type="widget" data-e-type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;,&quot;_animation_delay&quot;:350}" data-widget_type="woocommerce-product-add-to-cart.default">
@@ -116,7 +116,7 @@ require_once __DIR__ . '/../../../includes/header.php';
 				</div>
 				<div class="elementor-element elementor-element-437b28b elementor-widget elementor-widget-text-editor" data-id="437b28b" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default">
 				<div class="elementor-widget-container">
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</div>
+									<?= $db_product && $db_product->description ? e($db_product->description) : 'Organic textured studs inspired by coastal contours, offering subtle sophistication for daily wear.' ?></div>
 				</div>
 				<div class="elementor-element elementor-element-e8c4a0c elementor-widget elementor-widget-heading" data-id="e8c4a0c" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
 				<div class="elementor-widget-container">
@@ -165,63 +165,37 @@ Dimensions: 5.50 x 5.50 cm</div>
 				<div class="elementor-element elementor-element-23754ab0 elementor-grid-tablet-2 elementor-grid-mobile-1 elementor-grid-4 elementor-products-grid elementor-wc-products elementor-widget elementor-widget-woocommerce-product-related" data-id="23754ab0" data-element_type="widget" data-e-type="widget" data-widget_type="woocommerce-product-related.default">
 				<div class="elementor-widget-container">
 					
-	<section class="related products">
-
-					<h2>Related products</h2>
-				<ul class="products elementor-grid vamtam-wc columns-4">
-
-			
-					<li class="product type-product post-3196 status-publish first instock product_cat-bracelets product_tag-bracelet product_tag-golden has-post-thumbnail shipping-taxable purchasable product-type-simple">
-	<a href="<?= $base_path ?>shop/product/olivia-golden-bracelet/index.php" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img width="420" height="381" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20420%20381'%3E%3C/svg%3E" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="Olivia Golden Bracelet" decoding="async" data-lazy-srcset="<?= $base_path ?>assets/images/2020/01/j3354po053200.pw-1280-420x381.jpg 420w, <?= $base_path ?>assets/images/2020/01/j3354po053200.pw-1280-630x572.jpg 630w, <?= $base_path ?>assets/images/2020/01/j3354po053200.pw-1280-300x272.jpg 300w, <?= $base_path ?>assets/images/2020/01/j3354po053200.pw-1280-768x697.jpg 768w, <?= $base_path ?>assets/images/2020/01/j3354po053200.pw-1280-315x286.jpg 315w, <?= $base_path ?>assets/images/2020/01/j3354po053200.pw-1280.jpg 810w" data-lazy-sizes="(max-width: 420px) 100vw, 420px" data-lazy-src="<?= $base_path ?>assets/images/2020/01/j3354po053200.pw-1280-420x381.jpg" /><noscript><img loading="lazy" width="420" height="381" src="<?= $base_path ?>assets/images/2020/01/j3354po053200.pw-1280-420x381.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="Olivia Golden Bracelet" decoding="async" srcset="<?= $base_path ?>assets/images/2020/01/j3354po053200.pw-1280-420x381.jpg 420w, <?= $base_path ?>assets/images/2020/01/j3354po053200.pw-1280-630x572.jpg 630w, <?= $base_path ?>assets/images/2020/01/j3354po053200.pw-1280-300x272.jpg 300w, <?= $base_path ?>assets/images/2020/01/j3354po053200.pw-1280-768x697.jpg 768w, <?= $base_path ?>assets/images/2020/01/j3354po053200.pw-1280-315x286.jpg 315w, <?= $base_path ?>assets/images/2020/01/j3354po053200.pw-1280.jpg 810w" sizes="(max-width: 420px) 100vw, 420px" /></noscript>			</a>			<!-- Open content -->
-			<div class="vamtam-product-content">
-			<a href="<?= $base_path ?>shop/product/olivia-golden-bracelet/index.php" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><h2 class="woocommerce-loop-product__title">Olivia Golden Bracelet</h2>
-	<span class="price"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol" translate="no">&#36;</span>299.00</bdi></span></span>
-					</a><div class="vamtam-product-tags"><a href="<?= $base_path ?>shop/tags/bracelet/index.php" rel="tag">bracelet</a><span class="separator">  ・  </span><a href="<?= $base_path ?>shop/tags/golden/page/1/index.php" rel="tag">golden</a></div>			</div>
-			<!-- Close content -->
-						<span id="woocommerce_loop_add_to_cart_link_describedby_3196" class="screen-reader-text">
-			</span>
-</li>
-
-			
-					<li class="product type-product post-5094 status-publish instock product_cat-rings product_tag-golden product_tag-ring has-post-thumbnail shipping-taxable purchasable product-type-simple">
-	<a href="<?= $base_path ?>shop/product/exuberant-golden-ring/index.php" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img width="420" height="381" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20420%20381'%3E%3C/svg%3E" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="Exuberant Golden Ring" decoding="async" data-lazy-srcset="<?= $base_path ?>assets/images/2020/10/j3376an0132.pw-1280-420x381.jpg 420w, <?= $base_path ?>assets/images/2020/10/j3376an0132.pw-1280-630x572.jpg 630w, <?= $base_path ?>assets/images/2020/10/j3376an0132.pw-1280-300x272.jpg 300w, <?= $base_path ?>assets/images/2020/10/j3376an0132.pw-1280-768x697.jpg 768w, <?= $base_path ?>assets/images/2020/10/j3376an0132.pw-1280-315x286.jpg 315w, <?= $base_path ?>assets/images/2020/10/j3376an0132.pw-1280.jpg 810w" data-lazy-sizes="(max-width: 420px) 100vw, 420px" data-lazy-src="<?= $base_path ?>assets/images/2020/10/j3376an0132.pw-1280-420x381.jpg" /><noscript><img loading="lazy" width="420" height="381" src="<?= $base_path ?>assets/images/2020/10/j3376an0132.pw-1280-420x381.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="Exuberant Golden Ring" decoding="async" srcset="<?= $base_path ?>assets/images/2020/10/j3376an0132.pw-1280-420x381.jpg 420w, <?= $base_path ?>assets/images/2020/10/j3376an0132.pw-1280-630x572.jpg 630w, <?= $base_path ?>assets/images/2020/10/j3376an0132.pw-1280-300x272.jpg 300w, <?= $base_path ?>assets/images/2020/10/j3376an0132.pw-1280-768x697.jpg 768w, <?= $base_path ?>assets/images/2020/10/j3376an0132.pw-1280-315x286.jpg 315w, <?= $base_path ?>assets/images/2020/10/j3376an0132.pw-1280.jpg 810w" sizes="(max-width: 420px) 100vw, 420px" /></noscript>			</a>			<!-- Open content -->
-			<div class="vamtam-product-content">
-			<a href="<?= $base_path ?>shop/product/exuberant-golden-ring/index.php" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><h2 class="woocommerce-loop-product__title">Exuberant Golden Ring</h2>
-	<span class="price"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol" translate="no">&#36;</span>229.00</bdi></span></span>
-					</a><div class="vamtam-product-tags"><a href="<?= $base_path ?>shop/tags/golden/page/1/index.php" rel="tag">golden</a><span class="separator">  ・  </span><a href="<?= $base_path ?>shop/tags/ring/index.php" rel="tag">ring</a></div>			</div>
-			<!-- Close content -->
-						<span id="woocommerce_loop_add_to_cart_link_describedby_5094" class="screen-reader-text">
-			</span>
-</li>
-
-			
-					<li class="product type-product post-5057 status-publish instock product_cat-necklaces product_tag-golden product_tag-necklaces has-post-thumbnail shipping-taxable purchasable product-type-simple">
-	<a href="<?= $base_path ?>shop/product/moonrise-golden-necklace/index.php" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img width="420" height="583" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20420%20583'%3E%3C/svg%3E" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="Moonrise Golden Necklace" decoding="async" data-lazy-srcset="<?= $base_path ?>assets/images/2020/10/j3284co063200.pw-1280-420x583.jpg 420w, <?= $base_path ?>assets/images/2020/10/j3284co063200.pw-1280-630x875.jpg 630w, <?= $base_path ?>assets/images/2020/10/j3284co063200.pw-1280-216x300.jpg 216w, <?= $base_path ?>assets/images/2020/10/j3284co063200.pw-1280-737x1024.jpg 737w, <?= $base_path ?>assets/images/2020/10/j3284co063200.pw-1280-768x1067.jpg 768w, <?= $base_path ?>assets/images/2020/10/j3284co063200.pw-1280-315x438.jpg 315w, <?= $base_path ?>assets/images/2020/10/j3284co063200.pw-1280.jpg 810w" data-lazy-sizes="(max-width: 420px) 100vw, 420px" data-lazy-src="<?= $base_path ?>assets/images/2020/10/j3284co063200.pw-1280-420x583.jpg" /><noscript><img loading="lazy" width="420" height="583" src="<?= $base_path ?>assets/images/2020/10/j3284co063200.pw-1280-420x583.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="Moonrise Golden Necklace" decoding="async" srcset="<?= $base_path ?>assets/images/2020/10/j3284co063200.pw-1280-420x583.jpg 420w, <?= $base_path ?>assets/images/2020/10/j3284co063200.pw-1280-630x875.jpg 630w, <?= $base_path ?>assets/images/2020/10/j3284co063200.pw-1280-216x300.jpg 216w, <?= $base_path ?>assets/images/2020/10/j3284co063200.pw-1280-737x1024.jpg 737w, <?= $base_path ?>assets/images/2020/10/j3284co063200.pw-1280-768x1067.jpg 768w, <?= $base_path ?>assets/images/2020/10/j3284co063200.pw-1280-315x438.jpg 315w, <?= $base_path ?>assets/images/2020/10/j3284co063200.pw-1280.jpg 810w" sizes="(max-width: 420px) 100vw, 420px" /></noscript>			</a>			<!-- Open content -->
-			<div class="vamtam-product-content">
-			<a href="<?= $base_path ?>shop/product/moonrise-golden-necklace/index.php" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><h2 class="woocommerce-loop-product__title">Moonrise Golden Necklace</h2>
-	<span class="price"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol" translate="no">&#36;</span>369.00</bdi></span></span>
-					</a><div class="vamtam-product-tags"><a href="<?= $base_path ?>shop/tags/golden/page/1/index.php" rel="tag">golden</a><span class="separator">  ・  </span><a href="<?= $base_path ?>shop/tags/necklaces/index.php" rel="tag">necklaces</a></div>			</div>
-			<!-- Close content -->
-						<span id="woocommerce_loop_add_to_cart_link_describedby_5057" class="screen-reader-text">
-			</span>
-</li>
-
-			
-					<li class="product type-product post-4370 status-publish last instock product_cat-earrings product_tag-earrings product_tag-golden has-post-thumbnail shipping-taxable purchasable product-type-simple">
-	<a href="<?= $base_path ?>shop/product/angel-hoops/index.php" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img width="420" height="583" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20420%20583'%3E%3C/svg%3E" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="Angel Hoops Golden Earrings" decoding="async" data-lazy-srcset="<?= $base_path ?>assets/images/2020/10/j3343ar043200-2500.pw-1280-420x583.jpg 420w, <?= $base_path ?>assets/images/2020/10/j3343ar043200-2500.pw-1280-630x875.jpg 630w, <?= $base_path ?>assets/images/2020/10/j3343ar043200-2500.pw-1280-216x300.jpg 216w, <?= $base_path ?>assets/images/2020/10/j3343ar043200-2500.pw-1280-737x1024.jpg 737w, <?= $base_path ?>assets/images/2020/10/j3343ar043200-2500.pw-1280-768x1067.jpg 768w, <?= $base_path ?>assets/images/2020/10/j3343ar043200-2500.pw-1280-315x438.jpg 315w, <?= $base_path ?>assets/images/2020/10/j3343ar043200-2500.pw-1280.jpg 810w" data-lazy-sizes="(max-width: 420px) 100vw, 420px" data-lazy-src="<?= $base_path ?>assets/images/2020/10/j3343ar043200-2500.pw-1280-420x583.jpg" /><noscript><img loading="lazy" width="420" height="583" src="<?= $base_path ?>assets/images/2020/10/j3343ar043200-2500.pw-1280-420x583.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="Angel Hoops Golden Earrings" decoding="async" srcset="<?= $base_path ?>assets/images/2020/10/j3343ar043200-2500.pw-1280-420x583.jpg 420w, <?= $base_path ?>assets/images/2020/10/j3343ar043200-2500.pw-1280-630x875.jpg 630w, <?= $base_path ?>assets/images/2020/10/j3343ar043200-2500.pw-1280-216x300.jpg 216w, <?= $base_path ?>assets/images/2020/10/j3343ar043200-2500.pw-1280-737x1024.jpg 737w, <?= $base_path ?>assets/images/2020/10/j3343ar043200-2500.pw-1280-768x1067.jpg 768w, <?= $base_path ?>assets/images/2020/10/j3343ar043200-2500.pw-1280-315x438.jpg 315w, <?= $base_path ?>assets/images/2020/10/j3343ar043200-2500.pw-1280.jpg 810w" sizes="(max-width: 420px) 100vw, 420px" /></noscript>			</a>			<!-- Open content -->
-			<div class="vamtam-product-content">
-			<a href="<?= $base_path ?>shop/product/angel-hoops/index.php" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><h2 class="woocommerce-loop-product__title">Angel Hoops Golden Earrings</h2>
-	<span class="price"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol" translate="no">&#36;</span>119.00</bdi></span></span>
-					</a><div class="vamtam-product-tags"><a href="<?= $base_path ?>shop/tags/earrings/index.php" rel="tag">earrings</a><span class="separator">  ・  </span><a href="<?= $base_path ?>shop/tags/golden/page/1/index.php" rel="tag">golden</a></div>			</div>
-			<!-- Close content -->
-						<span id="woocommerce_loop_add_to_cart_link_describedby_4370" class="screen-reader-text">
-			</span>
-</li>
-
-			
-		</ul>
-
-	</section>
+	<?php
+$related_products = array_filter(get_catalog_products(), function($p) use ($db_product) {
+    return ($p->id ?? 0) != ($db_product->id ?? 0);
+});
+$related_products = array_slice($related_products, 0, 3);
+?>
+<section class="related products">
+    <h2>Complementary Pieces</h2>
+    <ul class="products elementor-grid vamtam-wc columns-3" style="display:flex; flex-wrap:wrap; gap:24px; list-style:none; padding:0; margin:24px 0 0 0;">
+        <?php foreach ($related_products as $rp): ?>
+        <li class="product type-product" style="flex:1; min-width:240px; max-width:340px; margin-bottom:20px;">
+            <a href="<?= $base_path ?><?= e($rp->url) ?>" class="woocommerce-LoopProduct-link woocommerce-loop-product__link" style="display:block; text-decoration:none;">
+                <div style="background:#FAF8F5; border-radius:8px; overflow:hidden; aspect-ratio:420/583;">
+                    <img width="420" height="583" src="<?= $base_path ?><?= e($rp->image) ?>" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="<?= e($rp->name) ?>" style="width:100%; height:100%; object-fit:cover; display:block;" />
+                </div>
+            </a>
+            <div class="vamtam-product-content" style="padding-top:14px; text-align:left;">
+                <a href="<?= $base_path ?><?= e($rp->url) ?>" class="woocommerce-LoopProduct-link woocommerce-loop-product__link" style="text-decoration:none; color:inherit;">
+                    <h2 class="woocommerce-loop-product__title" style="font-family:'Sorts Mill Goudy', serif; font-size:18px; margin:0 0 6px 0; color:#051F34;"><?= e($rp->name) ?></h2>
+                    <span class="price" style="font-family:'Montserrat', sans-serif; font-size:15px; font-weight:600; color:#051F34;">
+                        <span class="woocommerce-Price-amount amount"><?= format_price($rp->price) ?></span>
+                    </span>
+                </a>
+                <div class="vamtam-product-tags" style="font-size:11px; text-transform:uppercase; letter-spacing:1px; color:#A89060; margin-top:4px;">
+                    <span><?= e($rp->categoryName) ?></span>
+                </div>
+            </div>
+        </li>
+        <?php endforeach; ?>
+    </ul>
+</section>
 					</div>
 				</div>
 					</div>

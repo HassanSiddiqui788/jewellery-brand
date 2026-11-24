@@ -8,7 +8,23 @@ $page_title = 'Categories';
 $page_subtitle = 'Organize Jewellery Collections';
 $active_nav = 'categories';
 
-$categories = get_sample_categories();
+$dbCats = [];
+try {
+    $dbRawCats = get_catalog_categories();
+    foreach ($dbRawCats as $c) {
+        $dbCats[] = [
+            'id'          => $c->id,
+            'name'        => $c->name,
+            'slug'        => $c->slug,
+            'image'       => $c->image,
+            'description' => $c->description,
+            'count'       => 2,
+            'status'      => ucfirst($c->status),
+        ];
+    }
+} catch (\Throwable $e) {}
+
+$categories = !empty($dbCats) ? $dbCats : get_sample_categories();
 
 require_once __DIR__ . '/includes/header.php';
 ?>

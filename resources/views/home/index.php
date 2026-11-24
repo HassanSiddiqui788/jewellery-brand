@@ -3,7 +3,7 @@ $pageTitle = $title ?? 'Home';
 ob_start();
 ?>
 <div class="eyebrow">Luxury Jewellery House</div>
-<h1><?= e((string) ($title ?? 'Lorem Ipsum')) ?></h1>
+<h1><?= e((string) ($title ?? 'JARWAYA JEWELS')) ?></h1>
 <p><?= e((string) ($tagline ?? '')) ?></p>
 
 <?php if (!empty($categories)): ?>

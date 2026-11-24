@@ -1,6 +1,6 @@
 <?php
 /**
- * Page: Checkout – Lorem Ipsum
+ * Page: Checkout – JARWAYA JEWELS
  * Dynamic luxury checkout with customer & delivery details, payment selection,
  * order review, and seamless MySQL database order placement.
  */
@@ -16,7 +16,7 @@ if (session_status() === PHP_SESSION_NONE && !headers_sent()) {
 }
 
 $base_path = '../';
-$page_title = 'Checkout – Lorem Ipsum';
+$page_title = 'Checkout – JARWAYA JEWELS';
 $body_class = 'page page-checkout';
 $current_page = 'checkout';
 $page_css = ['checkout.css'];
@@ -287,7 +287,7 @@ require_once __DIR__ . '/../includes/header.php';
                         <div class="summary-totals-table">
                             <div class="summary-totals-row">
                                 <span>Subtotal</span>
-                                <strong id="checkoutSubtotal">$0.00</strong>
+                                <strong id="checkoutSubtotal">Rs. 0</strong>
                             </div>
                             <div class="summary-totals-row">
                                 <span>Delivery</span>
@@ -295,14 +295,14 @@ require_once __DIR__ . '/../includes/header.php';
                             </div>
                             <div class="summary-totals-row grand-total">
                                 <span>Grand Total</span>
-                                <span id="checkoutGrandTotal" class="grand-total-amount">$0.00</span>
+                                <span id="checkoutGrandTotal" class="grand-total-amount">Rs. 0</span>
                             </div>
                         </div>
 
                         <!-- Submit Button -->
                         <button type="submit" id="placeOrderBtn" class="btn-place-order">
                             <i class="fas fa-lock" aria-hidden="true"></i>
-                            <span id="btnText">Place Order &bull; $0.00</span>
+                            <span id="btnText">Place Order &bull; Rs. 0</span>
                         </button>
 
                         <!-- Trust Guarantees -->
@@ -355,7 +355,8 @@ require_once __DIR__ . '/../includes/header.php';
     }
 
     function formatPrice(num) {
-        return '$' + parseFloat(num).toFixed(2);
+        var val = parseFloat(num) || 0;
+        return 'Rs. ' + Math.round(val).toLocaleString('en-US');
     }
 
     function showAlert(message, isSuccess = false) {

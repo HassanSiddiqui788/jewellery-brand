@@ -1,11 +1,11 @@
 <?php
 /**
- * Page: Forgot Password – Lorem Ipsum
+ * Page: Forgot Password – JARWAYA JEWELS
  * Luxury Authentication Frontend
  */
 require_once __DIR__ . '/../includes/config.php';
 $base_path = '../';
-$page_title = 'Forgot Password – Lorem Ipsum';
+$page_title = 'Forgot Password – JARWAYA JEWELS';
 $body_class = 'page page-auth page-forgot-password';
 $current_page = 'forgot-password';
 
@@ -20,7 +20,7 @@ require_once __DIR__ . '/../includes/header.php';
         <!-- Brand Header -->
         <header class="auth-header">
             <a href="<?= $base_path ?>index.php" class="auth-logo-link" aria-label="Home">
-                <img src="<?= $base_path ?>assets/icons/logo.svg" alt="Lorem Ipsum" class="auth-logo-img">
+                <img src="<?= $base_path ?>assets/icons/logo.svg" alt="JARWAYA JEWELS" class="auth-logo-img">
             </a>
             <h1 class="auth-title">Forgot Password</h1>
             <p class="auth-subtitle">Provide your registered email address and we will dispatch a secure link to reset your credentials.</p>

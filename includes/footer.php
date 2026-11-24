@@ -16,7 +16,7 @@ $base_path = $base_path ?? './';
             <!-- Brand Logo -->
             <div class="footer-logo-wrap">
                 <a href="<?= $base_path ?>index.php" aria-label="Home">
-                    <img width="156" height="30" src="<?= $base_path ?>assets/icons/logo.svg" alt="Lorem Ipsum" class="footer-logo-img">
+                    <img width="220" height="30" src="<?= $base_path ?>assets/icons/logo.svg" alt="JARWAYA JEWELS" class="footer-logo-img">
                 </a>
             </div>
 
@@ -58,7 +58,7 @@ $base_path = $base_path ?? './';
 
         <!-- Luxury Decorative Typography Banner -->
         <div class="footer-marquee-top">
-            <span class="footer-marquee-text">Lorem ipsum dolor sit</span>
+            <span class="footer-marquee-text">Timeless Craftsmanship &bull; Hand-Finished Luxury &bull; Bespoke Elegance</span>
         </div>
 
         <!-- Centered Social Icons -->
@@ -77,13 +77,13 @@ $base_path = $base_path ?? './';
         </div>
 
         <div class="footer-marquee-bottom">
-            <span class="footer-marquee-text">amet consectetur adipiscing.</span>
+            <span class="footer-marquee-text">Curated Collections &bull; Pure Distinction &bull; Radiant Heirlooms</span>
         </div>
 
         <!-- Copyright Bottom Bar -->
         <div class="footer-copyright-bar">
             <div class="site-container">
-                <p>Copyright &copy; <?= date('Y') ?> <a href="<?= $base_path ?>index.php">Lorem Ipsum</a>. All rights reserved.</p>
+                <p>Copyright &copy; <?= date('Y') ?> <a href="<?= $base_path ?>index.php">JARWAYA JEWELS</a>. All rights reserved.</p>
             </div>
         </div>
     </footer>

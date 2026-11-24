@@ -3,8 +3,8 @@
 declare(strict_types=1);
 
 return [
-    'name' => env('APP_NAME', 'Lorem Ipsum'),
-    'tagline' => env('APP_TAGLINE', 'Lorem Ipsum Dolor Sit Amet'),
+    'name' => env('APP_NAME', 'JARWAYA JEWELS'),
+    'tagline' => env('APP_TAGLINE', 'Exquisite Fine Jewellery & Modern Heirlooms'),
     'env' => env('APP_ENV', 'production'),
     'debug' => filter_var(env('APP_DEBUG', false), FILTER_VALIDATE_BOOLEAN),
     'url' => rtrim((string) env('APP_URL', 'http://localhost'), '/'),

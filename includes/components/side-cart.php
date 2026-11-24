@@ -23,7 +23,7 @@ $base_path = $base_path ?? './';
                     <path d="M16 10a4 4 0 0 1-8 0"></path>
                 </svg>
                 <h3 class="site-mini-cart-empty-title">Your Cart is Empty</h3>
-                <p class="site-mini-cart-empty-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor.</p>
+                <p class="site-mini-cart-empty-desc">Discover our curated fine jewellery collections and add your favorite handcrafted pieces to your bag.</p>
                 <a href="<?= $base_path ?>shop/collections/index.php" class="site-mini-cart-btn">Explore Collections</a>
             </div>
         </div>

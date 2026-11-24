@@ -1,13 +1,13 @@
 <?php
 /** @var string $pageTitle */
-$pageTitle = $pageTitle ?? (string) config('app.name', 'Lorem Ipsum');
+$pageTitle = $pageTitle ?? (string) config('app.name', 'JARWAYA JEWELS');
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= e($pageTitle) ?> — <?= e((string) config('app.name', 'Lorem Ipsum')) ?></title>
+    <title><?= e($pageTitle) ?> — <?= e((string) config('app.name', 'JARWAYA JEWELS')) ?></title>
     <style>
         :root {
             --bg-cream: #F9F8F6;

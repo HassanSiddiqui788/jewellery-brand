@@ -94,7 +94,7 @@ $base_path = $base_path ?? './';
             "woocommerce_notices_elements": [],
             "vamtam_theme_has_theme_cursor": ""
         },
-        "post": { "id": 11, "title": "Lorem Ipsum", "excerpt": "", "featuredImage": false }
+        "post": { "id": 11, "title": "JARWAYA JEWELS", "excerpt": "", "featuredImage": false }
     };
 </script>
 <script id="elementor-frontend-js" src="<?= $base_path ?>assets/js/elementor-frontend.min.js" defer></script>

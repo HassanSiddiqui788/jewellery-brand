@@ -43,7 +43,7 @@ $logged_user = \App\Services\AuthService::user();
         <!-- 2. Center: Brand Logo -->
         <div class="site-logo-wrap">
             <a href="<?= $base_path ?>index.php" aria-label="Home" class="site-logo-link">
-                <img width="156" height="30" src="<?= $base_path ?>assets/icons/logo.svg" alt="Lorem Ipsum" class="site-logo-img">
+                <img width="220" height="30" src="<?= $base_path ?>assets/icons/logo.svg" alt="JARWAYA JEWELS" class="site-logo-img">
             </a>
         </div>
 

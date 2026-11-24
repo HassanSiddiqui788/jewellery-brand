@@ -19,7 +19,7 @@ if (PHP_SAPI !== 'cli' && !headers_sent()) {
 }
 
 if (!defined('ADMIN_SITE_NAME')) {
-    define('ADMIN_SITE_NAME', 'LOREM');
+    define('ADMIN_SITE_NAME', 'JARWAYA');
 }
 
 if (!defined('ADMIN_BRAND_SUBTITLE')) {
@@ -102,7 +102,7 @@ function e_admin($value) {
  * Format currency nicely for display
  */
 function admin_currency($amount) {
-    return '$' . number_format((float)$amount, 2);
+    return 'Rs. ' . number_format((float)$amount);
 }
 
 /**

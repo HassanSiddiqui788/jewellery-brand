@@ -1,11 +1,11 @@
 <?php
 /**
- * Page: Home – Lorem Ipsum
- * Lorem Ipsum Store
+ * Page: Home – JARWAYA JEWELS
+ * Exquisite Fine Jewellery & Modern Heirlooms
  */
 require_once __DIR__ . '/includes/config.php';
 $base_path = './';
-$page_title = 'Home – Lorem Ipsum';
+$page_title = 'JARWAYA JEWELS – Exquisite Fine Jewellery & Modern Heirlooms';
 $current_page = 'home';
 
 $page_css = ['swiper.min.css', 'hero-banner.css', 'promo-banners.css'];
@@ -21,100 +21,106 @@ require_once __DIR__ . '/includes/header.php';
     <?php include __DIR__ . '/includes/components/promo-dual-banner.php'; ?>
 
     <!-- 3. Selected Works / Featured Products Grid -->
-    <section id="position1" class="home-featured-section" aria-label="Selected Works">
+    <?php
+    $featured_products = get_catalog_products(null, 4);
+    ?>
+    <section id="position1" class="home-featured-section" aria-label="Featured Creations">
         <div class="home-section-header">
-            <h2 class="home-section-heading">Lorem Ipsum:</h2>
-            <a href="<?= $base_path ?>shop/index.php" class="home-section-link">Lorem Ipsum &rarr;</a>
+            <h2 class="home-section-heading">Featured Creations:</h2>
+            <a href="<?= $base_path ?>shop/index.php" class="home-section-link">View All Jewellery &rarr;</a>
         </div>
 
         <div class="home-products-grid">
-            <!-- Product 1: Splash Golden Necklace -->
-            <a href="<?= $base_path ?>shop/product/splash-golden-necklace/index.php" class="home-product-card">
-                <div class="home-product-thumb">
-                    <img src="<?= $base_path ?>assets/images/2020/02/j3370co033200.pw-1280-420x583.jpg" 
-                         alt="Splash Golden Necklace" 
-                         width="420" height="583" loading="lazy">
-                </div>
-                <div class="home-product-info">
-                    <h3 class="home-product-title">Splash Golden Necklace</h3>
-                    <div class="home-product-price">&#36;369.00</div>
-                    <div class="home-product-meta">golden &bull; necklaces</div>
-                </div>
-            </a>
-
-            <!-- Product 2: Curves Golden Earrings -->
-            <a href="<?= $base_path ?>shop/product/curves-golden-earrings/index.php" class="home-product-card">
-                <div class="home-product-thumb">
-                    <img src="<?= $base_path ?>assets/images/2020/10/j3378ar043200.pw-1280-420x583.jpg" 
-                         alt="Curves Golden Earrings" 
-                         width="420" height="583" loading="lazy">
-                </div>
-                <div class="home-product-info">
-                    <h3 class="home-product-title">Curves Golden Earrings</h3>
-                    <div class="home-product-price">&#36;189.00</div>
-                    <div class="home-product-meta">golden &bull; earrings</div>
-                </div>
-            </a>
-
-            <!-- Product 3: Portlligat Golden Earrings -->
-            <a href="<?= $base_path ?>shop/product/portlligat-golden-earrings/index.php" class="home-product-card">
-                <div class="home-product-thumb">
-                    <img src="<?= $base_path ?>assets/images/2020/10/j3378ar043200.pw-1280-420x583.jpg" 
-                         alt="Portlligat Golden Earrings" 
-                         width="420" height="583" loading="lazy">
-                </div>
-                <div class="home-product-info">
-                    <h3 class="home-product-title">Portlligat Golden Earrings</h3>
-                    <div class="home-product-price">&#36;119.00</div>
-                    <div class="home-product-meta">earrings &bull; golden</div>
-                </div>
-            </a>
-
-            <!-- Product 4: Miro Jewelry Golden Bracelet -->
-            <a href="<?= $base_path ?>shop/product/miro-jewelry-golden-bracelet/index.php" class="home-product-card">
-                <div class="home-product-thumb">
-                    <img src="<?= $base_path ?>assets/images/2020/10/m-9-9-9-9-p-o-1-5-3-2-0-0.pw-1280-420x381.jpg" 
-                         alt="Miro Jewelry Golden Bracelet" 
-                         width="420" height="381" loading="lazy">
-                </div>
-                <div class="home-product-info">
-                    <h3 class="home-product-title">Miro Jewelry Golden Bracelet</h3>
-                    <div class="home-product-price">&#36;219.00</div>
-                    <div class="home-product-meta">bracelet &bull; golden</div>
-                </div>
-            </a>
+            <?php if (!empty($featured_products)): ?>
+                <?php foreach ($featured_products as $prod): ?>
+                    <a href="<?= $base_path ?>shop/product/<?= esc_attr($prod->slug) ?>/index.php" class="home-product-card">
+                        <div class="home-product-thumb">
+                            <img src="<?= $base_path ?><?= esc_attr($prod->mainImage) ?>" 
+                                 alt="<?= esc_attr($prod->name) ?>" 
+                                 width="420" height="583" loading="lazy">
+                        </div>
+                        <div class="home-product-info">
+                            <h3 class="home-product-title"><?= e($prod->name) ?></h3>
+                            <div class="home-product-price"><?= format_price($prod->effectivePrice()) ?></div>
+                            <div class="home-product-meta"><?= e($prod->categoryName ?? 'Jewellery') ?> &bull; handcrafted</div>
+                        </div>
+                    </a>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <!-- Fallback when catalog products are loading -->
+                <a href="<?= $base_path ?>shop/product/splash-golden-necklace/index.php" class="home-product-card">
+                    <div class="home-product-thumb">
+                        <img src="<?= $base_path ?>assets/images/2020/02/j3370co033200.pw-1280-420x583.jpg" alt="Splash Golden Necklace" width="420" height="583" loading="lazy">
+                    </div>
+                    <div class="home-product-info">
+                        <h3 class="home-product-title">Splash Golden Necklace</h3>
+                        <div class="home-product-price">Rs. 28,500</div>
+                        <div class="home-product-meta">necklaces &bull; handcrafted</div>
+                    </div>
+                </a>
+                <a href="<?= $base_path ?>shop/product/curves-golden-earrings/index.php" class="home-product-card">
+                    <div class="home-product-thumb">
+                        <img src="<?= $base_path ?>assets/images/2020/10/j3378ar043200.pw-1280-420x583.jpg" alt="Curves Golden Earrings" width="420" height="583" loading="lazy">
+                    </div>
+                    <div class="home-product-info">
+                        <h3 class="home-product-title">Curves Golden Earrings</h3>
+                        <div class="home-product-price">Rs. 14,500</div>
+                        <div class="home-product-meta">earrings &bull; handcrafted</div>
+                    </div>
+                </a>
+                <a href="<?= $base_path ?>shop/product/portlligat-golden-earrings/index.php" class="home-product-card">
+                    <div class="home-product-thumb">
+                        <img src="<?= $base_path ?>assets/images/2020/10/j3378ar043200.pw-1280-420x583.jpg" alt="Portlligat Golden Earrings" width="420" height="583" loading="lazy">
+                    </div>
+                    <div class="home-product-info">
+                        <h3 class="home-product-title">Portlligat Golden Earrings</h3>
+                        <div class="home-product-price">Rs. 11,500</div>
+                        <div class="home-product-meta">earrings &bull; handcrafted</div>
+                    </div>
+                </a>
+                <a href="<?= $base_path ?>shop/product/miro-jewelry-golden-bracelet/index.php" class="home-product-card">
+                    <div class="home-product-thumb">
+                        <img src="<?= $base_path ?>assets/images/2020/10/m-9-9-9-9-p-o-1-5-3-2-0-0.pw-1280-420x381.jpg" alt="Miro Jewelry Golden Bracelet" width="420" height="381" loading="lazy">
+                    </div>
+                    <div class="home-product-info">
+                        <h3 class="home-product-title">Miro Jewelry Golden Bracelet</h3>
+                        <div class="home-product-price">Rs. 18,500</div>
+                        <div class="home-product-meta">bracelets &bull; handcrafted</div>
+                    </div>
+                </a>
+            <?php endif; ?>
         </div>
     </section>
 
-    <!-- 4. Editorial Split 1: Lorem Ipsum Dolor -->
+    <!-- 4. Editorial Split 1: Sculptural Grace -->
     <section class="home-editorial-split" aria-label="Featured Collection">
         <div class="editorial-row">
             <div class="editorial-image-wrap">
                 <img src="<?= $base_path ?>assets/images/2020/05/iStock-1136336605.jpg" 
-                     alt="Lorem Ipsum Editorial" 
+                     alt="JARWAYA JEWELS Editorial" 
                      width="1070" height="1552" loading="lazy">
             </div>
             <div class="editorial-content">
-                <h2 class="editorial-title">Lorem Ipsum<br>Dolor Sit Amet</h2>
-                <p class="editorial-subtitle">consectetur adipiscing elit sed do eiusmod tempor.</p>
-                <a href="<?= $base_path ?>shop/collections/index.php#necklaces" class="editorial-btn">
-                    discover
+                <h2 class="editorial-title">Sculptural Grace<br>& Timeless Allure</h2>
+                <p class="editorial-subtitle">Every piece is thoughtfully contoured with harmonious proportions and hand-finished brilliance.</p>
+                <a href="<?= $base_path ?>shop/categories/necklaces/index.php" class="editorial-btn">
+                    discover necklaces
                 </a>
             </div>
         </div>
 
-        <!-- 5. Editorial Split 2: Sed Do Eiusmod -->
+        <!-- 5. Editorial Split 2: Artisanal Mastery -->
         <div class="editorial-row reverse">
             <div class="editorial-image-wrap">
                 <img src="<?= $base_path ?>assets/images/2020/05/iStock-1136336598.jpg" 
-                     alt="Consectetur Adipiscing" 
+                     alt="Artisanal Mastery" 
                      width="1070" height="1552" loading="lazy">
             </div>
             <div class="editorial-content">
-                <h2 class="editorial-title">Sed Do Eiusmod<br>Tempor Incididunt</h2>
-                <p class="editorial-subtitle">ut enim ad minim veniam quis nostrud exercitation.</p>
+                <h2 class="editorial-title">Artisanal Mastery<br>& Modern Heirlooms</h2>
+                <p class="editorial-subtitle">Crafted for discerning collectors who cherish understated opulence and enduring character.</p>
                 <a href="<?= $base_path ?>shop/collections/index.php" class="editorial-btn">
-                    discover the set
+                    explore collections
                 </a>
             </div>
         </div>
@@ -131,7 +137,7 @@ require_once __DIR__ . '/includes/header.php';
             </div>
         </div>
         <p class="home-quote-text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua&hellip;
+            &ldquo;Jewellery that speaks with subtle grandeur&mdash;crafted with passion, shaped by heritage, and destined to be cherished forever.&rdquo;
         </p>
 
         <div class="categories-grid">
@@ -144,7 +150,7 @@ require_once __DIR__ . '/includes/header.php';
                 </div>
                 <div class="category-card-body">
                     <span class="category-card-letter">N</span>
-                    <h3 class="category-card-title">Necklaces <span class="category-card-count">(6)</span></h3>
+                    <h3 class="category-card-title">Necklaces <span class="category-card-count">(2)</span></h3>
                 </div>
             </a>
 
@@ -157,7 +163,7 @@ require_once __DIR__ . '/includes/header.php';
                 </div>
                 <div class="category-card-body">
                     <span class="category-card-letter">B</span>
-                    <h3 class="category-card-title">Bracelets <span class="category-card-count">(6)</span></h3>
+                    <h3 class="category-card-title">Bracelets <span class="category-card-count">(2)</span></h3>
                 </div>
             </a>
 
@@ -170,7 +176,7 @@ require_once __DIR__ . '/includes/header.php';
                 </div>
                 <div class="category-card-body">
                     <span class="category-card-letter">E</span>
-                    <h3 class="category-card-title">Earrings <span class="category-card-count">(6)</span></h3>
+                    <h3 class="category-card-title">Earrings <span class="category-card-count">(2)</span></h3>
                 </div>
             </a>
         </div>
@@ -187,7 +193,7 @@ require_once __DIR__ . '/includes/header.php';
         <div class="home-testimonials-container">
             <div class="home-testimonials-header">
                 <h2 class="home-testimonials-title">What Our Clients Say</h2>
-                <p class="home-testimonials-subtitle">Adorn Yourself in Glamour: Find Your Perfect Piece Today</p>
+                <p class="home-testimonials-subtitle">Adorn Yourself in Glamour: Discover Real Collector Experiences</p>
             </div>
 
             <div class="home-testimonials-grid">
@@ -196,15 +202,15 @@ require_once __DIR__ . '/includes/header.php';
                     <div class="testimonial-stars" aria-label="5 out of 5 stars">
                         &#9733;&#9733;&#9733;&#9733;&#9733;
                     </div>
-                    <h3 class="testimonial-quote-title">&ldquo; Golden Bracelets &rdquo;</h3>
+                    <h3 class="testimonial-quote-title">&ldquo; Sculptural Masterpiece &rdquo;</h3>
                     <p class="testimonial-text">
-                        Montluc claim to offer the finest diamond jewellery . I did my research, compared with some of the big brands and now I will never walk into a store again.
+                        The craftsmanship of the Splash Golden Necklace is breathtaking. The radiant finish and substantial weight feel truly luxurious and timeless.
                     </p>
                     <div class="testimonial-author">
-                        <img src="<?= $base_path ?>assets/images/testimonials/avatar-1.jpg" alt="Rose Ether" class="testimonial-avatar" width="36" height="36" loading="lazy">
+                        <img src="<?= $base_path ?>assets/images/testimonials/avatar-1.jpg" alt="Sophia Rahman" class="testimonial-avatar" width="36" height="36" loading="lazy">
                         <div class="testimonial-author-meta">
-                            <strong class="testimonial-author-name">Rose Ether</strong>
-                            <span class="testimonial-author-role">Fresh Design</span>
+                            <strong class="testimonial-author-name">Sophia Rahman</strong>
+                            <span class="testimonial-author-role">Lahore, Pakistan</span>
                         </div>
                     </div>
                 </article>
@@ -214,15 +220,15 @@ require_once __DIR__ . '/includes/header.php';
                     <div class="testimonial-stars" aria-label="5 out of 5 stars">
                         &#9733;&#9733;&#9733;&#9733;&#9733;
                     </div>
-                    <h3 class="testimonial-quote-title">&ldquo; Charming Golden Jewellery &rdquo;</h3>
+                    <h3 class="testimonial-quote-title">&ldquo; Understated Opulence &rdquo;</h3>
                     <p class="testimonial-text">
-                        I did my research, compared with some of the big brands and now Aenean pulvinar maximus. Montluc claim to offer the finest diamond jewellery you can buy direct from the maker.
+                        My Miro Golden Bracelet has become an everyday staple. Subtle, elegant, and turns heads at every dinner and gathering I attend.
                     </p>
                     <div class="testimonial-author">
-                        <img src="<?= $base_path ?>assets/images/testimonials/avatar-2.jpg" alt="Clara Weton" class="testimonial-avatar" width="36" height="36" loading="lazy">
+                        <img src="<?= $base_path ?>assets/images/testimonials/avatar-2.jpg" alt="Ayesha Tariq" class="testimonial-avatar" width="36" height="36" loading="lazy">
                         <div class="testimonial-author-meta">
-                            <strong class="testimonial-author-name">Clara Weton</strong>
-                            <span class="testimonial-author-role">Fresh Design</span>
+                            <strong class="testimonial-author-name">Ayesha Tariq</strong>
+                            <span class="testimonial-author-role">Karachi, Pakistan</span>
                         </div>
                     </div>
                 </article>
@@ -232,15 +238,15 @@ require_once __DIR__ . '/includes/header.php';
                     <div class="testimonial-stars" aria-label="5 out of 5 stars">
                         &#9733;&#9733;&#9733;&#9733;&#9733;
                     </div>
-                    <h3 class="testimonial-quote-title">&ldquo; Charming Golden Jewellery &rdquo;</h3>
+                    <h3 class="testimonial-quote-title">&ldquo; Flawless Quality &rdquo;</h3>
                     <p class="testimonial-text">
-                        Integer nunc viverra laoreet est the is porta pretium metus aliquam eget maecenas porta is nunc viverra Aenean pulvinar maximus. Consectetur adipiscing elit.
+                        Exceptional craftsmanship and swift insured delivery to Islamabad. The Curves Golden Earrings catch the light with unmatched radiance.
                     </p>
                     <div class="testimonial-author">
-                        <img src="<?= $base_path ?>assets/images/testimonials/avatar-3.jpg" alt="Seraton Suth" class="testimonial-avatar" width="36" height="36" loading="lazy">
+                        <img src="<?= $base_path ?>assets/images/testimonials/avatar-3.jpg" alt="Mahnoor Khan" class="testimonial-avatar" width="36" height="36" loading="lazy">
                         <div class="testimonial-author-meta">
-                            <strong class="testimonial-author-name">Seraton Suth</strong>
-                            <span class="testimonial-author-role">Fresh Design</span>
+                            <strong class="testimonial-author-name">Mahnoor Khan</strong>
+                            <span class="testimonial-author-role">Islamabad, Pakistan</span>
                         </div>
                     </div>
                 </article>
@@ -250,15 +256,15 @@ require_once __DIR__ . '/includes/header.php';
                     <div class="testimonial-stars" aria-label="5 out of 5 stars">
                         &#9733;&#9733;&#9733;&#9733;&#9733;
                     </div>
-                    <h3 class="testimonial-quote-title">&ldquo; Charming Golden Jewellery &rdquo;</h3>
+                    <h3 class="testimonial-quote-title">&ldquo; Pure Luxury Distinction &rdquo;</h3>
                     <p class="testimonial-text">
-                        Consectetur adipiscing elit. Integer nunc viverra laoreet est the is porta pretium metus aliquam eget maecenas porta is nunc viverra Aenean pulvinar maximus
+                        JARWAYA JEWELS sets a new standard for luxury fine jewellery in Pakistan. Exquisite velvet packaging and true heirloom artistry.
                     </p>
                     <div class="testimonial-author">
-                        <img src="<?= $base_path ?>assets/images/testimonials/avatar-4.jpg" alt="Alex Rony" class="testimonial-avatar" width="36" height="36" loading="lazy">
+                        <img src="<?= $base_path ?>assets/images/testimonials/avatar-4.jpg" alt="Zainab Malik" class="testimonial-avatar" width="36" height="36" loading="lazy">
                         <div class="testimonial-author-meta">
-                            <strong class="testimonial-author-name">Alex Rony</strong>
-                            <span class="testimonial-author-role">Fresh Design</span>
+                            <strong class="testimonial-author-name">Zainab Malik</strong>
+                            <span class="testimonial-author-role">Lahore, Pakistan</span>
                         </div>
                     </div>
                 </article>
@@ -270,7 +276,7 @@ require_once __DIR__ . '/includes/header.php';
     <section class="home-trends-banner-section" style="background-image: url('<?= $base_path ?>assets/images/2024/h1_bn-6.jpg');" aria-label="Shop The Latest Trends">
         <div class="home-trends-banner-container">
             <div class="home-trends-banner-content">
-                <span class="home-trends-eyebrow">OLIGHT COLLECTION</span>
+                <span class="home-trends-eyebrow">JARWAYA COLLECTION</span>
                 <h2 class="home-trends-title">Shop The Latest Trends</h2>
                 <p class="home-trends-desc">
                     Exceptional Handcrafted Design to Enhance<br>the Magnificent Glow

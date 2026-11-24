@@ -12,7 +12,7 @@ if (session_status() === PHP_SESSION_NONE) {
 require_once __DIR__ . '/../includes/config.php';
 
 $base_path = '../';
-$page_title = 'Shopping Bag – Lorem Ipsum';
+$page_title = 'Shopping Bag – JARWAYA JEWELS';
 $body_class = 'page page-cart';
 $current_page = 'cart';
 $page_css = ['checkout.css'];
@@ -85,7 +85,8 @@ require_once __DIR__ . '/../includes/header.php';
     }
 
     function formatPrice(num) {
-        return '$' + parseFloat(num).toFixed(2);
+        var val = parseFloat(num) || 0;
+        return 'Rs. ' + Math.round(val).toLocaleString('en-US');
     }
 
     function renderFullCart() {

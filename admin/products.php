@@ -8,7 +8,27 @@ $page_title = 'Products';
 $page_subtitle = 'Manage Jewellery Catalog & Pricing';
 $active_nav = 'products';
 
-$products   = get_sample_products();
+$dbProducts = [];
+try {
+    $dbRaw = get_catalog_products(null, 100);
+    foreach ($dbRaw as $p) {
+        $dbProducts[] = [
+            'id'             => $p->id,
+            'sku'            => 'JW-' . $p->id,
+            'name'           => $p->name,
+            'description'    => $p->description,
+            'category'       => $p->categoryName ?? 'Jewellery',
+            'price'          => $p->price,
+            'discount_price' => $p->discountPrice,
+            'stock'          => $p->stockQuantity,
+            'sales'          => 0,
+            'status'         => ucfirst($p->status),
+            'images'         => [$p->mainImage],
+        ];
+    }
+} catch (\Throwable $e) {}
+
+$products   = !empty($dbProducts) ? $dbProducts : get_sample_products();
 $categories = get_sample_categories();
 
 require_once __DIR__ . '/includes/header.php';
