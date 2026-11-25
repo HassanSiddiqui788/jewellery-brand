@@ -495,13 +495,200 @@
                 });
                 checkScrollLock();
             }
+
+            // -----------------------------------------------------------------
+            // Search Overlay Click Handlers
+            // -----------------------------------------------------------------
+            var searchTrigger = e.target.closest('.header-search-trigger') || 
+                               e.target.closest('#header-search-btn') || 
+                               e.target.closest('.mobile-search-trigger');
+            if (searchTrigger) {
+                e.preventDefault();
+                e.stopPropagation();
+                if (isSearchOpen()) {
+                    closeSearch();
+                } else {
+                    openSearch();
+                }
+                return;
+            }
+
+            var searchClose = e.target.closest('#header-search-close');
+            if (searchClose) {
+                e.preventDefault();
+                e.stopPropagation();
+                closeSearch();
+                return;
+            }
+
+            // Close search overlay if clicked outside header
+            if (isSearchOpen() && !e.target.closest('.site-header')) {
+                closeSearch();
+            }
         });
+
+        // -----------------------------------------------------------------
+        // H. Header Full-Width Search Overlay & Live Search
+        // -----------------------------------------------------------------
+        var searchOverlay = document.getElementById('site-header-search');
+        var searchInput = document.getElementById('header-search-input');
+        var searchCloseBtn = document.getElementById('header-search-close');
+        var searchResults = document.getElementById('header-search-results');
+        var searchTriggerBtn = document.getElementById('header-search-btn');
+        var searchDebounceTimer = null;
+
+        function getSearchBasePath() {
+            if (searchOverlay && searchOverlay.getAttribute('data-base-path')) {
+                return searchOverlay.getAttribute('data-base-path');
+            }
+            if (window.VAMTAM_FRONT && window.VAMTAM_FRONT.ajaxurl) {
+                return window.VAMTAM_FRONT.ajaxurl.replace('shop/cart.php', '');
+            }
+            return (window.location.pathname.indexOf('/shop/') !== -1 || window.location.pathname.indexOf('/pages/') !== -1) ? '../' : './';
+        }
+
+        function isSearchOpen() {
+            return searchOverlay && searchOverlay.classList.contains('is-open');
+        }
+
+        function openSearch() {
+            if (!searchOverlay) return;
+            var header = document.querySelector('.site-header');
+            if (header) {
+                header.classList.add('search-open');
+            }
+            searchOverlay.classList.add('is-open');
+            searchOverlay.setAttribute('aria-hidden', 'false');
+            if (searchTriggerBtn) {
+                searchTriggerBtn.setAttribute('aria-expanded', 'true');
+            }
+
+            // Close mobile menu if open
+            var openMobileToggle = document.querySelector('.elementor-menu-toggle.elementor-active');
+            if (openMobileToggle) {
+                openMobileToggle.classList.remove('elementor-active');
+                openMobileToggle.setAttribute('aria-expanded', 'false');
+                var activeDropdowns = document.querySelectorAll('.elementor-nav-menu--dropdown.elementor-active');
+                activeDropdowns.forEach(function(d) {
+                    d.classList.remove('elementor-active');
+                    d.setAttribute('aria-hidden', 'true');
+                });
+            }
+
+            // Close cart if open
+            if (isCartOpen()) {
+                closeCartDrawer();
+            }
+
+            if (searchInput) {
+                setTimeout(function() {
+                    searchInput.focus();
+                }, 60);
+            }
+        }
+
+        function closeSearch() {
+            if (!searchOverlay) return;
+            var header = document.querySelector('.site-header');
+            if (header) {
+                header.classList.remove('search-open');
+            }
+            searchOverlay.classList.remove('is-open');
+            searchOverlay.setAttribute('aria-hidden', 'true');
+            if (searchTriggerBtn) {
+                searchTriggerBtn.setAttribute('aria-expanded', 'false');
+            }
+            if (searchResults) {
+                searchResults.classList.remove('has-results');
+                searchResults.innerHTML = '';
+            }
+            if (searchInput) {
+                searchInput.value = '';
+            }
+        }
+
+        function renderSearchResults(data, query) {
+            if (!searchResults) return;
+            var basePath = getSearchBasePath();
+
+            if (!data || !data.results || data.results.length === 0) {
+                searchResults.innerHTML = '<div class="search-results-empty">No creations found matching &ldquo;' + escapeHtml(query) + '&rdquo;. Press Enter to explore all pieces.</div>';
+                searchResults.classList.add('has-results');
+                return;
+            }
+
+            var html = '<ul class="search-results-list">';
+            data.results.forEach(function(item) {
+                html += '<li class="search-results-item-wrap">';
+                html += '  <a href="' + item.url + '" class="search-result-item">';
+                html += '    <div class="search-result-thumb">';
+                html += '      <img src="' + item.image + '" alt="' + escapeHtml(item.name) + '" loading="lazy">';
+                html += '    </div>';
+                html += '    <div class="search-result-info">';
+                html += '      <h4 class="search-result-title">' + escapeHtml(item.name) + '</h4>';
+                html += '      <div class="search-result-meta">' + escapeHtml(item.category) + ' &bull; Handcrafted</div>';
+                html += '    </div>';
+                html += '    <div class="search-result-price">' + escapeHtml(item.price) + '</div>';
+                html += '  </a>';
+                html += '</li>';
+            });
+            html += '</ul>';
+            html += '<a href="' + basePath + 'shop/index.php?q=' + encodeURIComponent(query) + '" class="search-results-view-all">View all ' + data.results.length + '+ results for &ldquo;' + escapeHtml(query) + '&rdquo; &rarr;</a>';
+
+            searchResults.innerHTML = html;
+            searchResults.classList.add('has-results');
+        }
+
+        function escapeHtml(str) {
+            return String(str || '').replace(/[&<>"']/g, function(m) {
+                return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' }[m];
+            });
+        }
+
+        if (searchInput) {
+            searchInput.addEventListener('input', function(e) {
+                var q = e.target.value.trim();
+                if (searchDebounceTimer) {
+                    clearTimeout(searchDebounceTimer);
+                }
+
+                if (q.length < 2) {
+                    if (searchResults) {
+                        searchResults.classList.remove('has-results');
+                        searchResults.innerHTML = '';
+                    }
+                    return;
+                }
+
+                searchDebounceTimer = setTimeout(function() {
+                    var basePath = getSearchBasePath();
+                    var endpoint = basePath + 'api/search.php?q=' + encodeURIComponent(q) + '&base=' + encodeURIComponent(basePath);
+
+                    fetch(endpoint)
+                        .then(function(res) {
+                            if (!res.ok) throw new Error('Network error');
+                            return res.json();
+                        })
+                        .then(function(data) {
+                            renderSearchResults(data, q);
+                        })
+                        .catch(function(err) {
+                            console.error('Search fetch error:', err);
+                        });
+                }, 200);
+            });
+        }
 
         // -----------------------------------------------------------------
         // G. Close on ESC Key
         // -----------------------------------------------------------------
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape' || e.keyCode === 27) {
+                // Close Search
+                if (isSearchOpen()) {
+                    closeSearch();
+                }
+
                 // Close Cart
                 if (isCartOpen()) {
                     closeCartDrawer();

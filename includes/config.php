@@ -90,7 +90,7 @@ if (!function_exists('format_price')) {
  * @return list<\App\Models\Product>
  */
 if (!function_exists('get_catalog_products')) {
-    function get_catalog_products(?string $categorySlug = null, int $limit = 24): array {
+    function get_catalog_products(?string $categorySlug = null, int $limit = 24, ?string $search = null): array {
         try {
             $app = \Core\Application::getInstance();
             if ($app) {
@@ -99,6 +99,9 @@ if (!function_exists('get_catalog_products')) {
                 $filters = ['limit' => $limit];
                 if ($categorySlug !== null && $categorySlug !== '') {
                     $filters['category'] = $categorySlug;
+                }
+                if ($search !== null && $search !== '') {
+                    $filters['q'] = $search;
                 }
                 $result = $service->browseProducts($filters);
                 return $result['products'] ?? [];

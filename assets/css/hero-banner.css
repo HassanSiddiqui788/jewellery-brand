@@ -85,7 +85,6 @@
 .luxury-hero-container {
     position: relative;
     z-index: 2;
-    max-width: 1260px;
     width: 100%;
     margin: 0 auto;
     padding: 0 50px;
@@ -147,6 +146,7 @@
 }
 
 @media (max-width: 1200px) {
+
     .luxury-hero-section h1.luxury-hero-title,
     .luxury-hero-section h2.luxury-hero-title,
     .luxury-hero-title {
@@ -155,6 +155,7 @@
 }
 
 @media (max-width: 768px) {
+
     .luxury-hero-section h1.luxury-hero-title,
     .luxury-hero-section h2.luxury-hero-title,
     .luxury-hero-title {
@@ -165,6 +166,7 @@
 }
 
 @media (max-width: 480px) {
+
     .luxury-hero-section h1.luxury-hero-title,
     .luxury-hero-section h2.luxury-hero-title,
     .luxury-hero-title {
@@ -242,6 +244,7 @@
         opacity: 0;
         transform: translateY(28px);
     }
+
     100% {
         opacity: 1;
         transform: translateY(0);
@@ -287,6 +290,7 @@
     transition: all 0.3s ease;
     z-index: 10;
     margin-top: -24px;
+    display: none !important;
 }
 
 .luxury-hero-slider .swiper-button-prev:after,
@@ -312,6 +316,7 @@
 }
 
 @media (max-width: 900px) {
+
     .luxury-hero-slider .swiper-button-prev,
     .luxury-hero-slider .swiper-button-next {
         display: none;
@@ -349,7 +354,7 @@
     border-radius: 4px;
 }
 
-/* Floating Down Arrow */
+/* Floating Down Arrow
 .luxury-hero-scroll {
     position: absolute;
     bottom: 24px;
@@ -365,17 +370,20 @@
     display: flex;
     align-items: center;
     justify-content: center;
-}
+} */
 
 .luxury-hero-scroll:hover {
     color: #ffffff;
 }
 
 @keyframes heroScrollFloat {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translate(-50%, 0);
         opacity: 0.6;
     }
+
     50% {
         transform: translate(-50%, 8px);
         opacity: 1;

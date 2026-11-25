@@ -11,19 +11,25 @@ $current_page = 'collections';
 
 require_once __DIR__ . '/../includes/header.php';
 
-// Fetch active products dynamically from MySQL database
-$products = get_catalog_products(null, 24);
+// Fetch active products dynamically from MySQL database (with search support)
+$search_query = isset($_GET['q']) ? trim((string)$_GET['q']) : (isset($_GET['s']) ? trim((string)$_GET['s']) : '');
+$products = get_catalog_products(null, 24, $search_query !== '' ? $search_query : null);
 ?>
 
 <main id="main-content" class="site-main">
     <!-- Luxury Page Header -->
     <header class="about-page-header">
-        <h1 class="about-page-title">Fine Jewellery Gallery</h1>
-        <p class="about-page-subtitle">Discover our complete collection of handcrafted necklaces, bracelets, and earrings designed for timeless elegance.</p>
+        <?php if ($search_query !== ''): ?>
+            <h1 class="about-page-title">Search Results</h1>
+            <p class="about-page-subtitle">Showing <?= count($products) ?> <?= count($products) === 1 ? 'creation' : 'creations' ?> matching &ldquo;<?= e($search_query) ?>&rdquo;</p>
+        <?php else: ?>
+            <h1 class="about-page-title">Fine Jewellery Gallery</h1>
+            <p class="about-page-subtitle">Discover our complete collection of handcrafted necklaces, bracelets, and earrings designed for timeless elegance.</p>
+        <?php endif; ?>
         
         <!-- Category Filter Pills -->
         <div class="site-category-pills">
-            <a href="<?= $base_path ?>shop/index.php" class="active">All Pieces</a>
+            <a href="<?= $base_path ?>shop/index.php" class="<?= empty($search_query) ? 'active' : '' ?>">All Pieces</a>
             <a href="<?= $base_path ?>shop/categories/necklaces/index.php">Necklaces</a>
             <a href="<?= $base_path ?>shop/categories/bracelets/index.php">Bracelets</a>
             <a href="<?= $base_path ?>shop/categories/earrings/index.php">Earrings</a>
@@ -46,6 +52,15 @@ $products = get_catalog_products(null, 24);
                         </div>
                     </a>
                 <?php endforeach; ?>
+            <?php elseif ($search_query !== ''): ?>
+                <div style="grid-column: 1 / -1; text-align: center; padding: 70px 20px;">
+                    <div style="font-size: 32px; color: #CB9274; margin-bottom: 16px;">
+                        <i class="fas fa-search" aria-hidden="true"></i>
+                    </div>
+                    <h3 style="font-family: 'Sorts Mill Goudy', serif; font-size: 22px; color: #051F34; margin-bottom: 8px;">No matching jewellery pieces found</h3>
+                    <p style="font-size: 14px; color: #8E8E93; max-width: 480px; margin: 0 auto 24px;">We could not find any items matching &ldquo;<?= e($search_query) ?>&rdquo;. Try searching by product name, style (necklace, bracelet, earrings), or gold finish.</p>
+                    <a href="<?= $base_path ?>shop/index.php" style="display: inline-block; padding: 12px 28px; background: #051F34; color: #FFFFFF; text-decoration: none; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; border-radius: 2px;">View All Creations</a>
+                </div>
             <?php else: ?>
                 <!-- Fallback when catalog products are loading -->
                 <a href="<?= $base_path ?>shop/product/splash-golden-necklace/index.php" class="home-product-card">

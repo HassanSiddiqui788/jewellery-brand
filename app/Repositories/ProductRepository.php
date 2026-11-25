@@ -26,8 +26,10 @@ final class ProductRepository extends BaseRepository
         }
 
         if (!empty($filters['search'])) {
-            $conditions[] = '(p.product_name LIKE :search OR p.description LIKE :search)';
-            $params[':search'] = '%' . (string) $filters['search'] . '%';
+            $conditions[] = '(p.product_name LIKE :search_name OR p.description LIKE :search_desc)';
+            $searchTerm = '%' . (string) $filters['search'] . '%';
+            $params[':search_name'] = $searchTerm;
+            $params[':search_desc'] = $searchTerm;
         }
 
         $orderSql = match ($filters['sort'] ?? 'newest') {

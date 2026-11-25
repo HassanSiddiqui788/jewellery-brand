@@ -49,6 +49,14 @@ $logged_user = \App\Services\AuthService::user();
 
         <!-- 3. Right: Luxury Action Icons -->
         <div class="site-actions">
+            <!-- Search Button (Refined Luxury Outline Icon Matching Login Icon) -->
+            <button type="button" class="site-action-btn search-btn header-search-trigger" id="header-search-btn" aria-label="Search" title="Search" aria-expanded="false" aria-controls="site-header-search">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="11" cy="11" r="7.5"></circle>
+                    <line x1="21" y1="21" x2="16.5" y2="16.5"></line>
+                </svg>
+            </button>
+
             <!-- Wishlist Button (Heart Icon) -->
             <a href="<?= $base_path ?>shop/collections/index.php" class="site-action-btn wishlist-btn" aria-label="Wishlist" title="Wishlist">
                 <i class="far fa-heart" aria-hidden="true"></i>
@@ -85,9 +93,43 @@ $logged_user = \App\Services\AuthService::user();
         </div>
     </div>
 
+    <!-- Header Full-Width Search Bar Overlay (Matches Reference Design) -->
+    <div id="site-header-search" class="site-header-search" data-base-path="<?= $base_path ?>" aria-hidden="true">
+        <div class="site-header-search-inner">
+            <form action="<?= $base_path ?>shop/index.php" method="GET" class="site-header-search-form" role="search">
+                <input 
+                    type="search" 
+                    name="q" 
+                    id="header-search-input" 
+                    class="site-header-search-input" 
+                    placeholder="Start your search here..." 
+                    autocomplete="off" 
+                    aria-label="Start your search here..."
+                >
+            </form>
+            <button type="button" id="header-search-close" class="site-header-search-close" aria-label="Close search">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        <!-- Live Instant Search Dropdown Results -->
+        <div id="header-search-results" class="site-header-search-results" aria-live="polite"></div>
+    </div>
+
     <!-- 4. Mobile & Tablet Navigation Dropdown Drawer -->
     <nav class="elementor-nav-menu--dropdown elementor-nav-menu__container" aria-hidden="true">
         <ul id="mobile-menu-main" class="elementor-nav-menu">
+            <li class="menu-item">
+                <a href="#" class="elementor-item mobile-search-trigger">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-right: 8px; vertical-align: middle;">
+                        <circle cx="11" cy="11" r="7.5"></circle>
+                        <line x1="21" y1="21" x2="16.5" y2="16.5"></line>
+                    </svg>
+                    Search
+                </a>
+            </li>
             <li class="menu-item">
                 <a href="<?= $base_path ?>index.php" class="elementor-item">Home</a>
             </li>

@@ -177,13 +177,13 @@ $related_products = array_slice($related_products, 0, 3);
     <ul class="products elementor-grid vamtam-wc columns-3" style="display:flex; flex-wrap:wrap; gap:24px; list-style:none; padding:0; margin:24px 0 0 0;">
         <?php foreach ($related_products as $rp): ?>
         <li class="product type-product" style="flex:1; min-width:240px; max-width:340px; margin-bottom:20px;">
-            <a href="<?= $base_path ?><?= e($rp->url) ?>" class="woocommerce-LoopProduct-link woocommerce-loop-product__link" style="display:block; text-decoration:none;">
+            <a href="<?= $base_path ?>shop/product/<?= e($rp->slug) ?>/index.php" class="woocommerce-LoopProduct-link woocommerce-loop-product__link" style="display:block; text-decoration:none;">
                 <div style="background:#FAF8F5; border-radius:8px; overflow:hidden; aspect-ratio:420/583;">
-                    <img width="420" height="583" src="<?= $base_path ?><?= e($rp->image) ?>" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="<?= e($rp->name) ?>" style="width:100%; height:100%; object-fit:cover; display:block;" />
+                    <img width="420" height="583" src="<?= $base_path ?><?= e($rp->mainImage) ?>" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="<?= e($rp->name) ?>" style="width:100%; height:100%; object-fit:cover; display:block;" />
                 </div>
             </a>
             <div class="vamtam-product-content" style="padding-top:14px; text-align:left;">
-                <a href="<?= $base_path ?><?= e($rp->url) ?>" class="woocommerce-LoopProduct-link woocommerce-loop-product__link" style="text-decoration:none; color:inherit;">
+                <a href="<?= $base_path ?>shop/product/<?= e($rp->slug) ?>/index.php" class="woocommerce-LoopProduct-link woocommerce-loop-product__link" style="text-decoration:none; color:inherit;">
                     <h2 class="woocommerce-loop-product__title" style="font-family:'Sorts Mill Goudy', serif; font-size:18px; margin:0 0 6px 0; color:#051F34;"><?= e($rp->name) ?></h2>
                     <span class="price" style="font-family:'Montserrat', sans-serif; font-size:15px; font-weight:600; color:#051F34;">
                         <span class="woocommerce-Price-amount amount"><?= format_price($rp->price) ?></span>
