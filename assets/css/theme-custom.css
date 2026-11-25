@@ -104,27 +104,32 @@ textarea {
     cursor: text !important;
 }
 
-/* Ensure clean text selection and image pointer interactions across content */
-body,
-main,
-article,
-section,
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-span,
-blockquote,
-li,
-td,
-th {
-    -webkit-user-select: text;
-    -moz-user-select: text;
-    -ms-user-select: text;
-    user-select: text;
+/* Ensure universal clean text selection and copying across the entire website */
+*,
+*::before,
+*::after {
+    -webkit-user-select: text !important;
+    -moz-user-select: text !important;
+    -ms-user-select: text !important;
+    user-select: text !important;
+}
+
+/* Custom interactive cursor ring/dot must ignore mouse & selection events */
+.custom-cursor-dot,
+.custom-cursor-ring {
+    pointer-events: none !important;
+    -webkit-user-select: none !important;
+    user-select: none !important;
+}
+
+/* Luxury brand selection highlight */
+::selection {
+    background-color: #CB9274 !important;
+    color: #FFFFFF !important;
+}
+::-moz-selection {
+    background-color: #CB9274 !important;
+    color: #FFFFFF !important;
 }
 
 img,
@@ -2981,7 +2986,6 @@ img {
 
 @media (hover: hover) and (pointer: fine) {
 
-    body.has-custom-cursor,
     body.has-custom-cursor a,
     body.has-custom-cursor button,
     body.has-custom-cursor [role="button"],
@@ -2995,9 +2999,20 @@ img {
         cursor: none !important;
     }
 
-    body.has-custom-cursor input[type="text"],
-    body.has-custom-cursor input[type="email"],
-    body.has-custom-cursor input[type="password"],
+    body.has-custom-cursor p,
+    body.has-custom-cursor h1,
+    body.has-custom-cursor h2,
+    body.has-custom-cursor h3,
+    body.has-custom-cursor h4,
+    body.has-custom-cursor h5,
+    body.has-custom-cursor h6,
+    body.has-custom-cursor span:not(.btn *):not(a *):not(button *),
+    body.has-custom-cursor blockquote,
+    body.has-custom-cursor li:not(.menu-item *),
+    body.has-custom-cursor td,
+    body.has-custom-cursor th,
+    body.has-custom-cursor label,
+    body.has-custom-cursor input,
     body.has-custom-cursor textarea {
         cursor: text !important;
     }

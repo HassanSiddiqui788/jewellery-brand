@@ -39,6 +39,8 @@
 
 <!-- Admin JavaScript Engine -->
 <script src="assets/js/admin.js" defer></script>
+<!-- Universal Text Copy & Toast Notification Engine -->
+<script src="../assets/js/copy-notification.js" defer></script>
 </body>
 </html>
 

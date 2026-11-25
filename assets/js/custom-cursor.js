@@ -75,11 +75,13 @@
         document.addEventListener('mouseover', function(e) {
             if (!e.target || !e.target.closest) return;
 
-            // Handle text input fields - hide custom cursor so native text cursor displays
-            if (e.target.closest('input[type="text"], input[type="email"], input[type="password"], textarea')) {
-                cursorRing.style.opacity = '0';
-                cursorDot.style.opacity = '0';
-                return;
+            // Handle text elements and inputs - hide custom cursor so native text cursor displays
+            if (e.target.closest('input, textarea, p, h1, h2, h3, h4, h5, h6, blockquote, td, th')) {
+                if (!e.target.closest('a, button, [role="button"], .site-action-btn, .editorial-btn, .home-story-btn, .home-trends-btn, .home-product-card, .category-card')) {
+                    cursorRing.style.opacity = '0';
+                    cursorDot.style.opacity = '0';
+                    return;
+                }
             }
 
             if (e.target.closest(hoverSelector)) {
@@ -91,7 +93,7 @@
         document.addEventListener('mouseout', function(e) {
             if (!e.target || !e.target.closest) return;
 
-            if (e.target.closest('input[type="text"], input[type="email"], input[type="password"], textarea')) {
+            if (e.target.closest('input, textarea, p, h1, h2, h3, h4, h5, h6, blockquote, td, th')) {
                 if (isVisible) {
                     cursorRing.style.opacity = '1';
                     cursorDot.style.opacity = '1';

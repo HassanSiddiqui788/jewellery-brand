@@ -185,6 +185,9 @@ window.lazyLoadOptions = [{
 <!-- Luxury Interactive Custom Cursor -->
 <script src="<?= $base_path ?>assets/js/custom-cursor.js" defer></script>
 
+<!-- Universal Text Copy & Toast Notification Engine -->
+<script src="<?= $base_path ?>assets/js/copy-notification.js" defer></script>
+
 <!-- Page Specific Scripts -->
 <?php if (!empty($page_scripts)): ?>
 <?php foreach ((array)$page_scripts as $script_file): ?>
